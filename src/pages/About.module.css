@@ -7,4 +7,6 @@
     position: absolute;
     text-transform: uppercase;
     font-weight: 900;
+    pointer-events: none;
+    z-index: -1;
 }
