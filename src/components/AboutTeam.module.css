@@ -1,0 +1,22 @@
+.container{
+    max-width: 1030px;
+    margin-bottom: 15rem;
+}
+.title{
+    font-size: 4.1875em;
+    font-weight: 500;
+}
+.top{
+    max-width: 620px;
+}
+.top p{
+    font-size: 1.375em;
+    opacity: 0.35;
+    line-height: 1.45;
+}
+.teamWrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+    margin-top: 5rem;
+}

@@ -1,0 +1,38 @@
+.col{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.imgWrap{
+    margin-bottom: 1rem;
+}
+.name, .position{
+    margin: 0;
+    line-height: 1.5;
+}
+.name{
+    font-size: 1.1875em;
+    font-weight: 500;
+}
+.position{
+    opacity: 0.35;
+    font-weight: 500;
+    font-size: 1em;
+}
+.social{
+    padding: 0;
+    margin: 1rem 0 0 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.social li{
+    margin: 0 0.5rem;
+}
+.social img{
+    width: 14px;
+    filter: invert(1);
+    transition: 300ms;
+}
+.social a:hover img{
+    opacity: 0.5;
+}

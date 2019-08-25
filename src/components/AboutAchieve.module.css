@@ -1,0 +1,14 @@
+.container{
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+    margin-bottom: 15rem;
+}
+.title{
+    font-size: 4.1875em;
+    max-width: 420px;
+    grid-column: 1 / 4;
+}
+p{
+    opacity: 0.35;
+    font-size: 1.25em;
+}

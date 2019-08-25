@@ -1,0 +1,12 @@
+.col{
+    grid-row: 2;
+}
+.col p{
+    font-size: 1.25em;
+    line-height: 1.1;
+}
+.title{
+    font-weight: normal;
+    font-size: 1.625em;
+    margin: 0 0 1.5rem;
+}
