@@ -1,0 +1,31 @@
+.container{
+    text-align: center;
+    margin-bottom: 10rem;
+}
+.top{
+    text-align: center;
+    padding: 0;
+    margin: 0 0 1rem;
+    list-style: none;
+    li{
+        margin: 0 1rem;
+        display: inline-block;
+    }
+    a{
+        font-size: 0.9375em;
+        color: var(--white);
+        transition: 300ms;
+        text-decoration: none;
+        &:hover{
+            opacity: 0.35;
+        }
+    }
+}
+.right{
+    font-size: 0.8125em;
+    opacity: 0.5;
+    margin-bottom: 1rem;
+}
+.powered{
+    font-size: 0.9375em;
+}
