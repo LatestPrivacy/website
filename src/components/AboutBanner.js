@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import BannerStyle from './AboutBanner.module.css'
+import BannerStyle from './AboutBanner.module.scss'
 
 import winnerImg from '../assets/images/winner.jpg'
 

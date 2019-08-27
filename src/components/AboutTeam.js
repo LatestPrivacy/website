@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import TeamStyle from './AboutTeam.module.css'
+import TeamStyle from './AboutTeam.module.scss'
 
 class AboutMission extends Component {
     render() {

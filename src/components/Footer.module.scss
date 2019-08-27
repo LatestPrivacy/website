@@ -7,19 +7,19 @@
     padding: 0;
     margin: 0 0 1rem;
     list-style: none;
-}
-.top li{
-    margin: 0 1rem;
-    display: inline-block;
-}
-.top a{
-    font-size: 0.9375em;
-    color: var(--white);
-    transition: 300ms;
-    text-decoration: none;
-}
-.top a:hover{
-    opacity: 0.35;
+    li{
+        margin: 0 1rem;
+        display: inline-block;
+    }
+    a{
+        font-size: 0.9375em;
+        color: var(--white);
+        transition: 300ms;
+        text-decoration: none;
+        &:hover{
+            opacity: 0.35;
+        }
+    }
 }
 .right{
     font-size: 0.8125em;

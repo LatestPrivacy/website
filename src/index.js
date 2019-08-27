@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom'
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -7,8 +9,10 @@ import * as serviceWorker from './serviceWorker';
 const rootEl = document.getElementById('root')
 
 ReactDOM.render(
-  <App />,
-  rootEl
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+    rootEl
 )
 
 if (module.hot) {

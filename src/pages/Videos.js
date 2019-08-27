@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class News extends Component {
+class Videos extends Component {
     render() {
         return (
             <div className="container">
-                This is News
+                This is Videos
             </div>
         );
     }
 }
 
-export default News;
+export default Videos;

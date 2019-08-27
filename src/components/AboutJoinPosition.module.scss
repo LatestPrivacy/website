@@ -3,19 +3,19 @@
     padding: 1rem;
     transition: 300ms;
     margin-bottom: 1rem;
-}
-.wrapper:hover{
-    background: rgba(255,255,255, 0.05);
-}
-.wrapper a{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9;
-    text-decoration: none;
-}
+    &:hover{
+        background: rgba(255,255,255, 0.05);
+    }
+    a{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+        text-decoration: none;
+    }
+} 
 .arrow{
     width: 19px;
     filter: invert(1);

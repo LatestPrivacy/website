@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import TeamItemStyle from './AboutTeamItem.module.css'
+import TeamItemStyle from './AboutTeamItem.module.scss'
 import github from '../assets/images/github.svg'
 import twitter from '../assets/images/twitter.svg'
 import exlink from '../assets/images/external-link.svg'

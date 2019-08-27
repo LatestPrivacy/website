@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import JoinPositionStyle from './AboutJoinPosition.module.css'
+import JoinPositionStyle from './AboutJoinPosition.module.scss'
 import Arrow from '../assets/images/arrow-right.svg'
 
 class AboutJoinPosition extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import JoinStyle from './AboutJoin.module.css'
+import JoinStyle from './AboutJoin.module.scss'
 
 class AboutJoin extends Component {
     render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AboutStyle from './About.module.css'
+import AboutStyle from './About.module.scss'
 
 import AboutBanner from '../components/AboutBanner'
 import AboutMission from '../components/AboutMission'

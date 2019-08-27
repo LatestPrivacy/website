@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AchieveItemStyle from './AboutAchieveItem.module.css'
+import AchieveItemStyle from './AboutAchieveItem.module.scss'
 
 class AboutAchieveItem extends Component {
     render() {

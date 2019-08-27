@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MissionStyle from './AboutMission.module.css'
+import MissionStyle from './AboutMission.module.scss'
 
 class AboutMission extends Component {
     render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AchieveStyle from './AboutAchieve.module.css'
+import AchieveStyle from './AboutAchieve.module.scss'
 
 class AboutMission extends Component {
     render() {

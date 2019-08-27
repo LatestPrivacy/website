@@ -1,0 +1,29 @@
+header{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+.container{
+    grid-template-columns: 3fr 9fr;
+}
+.menu{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: right;
+    font-size: 0.9375em;
+    li{
+        display: inline-block;
+        margin-right: 2rem;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    a{
+        color: var(--white);
+        text-decoration: none;
+        transition: 300ms;
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+}
