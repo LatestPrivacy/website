@@ -95,7 +95,7 @@ class About extends Component {
             }
         ]
         return (
-            <div class={AboutStyle.wrapper}>
+            <div className={AboutStyle.wrapper}>
                 <AboutBanner />
 
                 <AboutMission title="Our Mission" desc="To raise public awareness surrounding the issues of privacy in 
@@ -113,7 +113,7 @@ class About extends Component {
                 good; built up around volunteers contributing to this project 
                 in our free time at our own cost.">
                     {
-                        Team.map((data) => {
+                        Team.map((data, key) => {
                             return(
                                 <AboutTeamItem
                                     image = {data.image}
@@ -123,6 +123,7 @@ class About extends Component {
                                     github = {data.github}
                                     twitter = {data.twitter}
                                     exlink = {data.exlink}
+                                    key = {key}
                                 />
                             )
                         })                         
@@ -132,7 +133,7 @@ class About extends Component {
                 <AboutTeam title="Past contributors" desc="Team memebers who previously contributed to this project,
                 who are no longer currently active.">
                     {
-                        PastContributor.map((data) => {
+                        PastContributor.map((data, key) => {
                             return(
                                 <AboutTeamItem
                                     image = {data.image}
@@ -142,6 +143,7 @@ class About extends Component {
                                     github = {data.github}
                                     twitter = {data.twitter}
                                     exlink = {data.exlink}
+                                    key = {key}
                                 />
                             )
                         })                         
@@ -151,12 +153,13 @@ class About extends Component {
                 <AboutJoin title="Join our team" desc="Have you got what it takes to 
                 be apart of the team?">
                     {
-                        OpenPosition.map((data) => {
+                        OpenPosition.map((data, key) => {
                             return(
                                 <AboutJoinPosition
                                     position = {data.position}
                                     status = {data.status}
                                     url = {data.url}
+                                    key = {key}
                                 />
                             )
                         })                         

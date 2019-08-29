@@ -1,9 +1,40 @@
 header{
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+    position: relative;
 }
 .container{
     grid-template-columns: 3fr 9fr;
+}
+.menuWrap{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.social{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    li{
+        display: inline-flex;
+        align-items: center;
+        margin-right: 2rem;
+    }
+    a{
+        filter: invert(1);
+        opacity: 0.5;
+        transition: 300ms;
+        display: inline-flex;
+        align-items: center;
+        &:hover{
+            opacity: 1;
+        }
+        img{
+            width: 15px;
+        }
+    }
 }
 .menu{
     padding: 0;
@@ -11,9 +42,27 @@ header{
     list-style: none;
     text-align: right;
     font-size: 0.9375em;
+    @media screen and (max-width: 767px){
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(24px);
+        transition: 300ms;
+        position: absolute;
+        padding: 1rem 0;
+        width: 100%;
+        left: 0;
+        top: 80%;
+        z-index: 9;
+        text-align: center;
+        background: var(--bg-color);
+    }
     li{
         display: inline-block;
         margin-right: 2rem;
+        @media screen and (max-width: 767px){
+            display: block;
+            margin-right: 0;
+        }
         &:last-child{
             margin-right: 0;
         }
@@ -22,8 +71,59 @@ header{
         color: var(--white);
         text-decoration: none;
         transition: 300ms;
+        @media screen and (max-width: 767px){
+            display: block;
+            padding: 0.5rem 1rem;
+        }
         &:hover{
             opacity: 0.5;
         }
+    }
+}
+.ham{
+    position: relative;
+    height: 16px;
+    width: 20px;
+    &:after,
+    &:before,
+    > span{
+        display: inline-block;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        background: var(--white);
+        transition: 300ms;
+    }
+    &:after,
+    &:before{
+        content: "";
+    }
+    &:before{
+        top: 0;
+    }
+    &:after{
+        bottom: 0;
+    }
+    > span{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @media screen and (min-width: 768px){
+        display: none;
+    }
+}
+.hamActive{
+    &:after,
+    &:before{
+        transform: translateY(-50%);
+        top: 50%;
+    }
+    > span{
+        opacity: 0;
+    }
+    + ul{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 }

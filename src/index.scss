@@ -27,5 +27,9 @@ body {
   margin-right: auto;
   display: grid;
   grid-column-gap: 1.5rem;
+  @media screen and (max-width: 767px){
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
