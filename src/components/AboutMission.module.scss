@@ -1,6 +1,9 @@
 .container{
     margin-bottom: 15rem;
     max-width: 1030px;
+    @media screen and (max-width: 767px){
+        margin-bottom: 5rem;
+    }
 }
 .wrapper{
     max-width: 620px;
@@ -8,10 +11,17 @@
         font-size: 1.375em;
         opacity: 0.35;
         line-height: 1.45;
+        @media screen and (max-width: 767px){
+            font-size: 1.25em;
+        }
     }
 }
 .title{
     font-size: 5.125em;
     font-weight: 700;
-    margin-bottom: 4rem
+    margin-bottom: 4rem;
+    @media screen and (max-width: 767px){
+        font-size: 2.125em;
+        margin-bottom: 2rem;
+    }
 }

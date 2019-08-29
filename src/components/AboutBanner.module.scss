@@ -1,9 +1,11 @@
 .container{
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 90% minmax(200px, auto);
     padding-top: 10vh;
     position: relative;
     margin-bottom: 10rem;
+    @media screen and (max-width: 767px){
+        padding-top: 5vh;
+    }
 }
 .Title{
     font-size: 6.5625em;
@@ -16,6 +18,17 @@
     position: relative;
     z-index: 2;
     margin-top: 15vh;
+    @media screen and (max-width: 567px){
+        font-size: 2em;
+        grid-column: 1 / 4;
+    }
+    @media screen and (min-width: 568px) and (max-width: 767px){
+        font-size: 3em;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1023px){
+        font-size: 4em;
+        margin-top: 7.5vh;
+    }
 }
 .shadowText{
     color: var(--white);
@@ -29,9 +42,15 @@
     top: -10vh;
     left: 60%;
     z-index: -1;
+    @media screen and (max-width: 767px){
+        font-size: 10em;
+    }
 }
 .winnerImg{
     max-width: 100%;
     grid-column: 3 / 6;
     grid-row: 1 / 3;
+    @media screen and (max-width: 767px){
+        grid-column: 2 / 5;
+    }
 }
