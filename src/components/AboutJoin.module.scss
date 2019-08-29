@@ -5,14 +5,23 @@
 .title{
     font-size: 4.1875em;
     font-weight: 500;
+    @media screen and (max-width: 767px){
+        font-size: 2.125em;
+    }
 }
 .top{
     max-width: 415px;
     margin: 0 auto 5rem;
     text-align: center;
+    @media screen and (max-width: 767px){
+        margin-bottom: 2.5rem;
+    }
     p{
         font-size: 1.375em;
         opacity: 0.35;
         line-height: 1.45;
+        @media screen and (max-width: 767px){
+            font-size: 1.25em;
+        }
     }
 }

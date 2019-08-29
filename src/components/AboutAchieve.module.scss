@@ -2,11 +2,21 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1.5rem;
     margin-bottom: 15rem;
+    @media screen and (max-width: 767px){
+        grid-template-rows: repeat(4, auto);
+        grid-row-gap: 2rem;
+        margin-bottom: 10rem;
+    }
 }
 .title{
     font-size: 4.1875em;
     max-width: 420px;
     grid-column: 1 / 4;
+    @media screen and (max-width: 767px){
+        font-size: 2.125em;
+        grid-column: 1 / 5;
+        margin-bottom: 1.5rem;
+    }
 }
 p{
     opacity: 0.35;
