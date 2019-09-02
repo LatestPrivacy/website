@@ -1,0 +1,52 @@
+.wrapper{
+    max-width: 815px;
+    margin-top: 5rem;
+}
+.top{
+    margin-bottom: 4rem;
+}
+.title{
+    font-size: 3.5em;
+    margin-bottom: 0.625rem;
+}
+.jobType{
+    margin: 0;
+    font-size: 0.875em;
+    font-weight: normal;
+    color: #535353;
+    span{
+        color: #909090;
+    }
+}
+.hasLink{
+    color: #909090;
+}
+.section{
+    margin-bottom: 2rem;
+    &:last-child{
+        margin-bottom: 10rem;
+    }
+    > :last-child{
+        margin-bottom: 0;
+    }
+    h3{
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+    p{
+        font-size: 1.0625em;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+    ul{
+        padding: 0 0 0 1rem;
+        margin: 0;
+        opacity: 0.35;
+        line-height: 1.5;
+    }
+    a{
+        color: var(--white);
+        opacity: 1;
+        text-decoration: none;
+    }
+}
