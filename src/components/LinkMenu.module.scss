@@ -1,0 +1,28 @@
+.menuBorder{
+    position: absolute;
+    height: 2px;
+    overflow: hidden;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    > span{
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: var(--white);
+        transition: 300ms;
+        transform-style: preserve-3d;
+        transform: translateX(101%) translateY(0);
+    }
+}
+.menuBorderHide{
+    > span{
+        //transition: 0ms;
+        transform: translateX(-101%) translateY(0);
+    }
+}
+.menuBorderShow{
+    > span{
+        transform: translateX(0%) translateY(0);   
+    }
+}

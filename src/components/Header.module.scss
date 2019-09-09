@@ -62,6 +62,7 @@ header{
     li{
         display: inline-block;
         margin-right: 2rem;
+        position: relative;
         @media screen and (max-width: 767px){
             display: block;
             margin-right: 0;
@@ -77,9 +78,6 @@ header{
         @media screen and (max-width: 767px){
             display: block;
             padding: 0.5rem 1rem;
-        }
-        &:hover{
-            opacity: 0.5;
         }
     }
 }

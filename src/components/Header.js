@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
+import LinkMenu from "./LinkMenu";
+
 import Logo from '../assets/images/Logo.png';
 import github from '../assets/images/github.svg'
 import twitter from '../assets/images/twitter.svg'
@@ -25,6 +27,24 @@ class Header extends Component {
   }
 
   render() {
+    const menus = [
+      {
+        url: "/news",
+        text: "News"
+      },
+      {
+        url: "/videos",
+        text: "Videos"
+      },
+      {
+        url: "/laws",
+        text: "Laws"
+      },
+      {
+        url: "/donate",
+        text: "Donate"
+      }
+    ]
     return(
       <header>
         <div className={`${HeaderStyle.container} container`}>
@@ -48,18 +68,13 @@ class Header extends Component {
               <span></span>
             </div>
             <ul className={HeaderStyle.menu}>
-              <li>
-                <Link to="/news">News</Link>
-              </li>
-              <li>
-                <Link to="/videos">Videos</Link>
-              </li>
-              <li>
-                <Link to="/laws">Laws</Link>
-              </li>
-              <li>
-                <Link to="/donate">Donate</Link>
-              </li>
+              {
+                menus.map((menu, key) => {
+                  return(
+                    <LinkMenu url={menu.url} text={menu.text} key={key} />
+                  )
+                })
+              }
             </ul>
           </div>
         </div>
