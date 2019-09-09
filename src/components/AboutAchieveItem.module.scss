@@ -13,12 +13,7 @@
             grid-column: 3 / 5;
         }
     }
-    p{
-        font-size: 1.25em;
-        line-height: 1.35;
-        @media screen and (max-width: 767px){
-            font-size: 1.125em;
-        }
+    p{  
         &:last-child{
             margin-bottom: 0;
         }

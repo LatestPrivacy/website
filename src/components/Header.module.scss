@@ -1,7 +1,10 @@
 header{
-    padding-top: 1.5rem;
+    padding-top: 3.5rem;
     padding-bottom: 1.5rem;
     position: relative;
+    @media screen and (max-width: 767px){
+        padding-top: 1.5rem;
+    }
 }
 .container{
     grid-template-columns: 3fr 9fr;

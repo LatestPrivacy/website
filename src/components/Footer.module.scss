@@ -1,6 +1,6 @@
 .container{
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 .top{
     text-align: center;
@@ -12,20 +12,22 @@
         display: inline-block;
     }
     a{
-        font-size: 0.9375em;
+        font-size: 0.9em;
         color: var(--white);
         transition: 300ms;
         text-decoration: none;
+        opacity: 0.86;
         &:hover{
             opacity: 0.35;
         }
     }
 }
 .right{
-    font-size: 0.8125em;
+    font-size: 0.7em;
     opacity: 0.5;
     margin-bottom: 1rem;
 }
 .powered{
-    font-size: 0.9375em;
+    font-size: 0.8em;
+    opacity: 0.64;
 }

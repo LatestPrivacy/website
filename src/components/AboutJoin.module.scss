@@ -10,18 +10,10 @@
     }
 }
 .top{
-    max-width: 415px;
+    max-width: 435px;
     margin: 0 auto 5rem;
     text-align: center;
     @media screen and (max-width: 767px){
         margin-bottom: 2.5rem;
-    }
-    p{
-        font-size: 1.375em;
-        opacity: 0.35;
-        line-height: 1.45;
-        @media screen and (max-width: 767px){
-            font-size: 1.25em;
-        }
     }
 }

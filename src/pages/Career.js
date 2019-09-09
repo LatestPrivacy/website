@@ -75,7 +75,7 @@ class Career extends Component {
                     <h3>Email us</h3>
                     <p>We are a very relaxed team of down to earth people. Please dont be shysend us an email, we really would like to hear 
                     from you.</p>
-                    <div className={CareerStyle.hasLink}>Contact Us: <a href="mailto:thelatestprivacy@protonmail.com">thelatestprivacy@protonmail.com</a></div>
+                    <p className={CareerStyle.hasLink}><span>Contact Us:</span> <a href="mailto:thelatestprivacy@protonmail.com">thelatestprivacy@protonmail.com</a></p>
                 </div>
             </div>
         );

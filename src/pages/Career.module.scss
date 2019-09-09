@@ -18,9 +18,6 @@
         color: #909090;
     }
 }
-.hasLink{
-    color: #909090;
-}
 .section{
     margin-bottom: 2rem;
     &:last-child{
@@ -33,20 +30,33 @@
         font-size: 1.5em;
         font-weight: 400;
     }
-    p{
-        font-size: 1.0625em;
-        margin-bottom: 1.5rem;
-        line-height: 1.5;
-    }
     ul{
         padding: 0 0 0 1rem;
         margin: 0;
         opacity: 0.35;
         line-height: 1.5;
     }
+    p{
+        &.hasLink{
+            opacity: 1;
+            > span{
+                opacity: 0.5;
+            }
+            a{
+                opacity: 1;
+                &:hover{
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
     a{
         color: var(--white);
         opacity: 1;
         text-decoration: none;
+        transition: 300ms;
+        &:hover{
+            opacity: 0.5;
+        }
     }
 }

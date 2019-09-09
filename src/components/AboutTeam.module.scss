@@ -11,14 +11,6 @@
 }
 .top{
     max-width: 620px;
-    p{
-        font-size: 1.375em;
-        opacity: 0.35;
-        line-height: 1.45;
-        @media screen and (max-width: 767px){
-            font-size: 1.25em;
-        }
-    }
 }
 .teamWrapper{
     display: grid;
