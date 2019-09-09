@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import TeamStyle from './AboutTeam.module.scss'
 
-class AboutMission extends Component {
+class AboutTeam extends Component {
     render() {
         return (
             <div className={ `${TeamStyle.container} container` }>
@@ -18,4 +18,4 @@ class AboutMission extends Component {
     }
 }
 
-export default AboutMission;
+export default AboutTeam;

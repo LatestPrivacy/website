@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 import './index.scss';
 import App from './App';
@@ -10,7 +11,9 @@ const rootEl = document.getElementById('root')
 
 ReactDOM.render(
     <BrowserRouter>
-        <App />
+        <ParallaxProvider>
+            <App />
+        </ParallaxProvider>
     </BrowserRouter>,
     rootEl
 )

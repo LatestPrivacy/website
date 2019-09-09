@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Parallax } from 'react-scroll-parallax';
 import AboutStyle from './About.module.scss'
 
 import AboutBanner from '../components/AboutBanner'
@@ -165,8 +166,9 @@ class About extends Component {
                         })                         
                     }
                 </AboutJoin>
-
-                <div className={AboutStyle.privacyText}>Privacy</div>
+                <Parallax className={AboutStyle.parallaxTxt} x={[30, -60]} tagOuter="figure">
+                    <div className={AboutStyle.privacyText}>Privacy</div>
+                </Parallax>
             </div>
         );
     }
