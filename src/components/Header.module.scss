@@ -70,6 +70,24 @@ header{
         &:last-child{
             margin-right: 0;
         }
+        &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--white);
+            transition: width .3s ease;
+        }
+        &:hover{
+            &:after{
+                width: 100%;
+                left: 0;
+                right: auto;
+            }
+        }
     }
     a{
         color: var(--white);
