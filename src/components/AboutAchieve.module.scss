@@ -9,12 +9,18 @@
     }
 }
 .title{
-    font-size: 4.1875em;
     max-width: 420px;
     grid-column: 1 / 4;
+    margin: 2rem 0;
     @media screen and (max-width: 767px){
-        font-size: 2.125em;
         grid-column: 1 / 5;
         margin-bottom: 1.5rem;
+    }
+    h1{
+        font-size: 4.1875em;
+        margin: 0;
+        @media screen and (max-width: 767px){
+            font-size: 2.125em;
+        }
     }
 }

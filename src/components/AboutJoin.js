@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import BlockRevealAnimation from 'react-block-reveal-animation';
+import { Watch } from 'scrollmonitor-react';
 
 import JoinStyle from './AboutJoin.module.scss'
 
@@ -7,7 +9,11 @@ class AboutJoin extends Component {
         return (
             <div className={ `${JoinStyle.container} container` }>
                 <div className={JoinStyle.top}>
-                    <h1 className={JoinStyle.title}>{this.props.title}</h1>
+                    { this.props.isInViewport &&
+                        <BlockRevealAnimation className={JoinStyle.title} duration={0.3} color="#ffffff" delay={0.5}>
+                            <h1>{this.props.title}</h1>
+                        </BlockRevealAnimation>
+                    }
                     <p>{this.props.desc}</p>
                 </div>
                 {this.props.children}
@@ -16,4 +22,4 @@ class AboutJoin extends Component {
     }
 }
 
-export default AboutJoin;
+export default Watch(AboutJoin);

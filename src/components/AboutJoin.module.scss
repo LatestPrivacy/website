@@ -3,10 +3,14 @@
     margin-bottom: 15rem;
 }
 .title{
-    font-size: 4.1875em;
-    font-weight: 500;
-    @media screen and (max-width: 767px){
-        font-size: 2.125em;
+    margin: 1rem 0;
+    h1{
+        font-size: 4.1875em;
+        font-weight: 500;
+        margin: 0;
+        @media screen and (max-width: 767px){
+            font-size: 2.125em;
+        }
     }
 }
 .top{

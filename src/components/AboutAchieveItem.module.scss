@@ -20,10 +20,13 @@
     }
 }
 .title{
-    font-weight: normal;
-    font-size: 1.625em;
     margin: 0 0 1.5rem;
-    @media screen and (max-width: 767px){
-        font-size: 1.25em;
+    h3{
+        font-size: 1.625em;
+        font-weight: normal;
+        margin: 0;
+        @media screen and (max-width: 767px){
+            font-size: 1.25em;
+        }
     }
 }

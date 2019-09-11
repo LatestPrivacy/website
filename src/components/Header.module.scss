@@ -27,12 +27,12 @@ header{
     }
     a{
         filter: invert(1);
-        opacity: 0.5;
+        //opacity: 0.5;
         transition: 300ms;
         display: inline-flex;
         align-items: center;
         &:hover{
-            opacity: 1;
+            opacity: 0.5;
         }
         img{
             width: 15px;

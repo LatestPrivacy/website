@@ -9,11 +9,17 @@
     max-width: 620px;
 }
 .title{
-    font-size: 5.125em;
-    font-weight: 700;
-    margin-bottom: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     @media screen and (max-width: 767px){
-        font-size: 2.125em;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+    }
+    h1{
+        font-size: 5.125em;
+        font-weight: 700;
+        margin: 0;
+        @media screen and (max-width: 767px){
+            font-size: 2.125em;
+        }
     }
 }
