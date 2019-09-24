@@ -1,0 +1,23 @@
+.BodyTextAnimationWrapper{
+    position: relative;
+    display: inline-block;
+}
+.BodyTextAnimationText{
+    opacity: 0;
+    animation-fill-mode: both;
+    .animated-in &{
+        animation-name: fadeInUp;
+    }
+}
+
+  
+@keyframes fadeInUp {
+    from {
+        opacity: 0; 
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1; 
+        transform: translateY(0);
+    } 
+}

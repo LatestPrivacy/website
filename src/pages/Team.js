@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax } from 'react-scroll-parallax'
+import InViewMonitor from 'react-inview-monitor'
+import BodyTextAnimation from '../components/BodyTextAnimation'
 import AboutStyle from './About.module.scss'
 
 import AboutBanner from '../components/AboutBanner'
@@ -102,12 +104,24 @@ class About extends Component {
                 <AboutMission title="Our Mission" desc="To raise public awareness surrounding the issues of privacy in 
                 everyday use mobile device to desktops, if it’s relevant we will let 
                 you know about it and guide you in the right direction." />
-
+            
                 <AboutAchieve title="What we want to achieve">
-                    <AboutAchieveItem title="01. Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
-                    <AboutAchieveItem title="02. Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
-                    <AboutAchieveItem title="03. Security" desc="Guiding the public in ways to stay secure whilst online."/>
-                    <AboutAchieveItem title="04. Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
+                    <div className={AboutStyle.achieveItemWrapper}>
+                        <InViewMonitor classNameInView='animated-in'>
+                            <BodyTextAnimation duration={0.7} delay={0.3}>
+                                <AboutAchieveItem title="01. Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
+                            </BodyTextAnimation>
+                            <BodyTextAnimation duration={0.7} delay={0.6}>
+                                <AboutAchieveItem title="02. Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
+                            </BodyTextAnimation>
+                            <BodyTextAnimation duration={0.7} delay={0.9}>
+                                <AboutAchieveItem title="03. Security" desc="Guiding the public in ways to stay secure whilst online."/>
+                            </BodyTextAnimation>
+                            <BodyTextAnimation duration={0.7} delay={1.2}>
+                                <AboutAchieveItem title="04. Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
+                            </BodyTextAnimation>
+                        </InViewMonitor>
+                    </div>
                 </AboutAchieve>
 
                 <AboutTeam title="Meet the team" desc="We’re a small team of people working towards the greater 

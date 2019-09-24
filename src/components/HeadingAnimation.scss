@@ -1,0 +1,50 @@
+.HeadingAnimationWrapper{
+    position: relative;
+    display: inline-block;
+}
+.HeadingAnimationText{
+    opacity: 0;
+    animation-duration: 0.01s;
+    animation-fill-mode: both;
+    .animated-in &{
+        animation-name: reveal;
+    }
+}
+.HeadingAnimationBlock{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+    animation-fill-mode: both;
+    transform: scaleX(0);
+    transform-origin: left;
+    .animated-in &{
+        animation-name: move;
+    }
+}
+@keyframes move {
+    47% {
+        transform-origin: left;
+        animation-mode: forwards;
+        transform: scaleX(1); 
+    }
+    50% {
+        transform-origin: right;
+        transform: scaleX(1);
+    }
+    100% {
+      transform-origin: right;
+      transform: scaleX(0); 
+    } 
+}
+  
+    @keyframes reveal {
+    from {
+        opacity: 0; 
+    }
+    to {
+        opacity: 1; 
+    } 
+}

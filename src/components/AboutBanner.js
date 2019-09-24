@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Parallax } from 'react-scroll-parallax';
-import BlockRevealAnimation from 'react-block-reveal-animation';
-import { Watch } from 'scrollmonitor-react';
+import HeadingAnimation from './HeadingAnimation';
+import InViewMonitor from 'react-inview-monitor';
 
 import BannerStyle from './AboutBanner.module.scss'
 
@@ -28,18 +28,18 @@ class AboutBanner extends Component {
     }
     render() {
         return (
-            <div className={ `${BannerStyle.container} container` }>
-                { this.props.isInViewport &&  
+            <div className={ `${BannerStyle.container} container` }> 
                     <h1 className={BannerStyle.Title}>
-                        <BlockRevealAnimation delay={0} duration={0.3} color="#ffffff">We are</BlockRevealAnimation>
-                        <BlockRevealAnimation delay={0.5} duration={0.5} color="#ffffff">a small team</BlockRevealAnimation> 
-                        <BlockRevealAnimation delay={1} duration={0.5} color="#ffffff">that packs</BlockRevealAnimation>
-                        <BlockRevealAnimation delay={1.5} duration={0.5} color="#ffffff">a punch.</BlockRevealAnimation>
+                        <InViewMonitor classNameInView="animated-in">
+                            <HeadingAnimation delay={0} duration={0.7} color="#ffffff">We are</HeadingAnimation>
+                            <HeadingAnimation delay={0.2} duration={0.7} color="#ffffff">a small team</HeadingAnimation> 
+                            <HeadingAnimation delay={0.4} duration={0.7} color="#ffffff">that packs</HeadingAnimation>
+                            <HeadingAnimation delay={0.6} duration={0.7} color="#ffffff">a punch.</HeadingAnimation>
+                        </InViewMonitor>
                     </h1>
-                }
                 <Parallax className={BannerStyle.parallaxImg} y={[0, -20]} tagOuter="figure"
                 disabled={
-                    window.innerWidth < 768 ? true : false
+                    this.state.width < 768 ? true : false
                 }
                 >
                     <img src={winnerImg} alt="We are a small team that packs a punch" className={BannerStyle.winnerImg}/>
@@ -52,4 +52,4 @@ class AboutBanner extends Component {
     }
 }
 
-export default Watch(AboutBanner);
+export default AboutBanner;

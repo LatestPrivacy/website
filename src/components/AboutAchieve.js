@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import AchieveStyle from './AboutAchieve.module.scss'
-import BlockRevealAnimation from 'react-block-reveal-animation';
+import HeadingAnimation from './HeadingAnimation';
+import InViewMonitor from 'react-inview-monitor'
 import { Watch } from 'scrollmonitor-react';
 
 class AboutMission extends Component {
     render() {
         return (
-            <div className={ `${AchieveStyle.container} container` }>
-                { this.props.isInViewport &&
-                    <BlockRevealAnimation className={AchieveStyle.title} duration={0.3} color="#ffffff" delay={0.5}>
+            <InViewMonitor classNameInView='animated-in'>
+                <div className={ `${AchieveStyle.container} container` }>
+                    <HeadingAnimation className={AchieveStyle.title} duration={0.7} color="#ffffff" delay={0}>
                         <h1>{this.props.title}</h1>
-                    </BlockRevealAnimation>
-                }
-                {this.props.children}
-            </div>
+                    </HeadingAnimation>
+                    {this.props.children}
+                </div>
+            </InViewMonitor>
         );
     }
 }
