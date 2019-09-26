@@ -139,6 +139,7 @@ class About extends Component {
                                     twitter = {data.twitter}
                                     exlink = {data.exlink}
                                     key = {key}
+                                    delay = { 0.6 + (key * 0.3) }
                                 />
                             )
                         })                         
@@ -159,6 +160,7 @@ class About extends Component {
                                     twitter = {data.twitter}
                                     exlink = {data.exlink}
                                     key = {key}
+                                    delay = { 0.6 + (key * 0.3) }
                                 />
                             )
                         })                         

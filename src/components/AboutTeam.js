@@ -20,11 +20,10 @@ class AboutTeam extends Component {
                         </BodyTextAnimation>
                         
                     </div>
-                    <BodyTextAnimation duration={0.7} delay={0.6}>
-                        <div className={TeamStyle.teamWrapper}>
-                            {this.props.children}
-                        </div>
-                    </BodyTextAnimation>
+                    
+                    <div className={TeamStyle.teamWrapper}>
+                        {this.props.children}
+                    </div>
                     
                 </div>
             </InViewMonitor>
