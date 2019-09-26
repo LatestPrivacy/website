@@ -28,6 +28,7 @@
     list-style: none;
     display: flex;
     justify-content: center;
+    opacity: 1;
     li{
         margin: 0 0.5rem;
     }
@@ -36,7 +37,11 @@
         filter: invert(1);
         transition: 300ms;
     }
-    a:hover img{
+    a{
         opacity: 0.5;
+        transition: 300ms;
+        &:hover{
+            opacity: 1;
+        }
     }
 }

@@ -3,6 +3,7 @@
     top: 50%;
     position: absolute;
     transform: rotate(90deg) translateX(100%);
+    pointer-events: none;
 }
 .privacyText{
     font-size: 27em;
