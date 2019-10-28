@@ -1,7 +1,93 @@
+.container{
+    grid-template-columns: repeat(12, 1fr);
+}
+.historyLeft{
+    grid-column: 1 / span 5;
+}
+.historyRight{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 .title{
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     h3{
-        font-size: 1.625em;
         margin: 0;
+    }
+}
+.subTitle{
+    margin-bottom: 2rem;
+}
+.theHistory{
+    grid-column: 6 / span 7;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    :global .historyItem{
+        width: 320px;
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        &:nth-child(even){
+            flex-direction: column-reverse;
+            .top{
+                margin-top: 4rem;
+            }
+        }
+        &:nth-child(odd){
+            .bottom{
+                margin-top: 4rem;
+            }
+        }
+        h3{
+            font-weight: normal;
+            margin: 0;
+        }
+        p{
+            font-size: 1em;
+        }
+        .top{
+            &:before{
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: rgba(white, 0.5);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(calc(-50% - 0.5rem));
+            }
+            &:after{
+                content: "";
+                display: block;
+                width: 16px;
+                height: 16px;
+                border-radius: 100%;
+                background: white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(calc(-50% - 0.5rem)) translateX(-50%);
+            }
+        }
+        .bottom{
+            p{
+                opacity: 1;
+                > span{
+                    display: block;
+                    opacity: 0.5;
+                    &:nth-child(2){
+                        opacity: 1;
+                        color: white;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
     }
 }

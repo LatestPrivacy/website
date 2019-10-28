@@ -37,7 +37,7 @@ const itemSource = [
 class HomeOrganisation extends Component {
     render() {
         return (
-            <div className={`container`}>
+            <div className={`${Style.container} container`}>
                 <InViewMonitor classNameInView="animated-in">
                     <HeadingAnimation className={Style.title} delay={0} duration={0.7} color="#ffffff">
                         <h3>Organisation</h3>

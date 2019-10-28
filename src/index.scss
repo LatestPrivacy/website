@@ -33,6 +33,18 @@ body {
   }
 }
 
+h1,
+.h1{
+  font-size: 4.0625em;
+}
+
+h3,
+.h3{
+  font-size: 1.625em;
+  font-weight: 600;
+  line-height: calc(70/65);
+}
+
 p, ul{
   font-size: 1.2em;
   line-height: 1.5;
