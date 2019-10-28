@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { Parallax } from 'react-scroll-parallax'
 import InViewMonitor from 'react-inview-monitor'
 import BodyTextAnimation from '../components/BodyTextAnimation'
-import AboutStyle from './About.module.scss'
+import AboutStyle from './Team.module.scss'
 
 import AboutBanner from '../components/AboutBanner'
 import AboutMission from '../components/AboutMission'
 import AboutAchieve from '../components/AboutAchieve'
-import AboutAchieveItem from '../components/AboutAchieveItem'
+import TitleAndDescription from '../components/TitleAndDescription'
 import AboutTeam from '../components/AboutTeam'
 import AboutTeamItem from '../components/AboutTeamItem'
 import AboutJoin from '../components/AboutJoin'
@@ -109,16 +109,16 @@ class About extends Component {
                     <div className={AboutStyle.achieveItemWrapper}>
                         <InViewMonitor classNameInView='animated-in'>
                             <BodyTextAnimation duration={0.7} delay={0.3}>
-                                <AboutAchieveItem title="01. Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
+                                <TitleAndDescription className={AboutStyle.tadItem} title="01. Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
                             </BodyTextAnimation>
                             <BodyTextAnimation duration={0.7} delay={0.6}>
-                                <AboutAchieveItem title="02. Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
+                                <TitleAndDescription className={AboutStyle.tadItem} title="02. Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
                             </BodyTextAnimation>
                             <BodyTextAnimation duration={0.7} delay={0.9}>
-                                <AboutAchieveItem title="03. Security" desc="Guiding the public in ways to stay secure whilst online."/>
+                                <TitleAndDescription className={AboutStyle.tadItem} title="03. Security" desc="Guiding the public in ways to stay secure whilst online."/>
                             </BodyTextAnimation>
                             <BodyTextAnimation duration={0.7} delay={1.2}>
-                                <AboutAchieveItem title="04. Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
+                                <TitleAndDescription className={AboutStyle.tadItem} title="04. Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
                             </BodyTextAnimation>
                         </InViewMonitor>
                     </div>

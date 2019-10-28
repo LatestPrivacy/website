@@ -1,0 +1,24 @@
+.button{
+    display: inline-flex;
+    align-items: center;
+    height: 35px;
+    border-radius: 100px;
+    background: #FFF;
+    color: #000;
+    font-size: 0.75em;
+    padding: 0 1.5rem;
+    text-decoration: none;
+    > span{
+        margin-right: 1rem;
+        transition: 250ms;
+    }
+    &:hover{
+        > span{
+            margin-right: 1.5rem;
+        }
+    }
+}
+.arrow{
+    width: 11px;
+    transition: 300ms;
+}

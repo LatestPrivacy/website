@@ -46,3 +46,13 @@
         */
     }
 }
+.tadItem{
+    @media screen and (max-width: 1023px){
+        margin-bottom: 1.5rem;
+    }
+    p{  
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}

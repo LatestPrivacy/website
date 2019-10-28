@@ -1,0 +1,18 @@
+.container{
+    margin-bottom: 8rem;
+}
+.title{
+    margin-bottom: 4rem;
+    h3{
+        font-size: 1.625em;
+        margin: 0
+    }
+}
+.newsWrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.buttonWrapper{
+    margin-top: 2rem;
+    text-align: center;
+}

@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
+import HomeBanner from '../components/HomeBanner'
+import HomeNews from '../components/HomeNews'
+import HomeOrganisation from '../components/HomeOrganisation'
+import HomeHistory from '../components/HomeHistory'
+
+import Style from './Home.module.scss'
 
 class Home extends Component {
     render() {
         return (
-            <div className="container">
-                This is Home
+            <div className={Style.wrapper}>
+                <HomeBanner />
+                <HomeNews />
+                <HomeOrganisation />
+                <HomeHistory />
             </div>
         );
     }

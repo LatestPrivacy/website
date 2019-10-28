@@ -1,0 +1,15 @@
+.title{
+    margin-bottom: 4rem;
+    h3{
+        font-size: 1.625em;
+        margin: 0;
+    }
+}
+.orgWrapper{
+    display: flex;
+    justify-content: space-around;
+    > *{
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}

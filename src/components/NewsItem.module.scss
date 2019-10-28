@@ -1,0 +1,19 @@
+.newsItem{
+    margin-bottom: 3rem;
+}
+.author,
+.meta{
+    font-size: 0.75em;
+    color: #535353;
+    > :first-child{
+        color: #656565;
+    }
+    > :last-child{
+        color: #8C8C8C;
+    }
+}
+.newsTitle{
+    font-size: 1.3em;
+    margin: 1rem 0;
+    line-height: calc(32/21);
+}

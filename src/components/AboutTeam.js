@@ -17,8 +17,7 @@ class AboutTeam extends Component {
                         </HeadingAnimation>
                         <BodyTextAnimation duration={0.7} delay={0.3}>
                             <p>{this.props.desc}</p>
-                        </BodyTextAnimation>
-                        
+                        </BodyTextAnimation>   
                     </div>
                     
                     <div className={TeamStyle.teamWrapper}>
