@@ -1,0 +1,15 @@
+.missionContainer{
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: 5rem 0 4rem;
+}
+.missionBottom{
+    > div{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1.5rem;
+        @media screen and (min-width: 1800px){
+            grid-gap: 3rem;
+        }
+    }
+}

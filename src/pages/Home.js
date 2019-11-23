@@ -3,6 +3,7 @@ import HomeBanner from '../components/HomeBanner'
 import HomeNews from '../components/HomeNews'
 import HomeOrganisation from '../components/HomeOrganisation'
 import HomeHistory from '../components/HomeHistory'
+import HomeMission from '../components/HomeMission'
 
 import Style from './Home.module.scss'
 
@@ -14,6 +15,7 @@ class Home extends Component {
                 <HomeNews />
                 <HomeOrganisation />
                 <HomeHistory />
+                <HomeMission />
             </div>
         );
     }

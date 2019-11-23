@@ -1,5 +1,6 @@
 .container{
     grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 8rem;
 }
 .historyLeft{
     grid-column: 1 / span 5;
@@ -8,7 +9,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     position: absolute;
-    top: 0;
+    top: 3rem;
     right: 0;
 }
 .title{
@@ -18,12 +19,23 @@
     }
 }
 .subTitle{
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    :global .h1{
+        font-weight: 500;
+    }
+}
+.desc{
+    margin-bottom: 3rem;
+    :global p{
+        margin: 0;
+    }
 }
 .theHistory{
     grid-column: 6 / span 7;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    > *{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
     :global .historyItem{
         width: 320px;
         padding-left: 12px;

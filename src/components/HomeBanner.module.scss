@@ -3,6 +3,17 @@
     padding-top: 10vh;
     position: relative;
     margin-bottom: 10rem;
+    &:before{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: -105px;
+        left: 0;
+        background-image:  url(../assets/images/eye.png);
+        background-size: cover;
+    }
     @media screen and (max-width: 767px){
         padding-top: 5vh;
     }

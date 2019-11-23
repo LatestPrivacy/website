@@ -1,0 +1,18 @@
+.title{
+    margin-bottom: 2rem;
+    h3{
+        margin: 0;
+    }
+}
+.subTitle{
+    margin-bottom: 1.5rem;
+    :global .h1{
+        font-weight: 500;
+    }
+}
+.desc{
+    margin-bottom: 3rem;
+    :global p{
+        margin: 0;
+    }
+}

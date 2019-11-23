@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import HeadingAnimation from './HeadingAnimation';
-import InViewMonitor from 'react-inview-monitor';
+import HeadingAnimation from './HeadingAnimation'
+import BodyTextAnimation from '../components/BodyTextAnimation'
+import InViewMonitor from 'react-inview-monitor'
+import Section from '../components/Section'
 
 import Style from './HomeHistory.module.scss'
 
@@ -10,24 +12,18 @@ class HomeHistory extends Component {
             <div style={{position: 'relative'}}>
                 <div className={`${Style.container} container`}>
                     <div className={Style.historyLeft}>
-                        <InViewMonitor classNameInView="animated-in">
-                            <HeadingAnimation className={Style.title} delay={0} duration={0.7} color="#ffffff">
-                                <h3>Legislative History</h3>
-                            </HeadingAnimation>
-                            <div className={Style.subTitle}>
-                                <HeadingAnimation delay={0.2} duration={0.7} color="#ffffff">
-                                    <span className="h1">Checkout</span>
-                                </HeadingAnimation>
-                                <HeadingAnimation delay={0.4} duration={0.7} color="#ffffff">
-                                    <span className="h1">recent changes</span>
-                                </HeadingAnimation> 
-                            </div>
-                            <p>The latest laws affecting the United Kingdom that are potentially invading your privacy and what you can do to help.</p>
-                        </InViewMonitor>
+                        <Section
+                            title = "Legislative History"
+                            subtitle1 = "Checkout"
+                            subtitle2 = "recent changes"
+                            desc = "The latest laws affecting the United Kingdom that are potentially invading your privacy and what you can do to help."
+                            button = "Explore Now"
+                        />
                     </div>
                 </div>
-                <div className={Style.historyRight}>
-                    <div className={Style.theHistory}>
+                
+                <InViewMonitor classNameInView={`${Style.historyRight} animated-in`} className={Style.historyRight}>
+                    <BodyTextAnimation duration={0.7} delay={0} className={Style.theHistory}>
                         <div className="historyItem">
                             <div className="top">
                                 <h3>Help Us</h3>
@@ -73,11 +69,11 @@ class HomeHistory extends Component {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </BodyTextAnimation>
+                </InViewMonitor>
             </div>
-        );
+        )
     }
 }
 
-export default HomeHistory;
+export default HomeHistory
