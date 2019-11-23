@@ -13,6 +13,7 @@
         left: 0;
         background-image:  url(../assets/images/eye.png);
         background-size: cover;
+        pointer-events: none;
     }
     @media screen and (max-width: 767px){
         padding-top: 5vh;
