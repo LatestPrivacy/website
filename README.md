@@ -15,9 +15,6 @@ Stay up to date with our latest activities and progress.
 1. [What's been going on?](https://opencollective.com/latestprivacy/updates/whats-been-going-on) 
 > - Published on 27 September 2019
 
-### Updates
-* [Changelog.md](https://github.com/LatestPrivacy/Website/blob/master/CHANGELOG.md)
-
 ### Donators
 If you like what we are doing, please support this project by donating. Thank you! [Donate](https://opencollective.com/latestprivacy)
 
