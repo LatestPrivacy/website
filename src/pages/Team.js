@@ -27,9 +27,9 @@ class About extends Component {
                 image: LukeImage,
                 name: 'Luke Seers',
                 position: 'Lead Designer',
-                github: 'https://github.com',
-                twitter: 'https://twitter.com',
-                exlink: 'https://lukeseer.com'
+                github: 'https://github.com/lukeseers',
+                twitter: 'https://twitter.com/LukeSeers',
+                exlink: 'https://lukeseers.com'
             },
             {
                 image: noImage,
@@ -40,14 +40,13 @@ class About extends Component {
                 image: DaveImage,
                 name: 'David Weaver',
                 position: 'Legal Advisor',
-                github: 'https://github.com'
+                github: 'https://github.com/Wrasse39'
             },
             {
                 image: JohnImage,
                 name: 'Johnaton Weaver',
                 position: 'DevOps',
-                github: 'https://github.com',
-                exlink: 'https://john.com'
+                github: 'https://github.com/8BallBomBom',
             },
             {
                 image: RizqiImage,
@@ -69,9 +68,9 @@ class About extends Component {
                 image: noImage,
                 name: 'William Phillips',
                 position: 'Front-end Dev',
-                github: 'https://github.com',
-                twitter: 'https://twitter.com',
-                exlink: 'https://will.com'
+                github: 'https://github.com/metallicgloss',
+                twitter: 'https://twitter.com/MetallicGloss',
+                exlink: 'https://www.william-phillips.com'
             }
         ]
 
