@@ -4,6 +4,8 @@ This is the brand new website which is in development.
 ## [Latest Privacy](https://latestprivacy.com/)
 Our goal is to have a platform that allows people to keep track of privacy related news, laws etc easily.
 
+<a href="https://opencollective.com/latestprivacy" target="_blank"><img src="https://opencollective.com/latestprivacy/tiers/badge.svg"></a>
+
 ### who are we
 We are a small team of people working towards the greater good; built up around volunteers contributing to this project in our free time at our own cost.
 
@@ -18,12 +20,12 @@ Stay up to date with our latest activities and progress.
 ### Donators
 If you like what we are doing, please support this project by donating. Thank you! [Donate](https://opencollective.com/latestprivacy)
 
-<a href="https://opencollective.com/latestprivacy" target="_blank"><img src="https://opencollective.com/latestprivacy/tiers/we-need-your-support.svg?avatarHeight=36"></a>
+<a href="https://opencollective.com/latestprivacy" target="_blank"><img src="https://opencollective.com/latestprivacy/tiers/supporters.svg?avatarHeight=36"></a>
 
 ## Sponsors
 Think you can help us? We would love your support! [hello@latestprivacy.org](mailto:hello@latestprivacy.org)
 
-<a href="https://opencollective.com/latestprivacy" target="_blank"><img src="https://opencollective.com/latestprivacy/tiers/sponsor.svg?avatarHeight=36"></a>
+<a href="https://opencollective.com/latestprivacy" target="_blank"><img src="https://opencollective.com/latestprivacy/tiers/sponsors.svg?avatarHeight=36"></a>
 
 [![Browserstack](https://latestprivacy.org/images/browserstack.svg)](http://www.browserstack.com/)
 
