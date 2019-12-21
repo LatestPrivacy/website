@@ -32,3 +32,7 @@ Think you can help us? We would love your support! [hello@latestprivacy.org](mai
 [![Browserstack](https://latestprivacy.org/images/browserstack.svg)](http://www.browserstack.com/)
 
 Browserstack has allowed us to test and develop our website under many different devices. We can now develop Latest Privacy knowing that everything on our website will be truly responsive.
+
+[![PrimeNodes](https://latestprivacy.org/images/primenodes.svg)](https://primenodes.com)
+
+PrimeNodes Is giving us access to some of their goodies including a virtual private server (VPS), which we will be using to host a status page that give us a heads up if anything goes down.
