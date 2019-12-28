@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import HeadingAnimation from './HeadingAnimation'
 import BodyTextAnimation from '../components/BodyTextAnimation'
 import InViewMonitor from 'react-inview-monitor'
 import Section from '../components/Section'

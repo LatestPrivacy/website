@@ -10,8 +10,10 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "react-scroll-parallax": "^2.1.2",
+    "react-slick": "^0.25.2",
     "react-spring": "^8.0.27",
-    "scrollmonitor-react": "^2.4.1"
+    "scrollmonitor-react": "^2.4.1",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

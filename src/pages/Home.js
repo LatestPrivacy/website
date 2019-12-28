@@ -4,6 +4,8 @@ import HomeNews from '../components/HomeNews'
 import HomeOrganisation from '../components/HomeOrganisation'
 import HomeHistory from '../components/HomeHistory'
 import HomeMission from '../components/HomeMission'
+import HomeVideo from '../components/HomeVideo'
+import HomeDonate from '../components/HomeDonate'
 
 import Style from './Home.module.scss'
 
@@ -16,6 +18,8 @@ class Home extends Component {
                 <HomeOrganisation />
                 <HomeHistory />
                 <HomeMission />
+                <HomeVideo />
+                <HomeDonate />
             </div>
         );
     }
