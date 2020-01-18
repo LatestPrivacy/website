@@ -5,8 +5,14 @@
 .BodyTextAnimationText{
     opacity: 0;
     animation-fill-mode: both;
+    @media screen and (max-width: 767px){
+        opacity: 1;
+    }
     .animated-in &{
         animation-name: fadeInUp;
+        @media screen and (max-width: 767px){
+            animation: none;
+        }
     }
 }
 

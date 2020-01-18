@@ -1,9 +1,15 @@
 .container{
     grid-template-columns: repeat(12, 1fr);
     margin-bottom: 8rem;
+    @media screen and (max-width: 767px){
+        margin-bottom: 3rem;
+    }
 }
 .historyLeft{
     grid-column: 1 / span 5;
+    @media screen and (max-width: 767px){
+        grid-column: span 12;
+    }
 }
 .historyRight{
     display: grid;
@@ -11,27 +17,16 @@
     position: absolute;
     top: 3rem;
     right: 0;
-}
-.title{
-    margin-bottom: 2rem;
-    h3{
-        margin: 0;
-    }
-}
-.subTitle{
-    margin-bottom: 1.5rem;
-    :global .h1{
-        font-weight: 500;
-    }
-}
-.desc{
-    margin-bottom: 3rem;
-    :global p{
-        margin: 0;
+    @media screen and (max-width: 767px){
+        position: initial;
     }
 }
 .theHistory{
     grid-column: 6 / span 7;
+    @media screen and (max-width: 767px){
+        grid-column: 1 / span 12;
+        display: none;
+    }
     > *{
         display: grid;
         grid-template-columns: repeat(12, 1fr);

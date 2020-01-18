@@ -16,7 +16,19 @@ class HomeMission extends Component {
             slidesToShow: 3,
             slidesToScroll: 1,
             className: "center",
-            centerMode: true
+            centerMode: true,
+            responsive: [
+                {
+                  breakpoint: 767,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true,
+                    centerMode: false
+                  }
+                },
+            ]
         };
         return (
             <div className={Style.wrapper}>

@@ -1,5 +1,8 @@
 .container{
     margin-bottom: 8rem;
+    @media screen and (max-width: 767px){
+        margin-bottom: 3rem;
+    }
 }
 .title{
     margin-bottom: 4rem;
@@ -10,6 +13,9 @@
 .orgWrapper{
     display: flex;
     justify-content: space-around;
+    @media screen and (max-width: 767px){
+        flex-wrap: wrap;
+    }
     > *{
         margin-left: 12px;
         margin-right: 12px;

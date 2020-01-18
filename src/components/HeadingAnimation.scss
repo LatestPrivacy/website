@@ -6,8 +6,14 @@
     opacity: 0;
     animation-duration: 0.01s;
     animation-fill-mode: both;
+    @media screen and (max-width: 767px){
+        opacity: 1;
+    }
     .animated-in &{
         animation-name: reveal;
+        @media screen and (max-width: 767px){
+            animation: none;
+        }
     }
 }
 .HeadingAnimationBlock{
@@ -20,6 +26,9 @@
     animation-fill-mode: both;
     transform: scaleX(0);
     transform-origin: left;
+    @media screen and (max-width: 767px){
+        display: none;
+    }
     .animated-in &{
         animation-name: move;
     }

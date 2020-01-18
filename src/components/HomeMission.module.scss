@@ -3,12 +3,18 @@
     background-repeat: no-repeat;
     padding: 5rem 0 4rem;
     margin-bottom: 8rem;
+    @media screen and (max-width: 767px){
+        margin-bottom: 1rem;
+    }
 }
 .missionBottom{
     > div{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 1.5rem;
+        @media screen and (max-width: 767px){
+            grid-template-columns: repeat(1, 1fr);
+        }
         @media screen and (min-width: 1800px){
             grid-gap: 3rem;
         }

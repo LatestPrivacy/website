@@ -4,18 +4,34 @@
 }
 .donateLeft{
     grid-column: 2 / span 4;
+    @media screen and (max-width: 767px){
+        grid-column: span 12;
+        text-align: center;
+    }
     :global{
         .donate{
             &__status{
                 display: flex;
-                &__item{
+                margin-bottom: 3rem;
+                @media screen and (max-width: 767px){
+                    justify-content: center;
+                    > *:last-child{
+                        margin-right: 0;
+                    }
+                }
+                > *{
                     margin-right: 2rem;
+                }
+                &__item{
                     span{
                         display: block;
                         text-align: center;
                         &:first-child{
                             font-size: 2em;
                             margin-bottom: 0.5rem;
+                            @media screen and (max-width: 767px){
+                                font-size: 1.5em;
+                            }
                         }
                         &:last-child{
                             font-size: 1.125em;
@@ -37,13 +53,22 @@
 }
 .amount{
     margin: 3rem 0;
+    @media screen and (max-width: 767px){
+        display: block;
+    }
     h1{
         font-size: 5em;
         margin: 0;
+        @media screen and (max-width: 767px){
+            font-size: 3em;
+        }
     }
 }
 .donateRight{
     grid-column: 7 / span 5;
+    @media screen and (max-width: 767px){
+        grid-column: span 12;
+    }
     :global{
         .donate__button{
             margin-top: 3rem;
