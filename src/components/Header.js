@@ -33,16 +33,24 @@ class Header extends Component {
         text: "News"
       },
       {
-        url: "/videos",
-        text: "Videos"
-      },
-      {
         url: "/laws",
         text: "Laws"
       },
       {
+        url: "/mission",
+        text: "Mission"
+      },
+      {
+        url: "/videos",
+        text: "Videos"
+      },
+      {
+        url: "/team",
+        text: "Team"
+      },
+      {
         url: "/donate",
-        text: "Donate"
+        text: "Support Us"
       }
     ]
     return(

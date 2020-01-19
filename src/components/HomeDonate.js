@@ -40,12 +40,12 @@ class HomeDonate extends Component {
                             <h2>Transparency</h2>
                         </HeadingAnimation>
                         <BodyTextAnimation delay={1} duration={0.7}>
-                            <p>An archive of infomative videos that will help teach you about the various facetsbof privacy and how it can affect younAn archive of infomative videos.</p>
+                            <p>We believe in being open about our funds, we will let you know where its from and where it will be spent.</p>
                         </BodyTextAnimation>
                         
                         <div className="donate__button">
                             <BodyTextAnimation delay={1.2} duration={0.7}>
-                                <Button url="#" value="Learn More" />
+                                <Button url="#" value="Coming Soon" />
                             </BodyTextAnimation>
                             <BodyTextAnimation delay={1.4} duration={0.7}>
                                 <Button url="#" value="Donate" type="line" />

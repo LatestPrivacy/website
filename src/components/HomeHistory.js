@@ -16,7 +16,7 @@ class HomeHistory extends Component {
                             subtitle1 = "Checkout"
                             subtitle2 = "recent changes"
                             desc = "The latest laws affecting the United Kingdom that are potentially invading your privacy and what you can do to help."
-                            button = "Explore Now"
+                            button = "Coming Soon"
                         />
                     </div>
                 </div>
