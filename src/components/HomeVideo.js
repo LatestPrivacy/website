@@ -19,7 +19,7 @@ class HomeMission extends Component {
             centerMode: true,
             responsive: [
                 {
-                  breakpoint: 767,
+                  breakpoint: 666,
                   settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -28,6 +28,16 @@ class HomeMission extends Component {
                     centerMode: false
                   }
                 },
+                {
+                    breakpoint: 1023,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 1,
+                      infinite: true,
+                      dots: true,
+                      centerMode: false
+                    }
+                }
             ]
         };
         return (

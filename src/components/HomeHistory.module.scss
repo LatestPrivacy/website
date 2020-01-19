@@ -7,8 +7,11 @@
 }
 .historyLeft{
     grid-column: 1 / span 5;
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 1023px){
         grid-column: span 12;
+        :global .h1{
+            margin-right: 0.5rem;
+        }
     }
 }
 .historyRight{
@@ -17,15 +20,17 @@
     position: absolute;
     top: 3rem;
     right: 0;
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 1023px){
         position: initial;
     }
 }
 .theHistory{
     grid-column: 6 / span 7;
     @media screen and (max-width: 767px){
-        grid-column: 1 / span 12;
         display: none;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1023px){
+        grid-column: 1 / span 12;
     }
     > *{
         display: grid;
