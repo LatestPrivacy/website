@@ -40,7 +40,7 @@ class HomeOrganisation extends Component {
             <div className={`${Style.container} container`}>
                 <InViewMonitor classNameInView="animated-in">
                     <HeadingAnimation className={Style.title} delay={0} duration={0.7} color="#ffffff">
-                        <h3>Organisation</h3>
+                        <h3>Organisations</h3>
                     </HeadingAnimation>
                     <div className={Style.orgWrapper}>
                         {

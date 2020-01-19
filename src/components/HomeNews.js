@@ -9,49 +9,49 @@ import Style from './HomeNews.module.scss'
 
 const newsSource = [
     {
-        author: "Annabelle",
+        author: "Latest Privacy",
         date: "12 apr 2019",
         timetoread: "15 mins read",
         content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
     },
     {
-        author: "Annabelle",
+        author: "Theregister",
         date: "12 apr 2019",
         timetoread: "15 mins read",
         content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
     },
     {
-        author: "Annabelle",
+        author: "Theregister",
         date: "12 apr 2019",
         timetoread: "15 mins read",
         content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
     },
     {
-        author: "Annabelle",
+        author: "Privacy International",
         date: "12 apr 2019",
         timetoread: "15 mins read",
         content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
     },
     {
-        author: "Annabelle",
+        author: "The Verge",
         date: "12 apr 2019",
         timetoread: "15 mins read",
         content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
     },
     {
-        author: "Annabelle",
+        author: "The Hacker News",
         date: "12 apr 2019",
         timetoread: "15 mins read",
         content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
     },
     {
-        author: "Annabelle",
+        author: "Big Brother Watch",
         date: "12 apr 2019",
         timetoread: "15 mins read",
         content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
     },
     {
-        author: "Annabelle",
+        author: "Privacy International",
         date: "12 apr 2019",
         timetoread: "15 mins read",
         content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
@@ -64,7 +64,7 @@ class HomeNews extends Component {
             <div className={`${Style.container} container`}>
                 <InViewMonitor classNameInView="animated-in">
                     <HeadingAnimation className={Style.title} delay={0} duration={0.7} color="#ffffff">
-                        <h3>Latest</h3>
+                        <h3>Latest News</h3>
                     </HeadingAnimation>
                     <div className={Style.newsWrapper}>
                         {

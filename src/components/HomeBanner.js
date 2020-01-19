@@ -40,9 +40,9 @@ class HomeBanner extends Component {
                             </HeadingAnimation> 
                         </div>
                         <BodyTextAnimation duration={0.7} delay={0.5}>
-                            <p>Your data is potentially being watched even though you've 
-                            done nothing wrong, if you don't want to be treated like
-                            a criminal.</p>
+                            <p>Did you know that although you think your data is safe, it is being 
+                                shared numerous times without your knowledge? Keep up to date 
+                                with the latest privacy issues.</p>
                         </BodyTextAnimation>
                         <BodyTextAnimation duration={0.7} delay={0.8}>
                             <Button url="#" value="Explore Now" />
@@ -52,16 +52,16 @@ class HomeBanner extends Component {
                 <div className={Style.whatWeDo}>
                     <InViewMonitor classNameInView='animated-in'>
                         <BodyTextAnimation duration={0.7} delay={0.3}>
-                            <TitleAndDescription className={Style.whatWeDoItem} title="News" desc="To raise the level of public awareness as to what happens to their data."/>
+                            <TitleAndDescription className={Style.whatWeDoItem} title="News" desc="All your latest privacy news, easily found in one place."/>
                         </BodyTextAnimation>
                         <BodyTextAnimation duration={0.7} delay={0.9}>
-                            <TitleAndDescription className={Style.whatWeDoItem} title="Laws" desc="To raise the level of public awareness as to what happens to their data."/>
+                            <TitleAndDescription className={Style.whatWeDoItem} title="Laws" desc="Keep up to date with data protection and how it affects you!"/>
                         </BodyTextAnimation>
                         <BodyTextAnimation duration={0.7} delay={0.6}>
-                            <TitleAndDescription className={Style.whatWeDoItem} title="Education" desc="To aid the public in knowing exactly what privacy really means."/>
+                            <TitleAndDescription className={Style.whatWeDoItem} title="Videos" desc="Educational videos concerning privacy matters."/>
                         </BodyTextAnimation>
                         <BodyTextAnimation duration={0.7} delay={1.2}>
-                            <TitleAndDescription className={Style.whatWeDoItem} title="Awareness" desc="To aid the public in knowing exactly what privacy really means."/>
+                            <TitleAndDescription className={Style.whatWeDoItem} title="More to come!" desc="More features to be added in the near future."/>
                         </BodyTextAnimation>
                     </InViewMonitor>
                 </div>

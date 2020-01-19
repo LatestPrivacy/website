@@ -18,21 +18,21 @@ class HomeMission extends Component {
                     <div className={Style.missionTop}>
                         <Section
                             title = "Our Mission"
-                            subtitle1 = "Many countries are starting to destroy"
-                            subtitle2 = "privacy, while taking away our rights."
-                            subtitle3 = "We want to change that."
+                            subtitle1 = "We know how hard it is to keep track of"
+                            subtitle2 = "privacy, we want to change that by"
+                            subtitle3 = "making it easier to follow."
                         />
                     </div>
                     <div className={Style.missionBottom}>
                         <InViewMonitor classNameInView='animated-in'>
                             <BodyTextAnimation duration={0.7} delay={0.3}>
-                                <TitleAndDescription className={Style.whatWeDoItem} title="Privacy" desc="The latest laws affecting the United Kingdom that are potentially invading your privacy and what you can do to help."/>
+                                <TitleAndDescription className={Style.whatWeDoItem} title="Privacy" desc="By making it easier to follow it will help people to understand and want to protect their right to privacy."/>
                             </BodyTextAnimation>
                             <BodyTextAnimation duration={0.7} delay={0.6}>
-                                <TitleAndDescription className={Style.whatWeDoItem} title="Awareness" desc="The latest laws affecting the United Kingdom that are potentially invading your privacy and what you can do to help."/>
+                                <TitleAndDescription className={Style.whatWeDoItem} title="Awareness" desc="Spreading awareness doesn't just educate, but also helps to show the issues and risks we face whilst using the internet."/>
                             </BodyTextAnimation>
                             <BodyTextAnimation duration={0.7} delay={0.9}>
-                                <TitleAndDescription className={Style.whatWeDoItem} title="Education" desc="To aid the public in knowing exactly what privacy really means."/>
+                                <TitleAndDescription className={Style.whatWeDoItem} title="Education" desc="Teaching people that privacy is a basic human right is a big step to making the internet a safer place for everybody."/>
                             </BodyTextAnimation>
                         </InViewMonitor>
                     </div>
