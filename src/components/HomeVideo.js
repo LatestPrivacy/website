@@ -49,7 +49,7 @@ class HomeMission extends Component {
                             subtitle1 = "Find out more"
                             subtitle2 = "today"
                             desc = "An archive of infomative videos that will help teach you about the various facets of privacy and how it can affect you."
-                            button = "Explore Now"
+                            button = "Coming Soon"
                         />
                     </div>
                 </div>

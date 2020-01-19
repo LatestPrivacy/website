@@ -84,7 +84,7 @@ class HomeNews extends Component {
                     </div>
                     <div className={Style.buttonWrapper}>
                         <BodyTextAnimation duration={0.7} delay={2.7}>
-                            <Button url="#" value="Explore Now" />
+                            <Button url="#" value="Coming Soon" />
                         </BodyTextAnimation>
                     </div>
                 </InViewMonitor>

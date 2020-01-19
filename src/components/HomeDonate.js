@@ -45,7 +45,7 @@ class HomeDonate extends Component {
                         
                         <div className="donate__button">
                             <BodyTextAnimation delay={1.2} duration={0.7}>
-                                <Button url="#" value="Learn More" />
+                                <Button url="#" value="Coming Soon" />
                             </BodyTextAnimation>
                             <BodyTextAnimation delay={1.4} duration={0.7}>
                                 <Button url="#" value="Donate" type="line" />
