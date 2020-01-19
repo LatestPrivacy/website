@@ -9,7 +9,7 @@ import exlink from '../assets/images/external-link.svg'
 class AboutMission extends Component {
     render() {
         return (
-            <BodyTextAnimation duration={0.7} delay={this.props.delay}>
+            <BodyTextAnimation duration={0.7} delay={this.props.delay} className={this.props.name}>
                 <div className={TeamItemStyle.col}>
                     <div className={TeamItemStyle.imgWrap}>
                         <img src={this.props.image} alt={this.props.imgAlt} />
