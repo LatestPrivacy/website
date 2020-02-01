@@ -14,11 +14,13 @@ You can help by spreading the word about the site [latestprivacy.org](https://la
 
 ### Blog
 Stay up to date with our latest activities and progress.
-1. [The LP Team Keeps on Growing!](https://opencollective.com/latestprivacy/updates/the-latest-privacy-team-keeps-on-growing) 
+1. [What Will Change Regarding LP After Brexit?](https://opencollective.com/latestprivacy/updates/what-is-going-to-change-after-brexit) 
+> - Published on 1 February 2020
+2. [The LP Team Keeps on Growing!](https://opencollective.com/latestprivacy/updates/the-latest-privacy-team-keeps-on-growing) 
 > - Published on 27 January  2020
-2. [Tor + Latest Privacy](https://opencollective.com/latestprivacy/updates/next-level-privacy-with-tor) 
+3. [Tor + Latest Privacy](https://opencollective.com/latestprivacy/updates/next-level-privacy-with-tor) 
 > - Published on 27 November 2019
-3. [What's Been Going on?](https://opencollective.com/latestprivacy/updates/whats-been-going-on) 
+4. [What's Been Going on?](https://opencollective.com/latestprivacy/updates/whats-been-going-on) 
 > - Published on 27 September 2019
 
 ### Donators
