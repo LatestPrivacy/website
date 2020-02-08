@@ -7,57 +7,6 @@ import Button from '../components/Button'
 
 import Style from './HomeNews.module.scss'
 
-const newsSource = [
-    {
-        author: "Latest Privacy",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "Theregister",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "Theregister",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "Privacy International",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "The Verge",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "The Hacker News",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "Big Brother Watch",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "Privacy International",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    }
-]
-
 class HomeNews extends Component {
 
     state = {
