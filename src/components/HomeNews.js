@@ -59,7 +59,31 @@ const newsSource = [
 ]
 
 class HomeNews extends Component {
+
+    state = {
+        loading: true,
+        newsData: null
+    }
+
+    async componentDidMount(){
+        const url = "https://private-c72d5a-peepingtom.apiary-mock.com/api/v1/articles"
+        const response = await fetch(url)
+        const data = await response.json()
+        //console.log(data)
+        this.setState({
+            loading: false,
+            newsData: data
+        })
+    }
+
     render() {
+        if (this.state.loading) {
+            return <div>loading...</div>;
+        }
+      
+        if (!this.state.newsData) {
+            return <div>didn't get a news data</div>;
+        }
         return (
             <div className={`${Style.container} container`}>
                 <InViewMonitor classNameInView="animated-in">
@@ -68,15 +92,16 @@ class HomeNews extends Component {
                     </HeadingAnimation>
                     <div className={Style.newsWrapper}>
                         {
-                            newsSource.map((news, i) => {
+                            this.state.newsData.map((news, i) => {
                                 return(
                                     <NewsItem 
-                                        author = {news.author} 
-                                        date = {news.date} 
-                                        timetoread = {news.timetoread}
+                                        author = {news.publisher} 
+                                        date = {news.published_on} 
+                                        timetoread = {news.read_time}
+                                        slug = {news.slug}
                                         delay = { 0.6 + (i * 0.3) }
                                     >
-                                        {news.content}
+                                        {news.title}
                                     </NewsItem>
                                 )
                             })
