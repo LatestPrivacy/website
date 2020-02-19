@@ -14,7 +14,7 @@ class NewsItem extends Component {
                         <span>Author </span><span>{this.props.author}</span>
                     </div>
                     <div className={Style.newsTitle}>
-                        <Link to={`/${this.props.slug}`}>{this.props.children}</Link>
+                        <Link to={`/article/${this.props.slug}`}>{this.props.children}</Link>
                     </div>
                     <div className={Style.meta}>
                         <span>

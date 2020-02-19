@@ -12,12 +12,12 @@ class Button extends Component {
                 {
                     this.props.type === "line" ?
                     (
-                        <Link to={this.props.url} className={Style.buttonLine}>
+                        <Link to={this.props.url} className={`button ${Style.buttonLine}`}>
                             <span>{this.props.value}</span>
                             <img src={Love} alt="Love" class="love" />
                         </Link>
                     ) : (
-                        <Link to={this.props.url} className={Style.button}>
+                        <Link to={this.props.url} className={`button ${Style.button}`}>
                             <span>{this.props.value}</span>
                             <img src={Arrow} alt="arrow" class="arrow" />
                         </Link>
@@ -30,3 +30,7 @@ class Button extends Component {
 }
 
 export default Button;
+
+Button.defaultProps = {
+    url: "#"
+}

@@ -89,29 +89,6 @@ const PastContributor = [
     }
 ]
 
-const OpenPosition = [
-    {
-        position: 'Art Director',
-        status: 'Remote',
-        url: '#'
-    },
-    {
-        position: 'Copywriter',
-        status: 'Remote',
-        url: '#'
-    },
-    {
-        position: 'Front-end Developer',
-        status: 'Remote',
-        url: '#'
-    },
-    {
-        position: 'Content Writer',
-        status: 'Remote',
-        url: '#'
-    }
-]
-
 class About extends Component {
     state = {
         loading: true,
