@@ -96,7 +96,7 @@ class About extends Component {
     }
 
     async componentDidMount(){
-        const url = "https://private-c72d5a-peepingtom.apiary-mock.com/api/v1/jobs"
+        const url = "https://private-anon-bae8f28881-peepingtom.apiary-mock.com/api/v1/jobs"
         const response = await fetch(url)
         const data = await response.json()
         console.log(data)

@@ -1,10 +1,12 @@
 {
   "name": "latestprivacy",
   "version": "0.1.0",
+  "proxy": "https://latestprivacy.org/api",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.2",
     "moment": "^2.24.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-inview-monitor": "^2.2.1",

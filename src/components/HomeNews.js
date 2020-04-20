@@ -15,10 +15,10 @@ class HomeNews extends Component {
     }
 
     async componentDidMount(){
-        const url = "https://private-c72d5a-peepingtom.apiary-mock.com/api/v1/articles"
+        const url = "/articles?limit=4"
         const response = await fetch(url)
         const data = await response.json()
-        //console.log(data)
+        console.log(data)
         this.setState({
             loading: false,
             newsData: data
@@ -27,11 +27,11 @@ class HomeNews extends Component {
 
     render() {
         if (this.state.loading) {
-            return <div>loading...</div>;
+            return <div style={{ 'textAlign': 'center'}}>loading...</div>;
         }
       
         if (!this.state.newsData) {
-            return <div>didn't get a news data</div>;
+            return <div style={{ 'textAlign': 'center'}}>didn't get a news data</div>;
         }
         return (
             <div className={`${Style.container} container`}>
