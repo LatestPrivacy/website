@@ -120,6 +120,7 @@ class About extends Component {
                 <Helmet>
                     <title>Latest Privacy - Team</title>
                     <meta name="description" content="About the team who are behind Latest Privacy." />
+                    <meta name="keywords" content="latest privacy, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
                 </Helmet>
                 <div className={AboutStyle.wrapper}>
                     <AboutBanner />
