@@ -37,84 +37,77 @@ function shuffle(array) {
     return array;
 }
   
+const Team = [
+    {
+        image: LukeImage,
+        name: 'Luke Seers',
+        position: 'Lead Designer',
+        github: 'https://github.com/lukeseers',
+        twitter: 'https://twitter.com/LukeSeers',
+        exlink: 'https://lukeseers.com'
+    },
+    {
+        image: noImage,
+        name: 'Myles',
+        position: 'Back end Dev'
+    },
+    {
+        image: DaveImage,
+        name: 'David Weaver',
+        position: 'Legal Advisor',
+        github: 'https://github.com/Wrasse39'
+    },
+    {
+        image: JohnImage,
+        name: 'Johnaton Weaver',
+        position: 'DevOps',
+        github: 'https://github.com/8BallBomBom',
+    },
+    {
+        image: RizqiImage,
+        name: 'Rizqi Nizamil Putra',
+        position: 'Front-end Dev',
+        github: 'https://github.com/rizqinizamil',
+        twitter: 'https://twitter.com/nizamilputra',
+        exlink: 'https://rizqi.im'
+    },
+    {
+        image: noImage,
+        name: 'You',
+        position: 'Open Positions'
+    }
+]
+const shuffleTeam = shuffle(Team)
+
+const PastContributor = [
+    {
+        image: noImage,
+        name: 'William Phillips',
+        position: 'Front-end Dev',
+        github: 'https://github.com/metallicgloss',
+        twitter: 'https://twitter.com/MetallicGloss',
+        exlink: 'https://www.william-phillips.com'
+    }
+]
 
 class About extends Component {
+    state = {
+        loading: true,
+        jobsData: null
+    }
+
+    async componentDidMount(){
+        const url = "https://private-anon-bae8f28881-peepingtom.apiary-mock.com/api/v1/jobs"
+        const response = await fetch(url)
+        const data = await response.json()
+        console.log(data)
+        this.setState({
+            loading: false,
+            jobsData: data
+        })
+    }
+
     render() {
-        const Team = [
-            {
-                image: LukeImage,
-                name: 'Luke Seers',
-                position: 'Lead Designer',
-                github: 'https://github.com/lukeseers',
-                twitter: 'https://twitter.com/LukeSeers',
-                exlink: 'https://lukeseers.com'
-            },
-            {
-                image: noImage,
-                name: 'Myles',
-                position: 'Back end Dev'
-            },
-            {
-                image: DaveImage,
-                name: 'David Weaver',
-                position: 'Legal Advisor',
-                github: 'https://github.com/Wrasse39'
-            },
-            {
-                image: JohnImage,
-                name: 'Johnaton Weaver',
-                position: 'DevOps',
-                github: 'https://github.com/8BallBomBom',
-            },
-            {
-                image: RizqiImage,
-                name: 'Rizqi Nizamil Putra',
-                position: 'Front-end Dev',
-                github: 'https://github.com/rizqinizamil',
-                twitter: 'https://twitter.com/nizamilputra',
-                exlink: 'https://rizqi.im'
-            },
-            {
-                image: noImage,
-                name: 'You',
-                position: 'Open Positions'
-            }
-        ]
-        const shuffleTeam = shuffle(Team)
-
-        const PastContributor = [
-            {
-                image: noImage,
-                name: 'William Phillips',
-                position: 'Front-end Dev',
-                github: 'https://github.com/metallicgloss',
-                twitter: 'https://twitter.com/MetallicGloss',
-                exlink: 'https://www.william-phillips.com'
-            }
-        ]
-
-        const OpenPosition = [
-            {
-                position: 'Art Director',
-                status: 'Remote',
-                url: '#'
-            },
-            {
-                position: 'Copywriter',
-                status: 'Remote',
-                url: '#'
-            },
-            {
-                position: 'Front-end Developer',
-                status: 'Remote',
-                url: '#'
-            },
-            {
-                position: 'Content Writer',
-                status: 'Remote',
-                url: '#'
-            }
-        ]
         return (
             <>
                 <Helmet>
@@ -191,26 +184,32 @@ class About extends Component {
                         }
                     </AboutTeam>
 
-                    <AboutJoin title="Join our team" desc="Have you got what it takes to 
-                    be apart of the team?">
-                        {
-                            OpenPosition.map((data, key) => {
-                                return(
-                                    <AboutJoinPosition
-                                        position = {data.position}
-                                        status = {data.status}
-                                        url = {data.url}
-                                        key = {key}
-                                    />
-                                )
-                            })                         
-                        }
-                    </AboutJoin>
-                    <Parallax className={AboutStyle.parallaxTxt} x={[30, -60]} tagOuter="figure">
-                        <div className={AboutStyle.privacyText}>Privacy</div>
-                    </Parallax>
-                </div>
-            </>
+                <AboutJoin title="Join our team" desc="Have you got what it takes to 
+                be apart of the team?">
+                    {
+                        this.state.loading && <div>loading...</div>
+                    }
+                    {
+                        //console.log(this.state)
+                        !this.state.jobsData ? <div>didn't get a news data</div> :
+                        this.state.jobsData.map((data, key) => {
+                            return(
+                                <AboutJoinPosition
+                                    position = {data.position}
+                                    status = {data.status}
+                                    key = {key}
+                                />
+                            )
+                        })                         
+                    }
+                </AboutJoin>
+                <Parallax className={AboutStyle.parallaxTxt} x={[30, -60]} tagOuter="figure">
+                    <div className={AboutStyle.privacyText}>Privacy</div>
+                </Parallax>
+            </div>
+
+                   
+        </>
         );
     }
 }

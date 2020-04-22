@@ -7,59 +7,32 @@ import Button from '../components/Button'
 
 import Style from './HomeNews.module.scss'
 
-const newsSource = [
-    {
-        author: "Latest Privacy",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "Theregister",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "Theregister",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "Privacy International",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "The Verge",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "The Hacker News",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "Big Brother Watch",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    },
-    {
-        author: "Privacy International",
-        date: "12 apr 2019",
-        timetoread: "15 mins read",
-        content: "US capital's surveillance cam network allegedly hijacked by romanian ransomware suspects"
-    }
-]
-
 class HomeNews extends Component {
+
+    state = {
+        loading: true,
+        newsData: null
+    }
+
+    async componentDidMount(){
+        const url = "/articles?limit=4"
+        const response = await fetch(url)
+        const data = await response.json()
+        console.log(data)
+        this.setState({
+            loading: false,
+            newsData: data
+        })
+    }
+
     render() {
+        if (this.state.loading) {
+            return <div style={{ 'textAlign': 'center'}}>loading...</div>;
+        }
+      
+        if (!this.state.newsData) {
+            return <div style={{ 'textAlign': 'center'}}>didn't get a news data</div>;
+        }
         return (
             <div className={`${Style.container} container`}>
                 <InViewMonitor classNameInView="animated-in">
@@ -68,15 +41,16 @@ class HomeNews extends Component {
                     </HeadingAnimation>
                     <div className={Style.newsWrapper}>
                         {
-                            newsSource.map((news, i) => {
+                            this.state.newsData.map((news, i) => {
                                 return(
                                     <NewsItem 
-                                        author = {news.author} 
-                                        date = {news.date} 
-                                        timetoread = {news.timetoread}
+                                        author = {news.publisher} 
+                                        date = {news.published_on} 
+                                        timetoread = {news.read_time}
+                                        slug = {news.slug}
                                         delay = { 0.6 + (i * 0.3) }
                                     >
-                                        {news.content}
+                                        {news.title}
                                     </NewsItem>
                                 )
                             })

@@ -17,3 +17,7 @@ class AboutJoinPosition extends Component {
 }
 
 export default AboutJoinPosition;
+
+AboutJoinPosition.defaultProps = {
+    url: '#'
+}
