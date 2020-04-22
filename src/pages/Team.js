@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Helmet} from 'react-helmet'
 import { Parallax } from 'react-scroll-parallax'
 import InViewMonitor from 'react-inview-monitor'
 import BodyTextAnimation from '../components/BodyTextAnimation'
@@ -108,74 +109,80 @@ class About extends Component {
 
     render() {
         return (
-            <div className={AboutStyle.wrapper}>
-                <AboutBanner />
+            <>
+                <Helmet>
+                    <title>Latest Privacy - Team</title>
+                    <meta name="description" content="About the team who are behind Latest Privacy." />
+                    <meta name="keywords" content="latest privacy, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
+                </Helmet>
+                <div className={AboutStyle.wrapper}>
+                    <AboutBanner />
 
-                <AboutMission title="Our Mission" desc="To raise public awareness surrounding the issues of privacy in 
-                everyday use mobile device to desktops, if it’s relevant we will let 
-                you know about it and guide you in the right direction." />
-            
-                <AboutAchieve title="What we want to achieve">
-                    <div className={AboutStyle.achieveItemWrapper}>
-                        <InViewMonitor classNameInView='animated-in'>
-                            <BodyTextAnimation duration={0.7} delay={0.3}>
-                                <TitleAndDescription className={AboutStyle.tadItem} title="01. Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
-                            </BodyTextAnimation>
-                            <BodyTextAnimation duration={0.7} delay={0.6}>
-                                <TitleAndDescription className={AboutStyle.tadItem} title="02. Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
-                            </BodyTextAnimation>
-                            <BodyTextAnimation duration={0.7} delay={0.9}>
-                                <TitleAndDescription className={AboutStyle.tadItem} title="03. Security" desc="Guiding the public in ways to stay secure whilst online."/>
-                            </BodyTextAnimation>
-                            <BodyTextAnimation duration={0.7} delay={1.2}>
-                                <TitleAndDescription className={AboutStyle.tadItem} title="04. Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
-                            </BodyTextAnimation>
-                        </InViewMonitor>
-                    </div>
-                </AboutAchieve>
+                    <AboutMission title="Our Mission" desc="To raise public awareness surrounding the issues of privacy in 
+                    everyday use mobile device to desktops, if it’s relevant we will let 
+                    you know about it and guide you in the right direction." />
+                
+                    <AboutAchieve title="What we want to achieve">
+                        <div className={AboutStyle.achieveItemWrapper}>
+                            <InViewMonitor classNameInView='animated-in'>
+                                <BodyTextAnimation duration={0.7} delay={0.3}>
+                                    <TitleAndDescription className={AboutStyle.tadItem} title="01. Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
+                                </BodyTextAnimation>
+                                <BodyTextAnimation duration={0.7} delay={0.6}>
+                                    <TitleAndDescription className={AboutStyle.tadItem} title="02. Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
+                                </BodyTextAnimation>
+                                <BodyTextAnimation duration={0.7} delay={0.9}>
+                                    <TitleAndDescription className={AboutStyle.tadItem} title="03. Security" desc="Guiding the public in ways to stay secure whilst online."/>
+                                </BodyTextAnimation>
+                                <BodyTextAnimation duration={0.7} delay={1.2}>
+                                    <TitleAndDescription className={AboutStyle.tadItem} title="04. Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
+                                </BodyTextAnimation>
+                            </InViewMonitor>
+                        </div>
+                    </AboutAchieve>
 
-                <AboutTeam title="Meet the team" desc="We’re a small team of people working towards the greater 
-                good; built up around volunteers contributing to this project 
-                in our free time at our own cost.">
-                    {
-                        shuffleTeam.map((data, key) => {
-                            return(
-                                <AboutTeamItem
-                                    image = {data.image}
-                                    imgAlt = {data.name}
-                                    name = {data.name}
-                                    position = {data.position}
-                                    github = {data.github}
-                                    twitter = {data.twitter}
-                                    exlink = {data.exlink}
-                                    key = {key}
-                                    delay = { 0.6 + (key * 0.3) }
-                                />
-                            )
-                        })                         
-                    }
-                </AboutTeam>
+                    <AboutTeam title="Meet the team" desc="We’re a small team of people working towards the greater 
+                    good; built up around volunteers contributing to this project 
+                    in our free time at our own cost.">
+                        {
+                            shuffleTeam.map((data, key) => {
+                                return(
+                                    <AboutTeamItem
+                                        image = {data.image}
+                                        imgAlt = {data.name}
+                                        name = {data.name}
+                                        position = {data.position}
+                                        github = {data.github}
+                                        twitter = {data.twitter}
+                                        exlink = {data.exlink}
+                                        key = {key}
+                                        delay = { 0.6 + (key * 0.3) }
+                                    />
+                                )
+                            })                         
+                        }
+                    </AboutTeam>
 
-                <AboutTeam title="Past contributors" desc="Team memebers who previously contributed to this project,
-                who are no longer currently active.">
-                    {
-                        PastContributor.map((data, key) => {
-                            return(
-                                <AboutTeamItem
-                                    image = {data.image}
-                                    imgAlt = {data.name}
-                                    name = {data.name}
-                                    position = {data.position}
-                                    github = {data.github}
-                                    twitter = {data.twitter}
-                                    exlink = {data.exlink}
-                                    key = {key}
-                                    delay = { 0.6 + (key * 0.3) }
-                                />
-                            )
-                        })                         
-                    }
-                </AboutTeam>
+                    <AboutTeam title="Past contributors" desc="Team memebers who previously contributed to this project,
+                    who are no longer currently active.">
+                        {
+                            PastContributor.map((data, key) => {
+                                return(
+                                    <AboutTeamItem
+                                        image = {data.image}
+                                        imgAlt = {data.name}
+                                        name = {data.name}
+                                        position = {data.position}
+                                        github = {data.github}
+                                        twitter = {data.twitter}
+                                        exlink = {data.exlink}
+                                        key = {key}
+                                        delay = { 0.6 + (key * 0.3) }
+                                    />
+                                )
+                            })                         
+                        }
+                    </AboutTeam>
 
                 <AboutJoin title="Join our team" desc="Have you got what it takes to 
                 be apart of the team?">
@@ -200,6 +207,9 @@ class About extends Component {
                     <div className={AboutStyle.privacyText}>Privacy</div>
                 </Parallax>
             </div>
+
+                   
+        </>
         );
     }
 }
