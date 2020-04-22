@@ -50,6 +50,7 @@ class HomeOrganisation extends Component {
                                         delay = { 0.6 + (i * 0.3) }
                                         image = { item.image }
                                         title = { item.title }
+                                        key = {i}
                                     />
                                 )
                             })
