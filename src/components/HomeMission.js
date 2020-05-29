@@ -26,13 +26,13 @@ class HomeMission extends Component {
                     <div className={Style.missionBottom}>
                         <InViewMonitor classNameInView='animated-in'>
                             <BodyTextAnimation duration={0.7} delay={0.3}>
-                                <TitleAndDescription className={Style.whatWeDoItem} title="Privacy" desc="By making it easier to follow it will help people to understand and want to protect their right to privacy."/>
+                                <TitleAndDescription className={Style.whatWeDoItem} title="Privacy" desc="By making privacy easier to follow it will help those who want to protect their rights."/>
                             </BodyTextAnimation>
                             <BodyTextAnimation duration={0.7} delay={0.6}>
-                                <TitleAndDescription className={Style.whatWeDoItem} title="Awareness" desc="Spreading awareness doesn't just educate, but also helps to show the issues and risks we face whilst using the internet."/>
+                                <TitleAndDescription className={Style.whatWeDoItem} title="Awareness" desc="Spreading awareness doesn't just educate, but also helps to show the issues and risks we face in everyday life."/>
                             </BodyTextAnimation>
                             <BodyTextAnimation duration={0.7} delay={0.9}>
-                                <TitleAndDescription className={Style.whatWeDoItem} title="Education" desc="Teaching people that privacy is a basic human right is a big step to making the internet a safer place for everybody."/>
+                                <TitleAndDescription className={Style.whatWeDoItem} title="Education" desc="Teaching people that privacy is not just important, it is a basic human right."/>
                             </BodyTextAnimation>
                         </InViewMonitor>
                     </div>

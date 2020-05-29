@@ -73,8 +73,8 @@ const Team = [
     },
     {
         image: noImage,
-        name: 'You',
-        position: 'Open Positions'
+        name: 'This could be you',
+        position: 'Check open positions'
     }
 ]
 const shuffleTeam = shuffle(Team)
@@ -118,32 +118,28 @@ class About extends Component {
                 <div className={AboutStyle.wrapper}>
                     <AboutBanner />
 
-                    <AboutMission title="Our Mission" desc="To raise public awareness surrounding the issues of privacy in 
-                    everyday use mobile device to desktops, if it’s relevant we will let 
-                    you know about it and guide you in the right direction." />
+                    <AboutMission title="Our Mission" desc="To raise public awareness surrounding the issues of privacy in everyday life. If it's relevant we will let you know about it and guide you in the right direction." />
                 
                     <AboutAchieve title="What we want to achieve">
                         <div className={AboutStyle.achieveItemWrapper}>
                             <InViewMonitor classNameInView='animated-in'>
                                 <BodyTextAnimation duration={0.7} delay={0.3}>
-                                    <TitleAndDescription className={AboutStyle.tadItem} title="01. Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
+                                    <TitleAndDescription className={AboutStyle.tadItem} title="Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
                                 </BodyTextAnimation>
                                 <BodyTextAnimation duration={0.7} delay={0.6}>
-                                    <TitleAndDescription className={AboutStyle.tadItem} title="02. Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
+                                    <TitleAndDescription className={AboutStyle.tadItem} title="Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
                                 </BodyTextAnimation>
                                 <BodyTextAnimation duration={0.7} delay={0.9}>
-                                    <TitleAndDescription className={AboutStyle.tadItem} title="03. Security" desc="Guiding the public in ways to stay secure whilst online."/>
+                                    <TitleAndDescription className={AboutStyle.tadItem} title="Security" desc="Guiding the public in ways to stay secure whilst online."/>
                                 </BodyTextAnimation>
                                 <BodyTextAnimation duration={0.7} delay={1.2}>
-                                    <TitleAndDescription className={AboutStyle.tadItem} title="04. Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
+                                    <TitleAndDescription className={AboutStyle.tadItem} title="Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
                                 </BodyTextAnimation>
                             </InViewMonitor>
                         </div>
                     </AboutAchieve>
 
-                    <AboutTeam title="Meet the team" desc="We’re a small team of people working towards the greater 
-                    good; built up around volunteers contributing to this project 
-                    in our free time at our own cost.">
+                    <AboutTeam title="Meet the team" desc="Small group of people working towards an endgame where privacy really does mean private. We are all volunteers contributing to this project in our free time at our own cost.">
                         {
                             shuffleTeam.map((data, key) => {
                                 return(
@@ -184,8 +180,7 @@ class About extends Component {
                         }
                     </AboutTeam>
 
-                <AboutJoin title="Join our team" desc="Have you got what it takes to 
-                be apart of the team?">
+                <AboutJoin title="Join the team" desc="If you care about privacy please apply, we would love to hear from you!">
                     {
                         this.state.loading && <div>loading...</div>
                     }

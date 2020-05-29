@@ -38,10 +38,10 @@ class HomeDonate extends Component {
                     </div>
                     <div className={Style.donateRight}>
                         <HeadingAnimation className={Style.titleRight} delay={0.8} duration={0.7} color="#ffffff">
-                            <h2>Transparency</h2>
+                            <h2>Public Funding Transparency</h2>
                         </HeadingAnimation>
                         <BodyTextAnimation delay={1} duration={0.7}>
-                            <p>We believe in being open about our funds, we will let you know where its from and where it will be spent.</p>
+                            <p>We believe in being open about the public funds we recive. You can see where it's from and also where it's being spent.</p>
                         </BodyTextAnimation>
                         
                         <div className="donate__button">
@@ -49,7 +49,7 @@ class HomeDonate extends Component {
                                 <Button url="#" value="Coming Soon" />
                             </BodyTextAnimation>
                             <BodyTextAnimation delay={1.4} duration={0.7}>
-                                <ButtonExternal url="https://opencollective.com/latestprivacy" value="Donate" type="line" />
+                                <ButtonExternal url="https://opencollective.com/latestprivacy" value="Support Us" type="line" />
                             </BodyTextAnimation>
                         </div>
                     </div>
