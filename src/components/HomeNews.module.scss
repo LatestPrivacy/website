@@ -1,5 +1,8 @@
 .container{
-    margin-bottom: 8rem;
+    margin-bottom: 12rem;
+    @media screen and (max-width: 767px){
+        margin-bottom: 3rem;
+    }
 }
 .title{
     margin-bottom: 4rem;
@@ -11,6 +14,7 @@
 .newsWrapper{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1.5rem;
     @media screen and (max-width: 666px){
         grid-template-columns: repeat(1, 1fr);
     }

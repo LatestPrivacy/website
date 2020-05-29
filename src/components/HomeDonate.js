@@ -3,6 +3,7 @@ import BodyTextAnimation from '../components/BodyTextAnimation'
 import HeadingAnimation from './HeadingAnimation'
 import InViewMonitor from 'react-inview-monitor'
 import Button from '../components/Button'
+import ButtonExternal from '../components/ButtonExternal'
 
 import Style from './HomeDonate.module.scss'
 
@@ -48,7 +49,7 @@ class HomeDonate extends Component {
                                 <Button url="#" value="Coming Soon" />
                             </BodyTextAnimation>
                             <BodyTextAnimation delay={1.4} duration={0.7}>
-                                <Button url="#" value="Donate" type="line" />
+                                <ButtonExternal url="https://opencollective.com/latestprivacy" value="Donate" type="line" />
                             </BodyTextAnimation>
                         </div>
                     </div>

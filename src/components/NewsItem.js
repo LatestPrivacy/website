@@ -11,7 +11,7 @@ class NewsItem extends Component {
             <BodyTextAnimation duration={0.7} delay={this.props.delay}>
                 <div className={Style.newsItem}>
                     <div className={Style.author}>
-                        <span>Author </span><span>{this.props.author}</span>
+                        <span>Publisher </span><span>{this.props.author}</span>
                     </div>
                     <div className={Style.newsTitle}>
                         <Link to={`/article/${this.props.slug}`}>{this.props.children}</Link>

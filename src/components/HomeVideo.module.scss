@@ -2,9 +2,10 @@
     max-width: 1600px;
     padding-left: 3rem;
     padding-right: 3rem;
-    margin: 0 auto 8rem;
+    margin: 0 auto 12rem;
     position: relative;
     @media screen and (max-width: 767px){
+        margin-bottom: 3rem;
         padding-left: 0;
         padding-right: 0;
     }
