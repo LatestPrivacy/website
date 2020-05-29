@@ -41,7 +41,7 @@ class HomeDonate extends Component {
                             <h2>Public Funding Transparency</h2>
                         </HeadingAnimation>
                         <BodyTextAnimation delay={1} duration={0.7}>
-                            <p>We believe in being open about the public funds we recive. You can see where it's from and also where it's being spent.</p>
+                            <p>We believe in being open about the public funds we receive. You can see where it's from and also where it's being spent.</p>
                         </BodyTextAnimation>
                         
                         <div className="donate__button">
