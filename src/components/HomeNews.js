@@ -59,7 +59,7 @@ const HomeNews = () => {
                                 <NewsItem 
                                     author = {news.publisher} 
                                     date = {news.published_on} 
-                                    timetoread = {news.read_time}
+                                    /*timetoread = {news.read_time}*/  /*NewItem.js: Line 35*/
                                     slug = {news.slug}
                                     delay = { 0.6 + (i * 0.3) }
                                 >
