@@ -30,8 +30,8 @@ class HomeDonate extends Component {
                             </BodyTextAnimation>
                             <BodyTextAnimation delay={0.6} duration={0.7}>
                                 <div className="donate__status__item">
-                                    <span>42</span>
-                                    <span>Transactions</span>
+                                    <span>0</span>
+                                    <span>Sponsors</span>
                                 </div>
                             </BodyTextAnimation>
                         </div>
