@@ -41,7 +41,7 @@ class HomeMission extends Component {
             ]
         };
         return (
-            <div className={Style.wrapper}>
+            <div className={Style.wrapper} id="videos">
                 <div className={`${Style.videoContainer} container`}>
                     <div className={Style.videoLeft}>
                         <Section

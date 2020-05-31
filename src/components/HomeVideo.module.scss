@@ -2,12 +2,14 @@
     max-width: 1600px;
     padding-left: 3rem;
     padding-right: 3rem;
+    padding-top: 3rem;
     margin: 0 auto 12rem;
     position: relative;
     @media screen and (max-width: 767px){
         margin-bottom: 3rem;
         padding-left: 0;
         padding-right: 0;
+        padding-top: 1.5rem;
     }
 }
 .videoContainer{
@@ -38,10 +40,12 @@
     top: 0;
     right: 0;
     padding-right: 0;
+    padding-top: 3rem;
     @media screen and (max-width: 1023px){
         position: initial;
         width: auto;
         padding-left: 0;
+        padding-top: 1.5rem;
     }
     @media screen and (min-width: 1600px){
         width: 80%;

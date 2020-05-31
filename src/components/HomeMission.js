@@ -13,7 +13,7 @@ class HomeMission extends Component {
             backgroundImage: `url(${Cams})`
         }
         return (
-            <div className={Style.missionContainer} style={bg}>
+            <div className={Style.missionContainer} style={bg} id="mission">
                 <div className={` ${Style.containerBanner} container`}>
                     <div className={Style.missionTop}>
                         <Section

@@ -34,19 +34,19 @@ class Header extends Component {
         type: "hash"
       },
       {
-        url: "/laws",
+        url: "#laws",
         text: "Laws",
-        type: "link"
+        type: "hash"
       },
       {
-        url: "/mission",
+        url: "#mission",
         text: "Mission",
-        type: "link"
+        type: "hash"
       },
       {
-        url: "/videos",
+        url: "#videos",
         text: "Videos",
-        type: "link"
+        type: "hash"
       },
       {
         url: "/team",
@@ -54,9 +54,9 @@ class Header extends Component {
         type: "link"
       },
       {
-        url: "/donate",
+        url: "#donate",
         text: "Support Us",
-        type: "link"
+        type: "hash"
       }
     ]
     return(

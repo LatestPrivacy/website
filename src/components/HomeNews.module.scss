@@ -1,7 +1,9 @@
 .container{
     margin-bottom: 12rem;
+    padding-top: 3rem;
     @media screen and (max-width: 767px){
         margin-bottom: 3rem;
+        padding-top: 1.5rem;
     }
 }
 .title{

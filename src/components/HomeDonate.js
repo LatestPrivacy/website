@@ -11,7 +11,7 @@ class HomeDonate extends Component {
     render() {
         return (
             <InViewMonitor classNameInView="animated-in">
-                <div className={`${Style.donate} container`}>
+                <div className={`${Style.donate} container`} id="donate">
                     <div className={Style.donateLeft}>
                         <HeadingAnimation className={Style.title} delay={0} duration={0.7} color="#ffffff">
                             <h3>Our Balance</h3>

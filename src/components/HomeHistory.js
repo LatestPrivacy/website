@@ -8,7 +8,7 @@ import Style from './HomeHistory.module.scss'
 class HomeHistory extends Component {
     render() {
         return (
-            <div style={{position: 'relative'}}>
+            <div style={{position: 'relative'}} id="laws">
                 <div className={`${Style.container} container`}>
                     <div className={Style.historyLeft}>
                         <Section
