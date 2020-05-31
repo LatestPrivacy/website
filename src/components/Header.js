@@ -27,9 +27,9 @@ class Header extends Component {
   }
 
   /*Readd this once we have HomeHistory HomeVideo enabled*/
-  /*const bg = {
+  /*
   
-      Line: 53
+   Line: 53
       {
         url: "#laws",
         text: "Laws",
@@ -42,7 +42,8 @@ class Header extends Component {
         text: "Videos",
         type: "hash"
       },
-  }*/
+     
+  */
 
   render() {
     const menus = [
