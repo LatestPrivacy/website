@@ -36,6 +36,18 @@ function shuffle(array) {
     }
     return array;
 }
+
+
+/*When Myles has finished the team API add this on line 81*/
+/*
+    ,
+    {
+        image: noImage,
+        name: 'This could be you',
+        position: 'Check open positions'
+    }
+*/
+
   
 const Team = [
     {
@@ -70,11 +82,6 @@ const Team = [
         github: 'https://github.com/rizqinizamil',
         twitter: 'https://twitter.com/nizamilputra',
         exlink: 'https://rizqi.im'
-    },
-    {
-        image: noImage,
-        name: 'This could be you',
-        position: 'Check open positions'
     }
 ]
 const shuffleTeam = shuffle(Team)
