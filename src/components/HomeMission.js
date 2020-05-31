@@ -9,11 +9,13 @@ import Cams from '../assets/images/cams.png';
 
 class HomeMission extends Component {
     render() {
-        const bg = {
+        /*Readd this once we have HomeHistory HomeVideo enabled*/
+        /*Add style={bg} on line 18*/
+        /*const bg = {
             backgroundImage: `url(${Cams})`
-        }
+        }*/
         return (
-            <div className={Style.missionContainer} style={bg} id="mission">
+            <div className={Style.missionContainer} id="mission"> 
                 <div className={` ${Style.containerBanner} container`}>
                     <div className={Style.missionTop}>
                         <Section
