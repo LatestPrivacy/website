@@ -23,6 +23,9 @@
         }
         @media screen and (min-width: 1600px){
             grid-column-gap: 3.5rem;
+            p{
+                max-width: 420px;
+            }
         }
     }
 }
