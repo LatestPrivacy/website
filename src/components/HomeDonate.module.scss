@@ -69,6 +69,10 @@
     @media screen and (max-width: 767px){
         grid-column: span 12;
     }
+    @media screen and (min-width: 1600px){
+        grid-column: 7 / span 4;
+        padding-right: 5rem;
+    }
     :global{
         .donate__button{
             margin-top: 3rem;

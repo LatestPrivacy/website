@@ -6,6 +6,12 @@
     @media screen and (max-width: 767px){
         margin-bottom: 1rem;
     }
+    > div{
+        @media screen and (min-width: 1600px){
+            padding-left: 15rem;
+            padding-right: 15rem;
+        }
+    }
 }
 .missionBottom{
     > div{
@@ -15,8 +21,8 @@
         @media screen and (max-width: 767px){
             grid-template-columns: repeat(1, 1fr);
         }
-        @media screen and (min-width: 1800px){
-            grid-gap: 3rem;
+        @media screen and (min-width: 1600px){
+            grid-column-gap: 3.5rem;
         }
     }
 }

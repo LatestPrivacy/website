@@ -16,7 +16,7 @@ class HomeDonate extends Component {
                         <HeadingAnimation className={Style.title} delay={0} duration={0.7} color="#ffffff">
                             <h3>Our Balance</h3>
                         </HeadingAnimation>
-
+                        <br />
                         <HeadingAnimation className={Style.amount} delay={0.2} duration={0.7} color="#ffffff">
                             <h1>£13.64</h1>
                         </HeadingAnimation>

@@ -21,6 +21,10 @@
         grid-column: span 12;
         margin-bottom: 3rem;
     }
+    @media screen and (min-width: 1600px){
+        grid-column: 1 / span 4;
+        padding-right: 5rem;
+    }
     p{
         background-color: var(--bg-color);
         opacity: 1;
@@ -38,6 +42,9 @@
         position: initial;
         width: auto;
         padding-left: 0;
+    }
+    @media screen and (min-width: 1600px){
+        width: 80%;
     }
     :global{
         .videoContainer{

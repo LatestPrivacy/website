@@ -31,6 +31,10 @@
     grid-column: span 6;
     position: relative;
     z-index: 2;
+    @media screen and (min-width: 1600px){
+        grid-column: span 5;
+        padding-right: 5rem;
+    }
     .Title{
         font-size: 14px;
         margin-bottom: 2rem;
@@ -69,6 +73,9 @@
     @media screen and (max-width: 767px){
         grid-column: span 12;
     }
+    @media screen and (min-width: 1600px){
+        grid-column: 7 / span 6;
+    }
     > div{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -78,6 +85,10 @@
             @media screen and (max-width: 767px){
                 margin-top: 0;
             }
+        }
+        @media screen and (min-width: 1600px){
+            grid-template-columns: repeat(2, minmax(0, 300px));
+            grid-column-gap: 6rem;
         }
     }
     &Item{

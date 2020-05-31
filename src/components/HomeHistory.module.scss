@@ -13,6 +13,9 @@
             margin-right: 0.5rem;
         }
     }
+    @media screen and (min-width: 1600px){
+        grid-column: 1 / span 4;
+    }
 }
 .historyRight{
     display: grid;
@@ -31,6 +34,9 @@
     }
     @media screen and (min-width: 768px) and (max-width: 1023px){
         grid-column: 1 / span 12;
+    }
+    @media screen and (min-width: 1600px){
+        grid-column: 5 / span 7;
     }
     > *{
         display: grid;
