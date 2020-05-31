@@ -46,10 +46,10 @@ class HomeDonate extends Component {
                         
                         <div className="donate__button">
                             <BodyTextAnimation delay={1.2} duration={0.7}>
-                                <Button url="#" value="Coming Soon" />
+                            <ButtonExternal url="https://opencollective.com/latestprivacy/updates" value="Our Blogs"/>
                             </BodyTextAnimation>
                             <BodyTextAnimation delay={1.4} duration={0.7}>
-                                <ButtonExternal url="https://opencollective.com/latestprivacy" value="Support Us" type="line" />
+                                <ButtonExternal url="https://opencollective.com/latestprivacy#section-contribute" value="Support Us" type="line" />
                             </BodyTextAnimation>
                         </div>
                     </div>
