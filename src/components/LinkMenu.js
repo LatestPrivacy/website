@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { NavHashLink as NavLink } from 'react-router-hash-link';
 
 class LinkMenu extends Component {
     render(){
@@ -7,7 +8,10 @@ class LinkMenu extends Component {
             <li>
                 { 
                     this.props.type === 'hash' ?
-                    <a href={this.props.url}>{this.props.text}</a>
+                    <NavLink
+                        to={`/${this.props.url}`}
+                        activeClassName="selected"
+                        >{this.props.text}</NavLink>
                     : <Link to={this.props.url}>{this.props.text}</Link>
                 }
             </li>
