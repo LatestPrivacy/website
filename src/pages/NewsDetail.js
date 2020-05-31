@@ -42,10 +42,8 @@ const NewsDetail = ({ match, location }) => {
                             <Moment format="DD MMM YYYY">
                                 { new Date(data.published_on).toDateString() } 
                             </Moment>
-                        </span> - 
-                        <span>
-                            {data.read_time} {data.read_time > 1 ? 'mins read' : 'min read'}
-                       </span>
+                        </span>  
+                        
                     </div>
                     <div className={Style.metaAuthor}>
                         Author <span>{data.author}</span>
@@ -70,3 +68,11 @@ const NewsDetail = ({ match, location }) => {
 }
 
 export default NewsDetail;
+
+/*Add this to line 46 when Myles has implemented the reading predictions */
+ /*
+   &nbsp; &bull; &nbsp; 
+    <span>
+        {data.read_time} {data.read_time > 1 ? 'mins read' : 'min read'}
+    </span>
+*/
