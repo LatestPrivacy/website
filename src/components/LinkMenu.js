@@ -5,7 +5,11 @@ class LinkMenu extends Component {
     render(){
         return(
             <li>
-                <Link to={this.props.url}>{this.props.text}</Link>
+                { 
+                    this.props.type === 'hash' ?
+                    <a href={this.props.url}>{this.props.text}</a>
+                    : <Link to={this.props.url}>{this.props.text}</Link>
+                }
             </li>
         )
     }

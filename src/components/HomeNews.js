@@ -45,7 +45,7 @@ const HomeNews = () => {
     }
 
     return (
-        <div className={`${Style.container} container`}>
+        <div className={`${Style.container} container`} id="news">
             <InViewMonitor classNameInView="animated-in">
                 <HeadingAnimation className={Style.title} delay={0} duration={0.7} color="#ffffff">
                     <h3>Latest News</h3>
