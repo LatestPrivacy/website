@@ -9,6 +9,11 @@
   --f-primary: 'Roboto', sans-serif;
 }
 
+html{
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--f-primary); 
   margin: 0;

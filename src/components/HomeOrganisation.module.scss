@@ -1,17 +1,31 @@
 .container{
-    margin-bottom: 8rem;
+    margin-bottom: 9rem;
+    @media screen and (max-width: 767px){
+        margin-bottom: 3rem;
+    }
 }
 .title{
     margin-bottom: 4rem;
     h3{
         margin: 0;
+        font-weight: 400;
     }
 }
 .orgWrapper{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    @media screen and (max-width: 1023px){
+        flex-wrap: wrap;
+    }
     > *{
         margin-left: 12px;
         margin-right: 12px;
+    }
+    img{
+        transition: opacity 300ms;
+        &:hover{
+            opacity: 0.65;
+        }
     }
 }

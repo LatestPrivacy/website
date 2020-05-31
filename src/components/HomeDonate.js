@@ -3,6 +3,7 @@ import BodyTextAnimation from '../components/BodyTextAnimation'
 import HeadingAnimation from './HeadingAnimation'
 import InViewMonitor from 'react-inview-monitor'
 import Button from '../components/Button'
+import ButtonExternal from '../components/ButtonExternal'
 
 import Style from './HomeDonate.module.scss'
 
@@ -10,12 +11,12 @@ class HomeDonate extends Component {
     render() {
         return (
             <InViewMonitor classNameInView="animated-in">
-                <div className={`${Style.donate} container`}>
+                <div className={`${Style.donate} container`} id="donate">
                     <div className={Style.donateLeft}>
                         <HeadingAnimation className={Style.title} delay={0} duration={0.7} color="#ffffff">
                             <h3>Our Balance</h3>
                         </HeadingAnimation>
-
+                        <br />
                         <HeadingAnimation className={Style.amount} delay={0.2} duration={0.7} color="#ffffff">
                             <h1>£13.64</h1>
                         </HeadingAnimation>
@@ -37,18 +38,18 @@ class HomeDonate extends Component {
                     </div>
                     <div className={Style.donateRight}>
                         <HeadingAnimation className={Style.titleRight} delay={0.8} duration={0.7} color="#ffffff">
-                            <h2>Transparency</h2>
+                            <h2>Public Funding Transparency</h2>
                         </HeadingAnimation>
                         <BodyTextAnimation delay={1} duration={0.7}>
-                            <p>An archive of infomative videos that will help teach you about the various facetsbof privacy and how it can affect younAn archive of infomative videos.</p>
+                            <p>We believe in being open about the public funds we receive. You can see where it's from and also where it's being spent.</p>
                         </BodyTextAnimation>
                         
                         <div className="donate__button">
                             <BodyTextAnimation delay={1.2} duration={0.7}>
-                                <Button url="#" value="Learn More" />
+                                <Button url="#" value="Coming Soon" />
                             </BodyTextAnimation>
                             <BodyTextAnimation delay={1.4} duration={0.7}>
-                                <Button url="#" value="Donate" type="line" />
+                                <ButtonExternal url="https://opencollective.com/latestprivacy" value="Support Us" type="line" />
                             </BodyTextAnimation>
                         </div>
                     </div>

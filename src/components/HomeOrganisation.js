@@ -14,23 +14,28 @@ import logoliberty from '../assets/images/logo-liberty.png'
 const itemSource = [
     {
         image: logoeff,
-        title: "Electronic Frontier Foundation"
+        title: "Electronic Frontier Foundation",
+        url: "https://www.eff.org/"
     },
     {
         image: logobbw,
-        title: "Big Brother Watch"
+        title: "Big Brother Watch",
+        url: "https://bigbrotherwatch.org.uk/"
     },
     {
         image: logopi,
-        title: "Privacy International"
+        title: "Privacy International",
+        url: "https://privacyinternational.org/"
     },
     {
         image: logoorg,
-        title: "Open Right Group"
+        title: "Open Right Group",
+        url: "https://www.openrightsgroup.org/"
     },
     {
         image: logoliberty,
-        title: "Liberty"
+        title: "Liberty",
+        url: "https://www.libertyhumanrights.org.uk/"
     }
 ]
 
@@ -40,7 +45,7 @@ class HomeOrganisation extends Component {
             <div className={`${Style.container} container`}>
                 <InViewMonitor classNameInView="animated-in">
                     <HeadingAnimation className={Style.title} delay={0} duration={0.7} color="#ffffff">
-                        <h3>Organisation</h3>
+                        <h3>Organisations</h3>
                     </HeadingAnimation>
                     <div className={Style.orgWrapper}>
                         {
@@ -50,6 +55,8 @@ class HomeOrganisation extends Component {
                                         delay = { 0.6 + (i * 0.3) }
                                         image = { item.image }
                                         title = { item.title }
+                                        url = { item.url }
+                                        key = {i}
                                     />
                                 )
                             })

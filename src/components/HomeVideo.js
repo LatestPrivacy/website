@@ -16,18 +16,40 @@ class HomeMission extends Component {
             slidesToShow: 3,
             slidesToScroll: 1,
             className: "center",
-            centerMode: true
+            centerMode: true,
+            responsive: [
+                {
+                  breakpoint: 666,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true,
+                    centerMode: false
+                  }
+                },
+                {
+                    breakpoint: 1023,
+                    settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 1,
+                      infinite: true,
+                      dots: true,
+                      centerMode: false
+                    }
+                }
+            ]
         };
         return (
-            <div className={Style.wrapper}>
+            <div className={Style.wrapper} id="videos">
                 <div className={`${Style.videoContainer} container`}>
                     <div className={Style.videoLeft}>
                         <Section
                             title = "Education"
-                            subtitle1 = "Find out more"
-                            subtitle2 = "today"
-                            desc = "An archive of infomative videos that will help teach you about the various facets of privacy and how it can affect you."
-                            button = "Explore Now"
+                            subtitle1 = "Archive of"
+                            subtitle2 = "infomative videos"
+                            desc = "Curated videos that will show you about the various facets of privacy and how it can affect you."
+                            button = "Coming Soon"
                         />
                     </div>
                 </div>

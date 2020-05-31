@@ -2,8 +2,15 @@
     max-width: 1600px;
     padding-left: 3rem;
     padding-right: 3rem;
-    margin: 0 auto 8rem;
+    padding-top: 3rem;
+    margin: 0 auto 12rem;
     position: relative;
+    @media screen and (max-width: 767px){
+        margin-bottom: 3rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 1.5rem;
+    }
 }
 .videoContainer{
     grid-template-columns: repeat(12, 1fr);
@@ -12,6 +19,14 @@
     grid-column: 1 / span 5;
     position: relative;
     z-index: 9;
+    @media screen and (max-width: 1023px){
+        grid-column: span 12;
+        margin-bottom: 3rem;
+    }
+    @media screen and (min-width: 1600px){
+        grid-column: 1 / span 4;
+        padding-right: 5rem;
+    }
     p{
         background-color: var(--bg-color);
         opacity: 1;
@@ -25,16 +40,39 @@
     top: 0;
     right: 0;
     padding-right: 0;
+    padding-top: 3rem;
+    @media screen and (max-width: 1023px){
+        position: initial;
+        width: auto;
+        padding-left: 0;
+        padding-top: 1.5rem;
+    }
+    @media screen and (min-width: 1600px){
+        width: 80%;
+    }
     :global{
         .videoContainer{
             margin: 0 1rem;
         }
+        .slick-list{
+            @media screen and (max-width: 767px){
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
         .slick-slide{
             opacity: 0;
             transition: 300ms;
+            @media screen and (max-width: 1023px){
+                opacity: 1;
+            }
             &.slick-active{
                 opacity: 0.25;
                 transform: scale(0.85);
+                @media screen and (max-width: 1023px){
+                    opacity: 1;
+                    transform: scale(1);
+                }
                 &.slick-center{
                     opacity: 1;
                     transform: scale(1);

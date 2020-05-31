@@ -29,20 +29,34 @@ class Header extends Component {
   render() {
     const menus = [
       {
-        url: "/news",
-        text: "News"
+        url: "#news",
+        text: "News",
+        type: "hash"
       },
       {
-        url: "/videos",
-        text: "Videos"
+        url: "#laws",
+        text: "Laws",
+        type: "hash"
       },
       {
-        url: "/laws",
-        text: "Laws"
+        url: "#mission",
+        text: "Mission",
+        type: "hash"
       },
       {
-        url: "/donate",
-        text: "Donate"
+        url: "#videos",
+        text: "Videos",
+        type: "hash"
+      },
+      {
+        url: "/team",
+        text: "Team",
+        type: "link"
+      },
+      {
+        url: "#donate",
+        text: "Support Us",
+        type: "hash"
       }
     ]
     return(
@@ -71,7 +85,7 @@ class Header extends Component {
               {
                 menus.map((menu, key) => {
                   return(
-                    <LinkMenu url={menu.url} text={menu.text} key={key} />
+                    <LinkMenu url={menu.url} text={menu.text} type={menu.type} key={key} />
                   )
                 })
               }

@@ -16,4 +16,12 @@
     font-size: 1.3em;
     margin: 1rem 0;
     line-height: calc(32/21);
+    a{
+        color: white;
+        text-decoration: none;
+        transition: opacity 300ms;
+        &:hover{
+            opacity: 0.5;
+        }
+    }
 }

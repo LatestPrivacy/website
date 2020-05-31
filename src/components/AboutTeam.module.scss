@@ -25,4 +25,7 @@
         grid-template-columns: repeat(2, auto);
         justify-content: center;
     }
+    :global .You{
+        order: 7;
+    }
 }
