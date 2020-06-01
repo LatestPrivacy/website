@@ -71,7 +71,7 @@ const Team = [
     },
     {
         image: JohnImage,
-        name: 'Johnaton Weaver',
+        name: 'Johnathon Weaver',
         position: 'DevOps',
         github: 'https://github.com/8BallBomBom',
     },
@@ -166,7 +166,7 @@ class About extends Component {
                         }
                     </AboutTeam>
 
-                    <AboutTeam title="Past contributors" desc="Team memebers who previously contributed to this project,
+                    <AboutTeam title="Past contributors" desc="Team members who previously contributed to this project,
                     who are no longer currently active.">
                         {
                             PastContributor.map((data, key) => {
