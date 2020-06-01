@@ -104,7 +104,7 @@ class About extends Component {
     }
 
     async componentDidMount(){
-        const url = "https://private-anon-bae8f28881-peepingtom.apiary-mock.com/api/v1/jobs"
+        const url = "https://latestprivacy.org/api/jobs"
         const response = await fetch(url)
         const data = await response.json()
         console.log(data)
