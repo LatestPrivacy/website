@@ -1,6 +1,6 @@
 .container{
     grid-template-columns: repeat(12, 1fr);
-    margin-bottom: 12rem;
+    margin-bottom: 17.5rem;
     padding-top: 3rem;
     @media screen and (max-width: 767px){
         margin-bottom: 3rem;
@@ -35,7 +35,7 @@
         display: none;
     }
     @media screen and (min-width: 768px) and (max-width: 1023px){
-        grid-column: 1 / span 12;
+        display: none;
     }
     @media screen and (min-width: 1600px){
         grid-column: 5 / span 7;

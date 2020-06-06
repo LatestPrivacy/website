@@ -1,5 +1,5 @@
 .container{
-    margin-bottom: 9rem;
+    margin-bottom: 13.5rem;
     @media screen and (max-width: 767px){
         margin-bottom: 3rem;
     }
@@ -23,9 +23,14 @@
         margin-right: 12px;
     }
     img{
-        transition: opacity 300ms;
+        opacity: 0.5;
+        transition: .2s ease-in-out 0s;
         &:hover{
-            opacity: 0.65;
+            opacity: 1;
+            transform: scale(1.2);
+            cursor: pointer;
         }
     }
 }
+
+

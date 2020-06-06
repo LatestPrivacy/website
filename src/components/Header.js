@@ -26,6 +26,25 @@ class Header extends Component {
     })
   }
 
+  /*Readd this once we have HomeHistory HomeVideo enabled*/
+  /*
+  
+   Line: 53
+      {
+        url: "#laws",
+        text: "Laws",
+        type: "hash"
+      },
+
+      Line: 60
+      {
+        url: "#videos",
+        text: "Videos",
+        type: "hash"
+      },
+     
+  */
+
   render() {
     const menus = [
       {
@@ -33,21 +52,13 @@ class Header extends Component {
         text: "News",
         type: "hash"
       },
-      {
-        url: "#laws",
-        text: "Laws",
-        type: "hash"
-      },
+      
       {
         url: "#mission",
         text: "Mission",
         type: "hash"
       },
-      {
-        url: "#videos",
-        text: "Videos",
-        type: "hash"
-      },
+      
       {
         url: "/team",
         text: "Team",

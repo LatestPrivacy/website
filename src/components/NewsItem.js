@@ -22,12 +22,7 @@ class NewsItem extends Component {
                                 { new Date(this.props.date).toDateString() } 
                             </Moment>
                         </span>
-                        &nbsp; &bull; &nbsp;
-                        <span> 
-                            { 
-                                this.props.timetoread > 1 ? this.props.timetoread + ' mins read' : this.props.timetoread + ' min read'
-                            }
-                        </span>
+                        
                     </div>
                 </div>
             </BodyTextAnimation>
@@ -36,3 +31,13 @@ class NewsItem extends Component {
 }
 
 export default NewsItem;
+
+/*Add this to line 24 when Myles has implemented the reading predictions */
+ /*
+    &nbsp; &bull; &nbsp;
+    <span> 
+        { 
+            this.props.timetoread > 1 ? this.props.timetoread + ' mins read'  : this.props.timetoread + ' min read'
+        }
+    </span>
+*/

@@ -36,6 +36,18 @@ function shuffle(array) {
     }
     return array;
 }
+
+
+/*When Myles has finished the team API add this on line 81*/
+/*
+    ,
+    {
+        image: noImage,
+        name: 'This could be you',
+        position: 'Check open positions'
+    }
+*/
+
   
 const Team = [
     {
@@ -59,7 +71,7 @@ const Team = [
     },
     {
         image: JohnImage,
-        name: 'Johnaton Weaver',
+        name: 'Johnathon Weaver',
         position: 'DevOps',
         github: 'https://github.com/8BallBomBom',
     },
@@ -70,11 +82,6 @@ const Team = [
         github: 'https://github.com/rizqinizamil',
         twitter: 'https://twitter.com/nizamilputra',
         exlink: 'https://rizqi.im'
-    },
-    {
-        image: noImage,
-        name: 'This could be you',
-        position: 'Check open positions'
     }
 ]
 const shuffleTeam = shuffle(Team)
@@ -97,7 +104,7 @@ class About extends Component {
     }
 
     async componentDidMount(){
-        const url = "https://private-anon-bae8f28881-peepingtom.apiary-mock.com/api/v1/jobs"
+        const url = "https://latestprivacy.org/api/jobs"
         const response = await fetch(url)
         const data = await response.json()
         console.log(data)
@@ -159,7 +166,7 @@ class About extends Component {
                         }
                     </AboutTeam>
 
-                    <AboutTeam title="Past contributors" desc="Team memebers who previously contributed to this project,
+                    <AboutTeam title="Past contributors" desc="Team members who previously contributed to this project,
                     who are no longer currently active.">
                         {
                             PastContributor.map((data, key) => {
@@ -180,24 +187,7 @@ class About extends Component {
                         }
                     </AboutTeam>
 
-                <AboutJoin title="Join the team" desc="If you care about privacy please apply, we would love to hear from you!">
-                    {
-                        this.state.loading && <div>loading...</div>
-                    }
-                    {
-                        //console.log(this.state)
-                        !this.state.jobsData ? <div>didn't get a news data</div> :
-                        this.state.jobsData.map((data, key) => {
-                            return(
-                                <AboutJoinPosition
-                                    position = {data.position}
-                                    status = {data.status}
-                                    key = {key}
-                                />
-                            )
-                        })                         
-                    }
-                </AboutJoin>
+               
                 <Parallax className={AboutStyle.parallaxTxt} x={[30, -60]} tagOuter="figure">
                     <div className={AboutStyle.privacyText}>Privacy</div>
                 </Parallax>
@@ -210,3 +200,25 @@ class About extends Component {
 }
 
 export default About;
+
+/*When Myles has finished the team API add this on line 183*/
+/*
+    <AboutJoin title="Join the team" desc="If you care about privacy please apply, we would love to hear from you!">
+        {
+            this.state.loading && <div>loading...</div>
+        }
+        {
+            //console.log(this.state)
+            !this.state.jobsData ? <div>didn't get a news data</div> :
+            this.state.jobsData.map((data, key) => {
+                return(
+                    <AboutJoinPosition
+                        position = {data.position}
+                        status = {data.status}
+                        key = {key}
+                    />
+                )
+            })                         
+        }
+    </AboutJoin>
+*/

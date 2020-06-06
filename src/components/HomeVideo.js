@@ -46,8 +46,8 @@ class HomeMission extends Component {
                     <div className={Style.videoLeft}>
                         <Section
                             title = "Education"
-                            subtitle1 = "Archive of"
-                            subtitle2 = "infomative videos"
+                            subtitle1 = "Infomative"
+                            subtitle2 = "videos"
                             desc = "Curated videos that will show you about the various facets of privacy and how it can affect you."
                             button = "Coming Soon"
                         />

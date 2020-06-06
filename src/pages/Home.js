@@ -28,9 +28,7 @@ class Home extends Component {
                     <HomeBanner />
                     <HomeNews />
                     <HomeOrganisation />
-                    <HomeHistory />
                     <HomeMission />
-                    <HomeVideo />
                     <HomeDonate />
                 </div>
             </>

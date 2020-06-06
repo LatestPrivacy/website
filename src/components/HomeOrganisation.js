@@ -5,11 +5,11 @@ import OrganisationItem from './OrganisationItem'
 
 import Style from './HomeOrganisation.module.scss'
 
-import logoeff from '../assets/images/logo-eff.png'
-import logobbw from '../assets/images/logo-bbw.png'
-import logopi from '../assets/images/logo-pi.png'
-import logoorg from '../assets/images/logo-org.png'
-import logoliberty from '../assets/images/logo-liberty.png'
+import logoeff from '../assets/images/logo-eff.svg'
+import logobbw from '../assets/images/logo-bbw.svg'
+import logopi from '../assets/images/logo-pi.svg'
+import logoorg from '../assets/images/logo-org.svg'
+import logoliberty from '../assets/images/logo-liberty.svg'
 
 const itemSource = [
     {

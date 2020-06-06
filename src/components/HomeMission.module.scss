@@ -2,7 +2,7 @@
     background-position: left;
     background-repeat: no-repeat;
     padding: 5rem 0 4rem;
-    margin-bottom: 9rem;
+    margin-bottom: 15.5rem;
     @media screen and (max-width: 767px){
         margin-bottom: 1rem;
     }
@@ -23,6 +23,9 @@
         }
         @media screen and (min-width: 1600px){
             grid-column-gap: 3.5rem;
+            p{
+                max-width: 420px;
+            }
         }
     }
 }
