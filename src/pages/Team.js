@@ -59,11 +59,6 @@ const Team = [
         exlink: 'https://lukeseers.com'
     },
     {
-        image: noImage,
-        name: 'Myles',
-        position: 'Back end Dev'
-    },
-    {
         image: DaveImage,
         name: 'David Weaver',
         position: 'Legal Advisor',
