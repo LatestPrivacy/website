@@ -3,7 +3,7 @@ import HeadingAnimation from './HeadingAnimation';
 import InViewMonitor from 'react-inview-monitor';
 import BodyTextAnimation from '../components/BodyTextAnimation'
 import TitleAndDescription from '../components/TitleAndDescription'
-import Button from '../components/Button'
+import ButtonExternal from '../components/ButtonExternal'
 
 import Style from './HomeBanner.module.scss'
 
@@ -45,7 +45,7 @@ class HomeBanner extends Component {
                                 with the latest privacy issues.</p>
                         </BodyTextAnimation>
                         <BodyTextAnimation duration={0.7} delay={0.8}>
-                            <Button url="#" value="Explore Now" />
+                            <ButtonExternal url="#news" value="Explore Now" />
                         </BodyTextAnimation>
                     </InViewMonitor>
                 </div>
