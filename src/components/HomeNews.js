@@ -16,7 +16,7 @@ const HomeNews = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        axios.get("/articles?limit=8")
+        axios.get("/api/articles?limit=8")
             .then(res => {
                 setData(res.data)
                 setLoading(false)
