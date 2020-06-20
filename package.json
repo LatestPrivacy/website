@@ -1,6 +1,6 @@
 {
   "name": "latestprivacy",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "proxy": "https://opencollective.com/",
   "private": true,
   "dependencies": {
