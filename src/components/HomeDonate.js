@@ -15,7 +15,7 @@ const HomeDonate = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        axios.get("/latestprivacy.json")
+        axios.get("/donate/latestprivacy.json")
             .then(res => {
                 setData(res.data)
                 setLoading(false)
