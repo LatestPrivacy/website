@@ -22,6 +22,18 @@
             opacity: 1;
         }
     }
+    .onionlink{
+        a{
+            &:hover{
+                cursor: copy;  
+            }
+        }
+        .oniontooltip{
+            font-size: 0.9rem;
+            background-color: #2c2c2c !important;
+            max-width: 185px;
+        }
+    }
 }
 .right{
     font-size: 0.7em;
