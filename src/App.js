@@ -10,6 +10,7 @@ import Donate from './pages/Donate';
 import Videos from './pages/Videos';
 import Laws from './pages/Laws';
 import Career from './pages/Career';
+import NotFoundPage from './components/NotFoundPage';
 
 import './App.css';
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/laws" component={Laws} />
             <Route path="/donate" component={Donate} />
             <Route path="/career" component={Career} />
+            <Route path="*" component={NotFoundPage} />
           </Switch>
         </Layout>
     </Router>
