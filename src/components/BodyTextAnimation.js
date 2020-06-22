@@ -27,5 +27,5 @@ BodyTextAnimation.defaultProps = {
 BodyTextAnimation.propTypes = {
     className: PropTypes.string,
     delay: PropTypes.number,
-    duration: PropTypes.string
+    duration: PropTypes.number
 }

@@ -31,6 +31,6 @@ HeadingAnimation.defaultProps = {
 
 HeadingAnimation.propTypes = {
     delay: PropTypes.number,
-    duration: PropTypes.string,
+    duration: PropTypes.number,
     color: PropTypes.string
 }
