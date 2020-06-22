@@ -11,6 +11,7 @@ import Videos from './pages/Videos';
 import Laws from './pages/Laws';
 import Career from './pages/Career';
 import TermsAndConditions from './pages/TermsAndConditions';
+import NotFoundPage from './components/NotFoundPage';
 
 import './App.css';
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/donate" component={Donate} />
             <Route path="/career" component={Career} />
             <Route path="/terms-and-conditions" component={TermsAndConditions} />
+            <Route path="*" component={NotFoundPage} />
           </Switch>
         </Layout>
     </Router>
