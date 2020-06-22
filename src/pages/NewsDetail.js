@@ -10,9 +10,10 @@ const NewsDetail = ({ match, location }) => {
 
     const [data, setData] = useState({})
     const [loading, setLoading] = useState(true)
-    
+    const [failed, setfailed] = useState(false)
+
     useEffect(() => {
-        axios.get(`/articles/${slug}`)
+        axios.get(`/api/articles/${slug}`)
             .then(res => {
                 setData(res.data)
                 setLoading(false)
@@ -20,6 +21,9 @@ const NewsDetail = ({ match, location }) => {
             })
             .catch(err => {
                 console.log(err)
+                if (err.response.status == 404) {
+                    setfailed(true)
+                }
             })
     }, [])
     
@@ -31,7 +35,12 @@ const NewsDetail = ({ match, location }) => {
                 'transitionProperty': 'opacity',
                 'transitionDuration': '300ms'
             }}
-                 className={loading ? Style.loading : Style.loadingComplete}>Loading...</div>
+                 className={loading ? Style.loading : Style.loadingComplete}>
+                     {failed
+                        ? 'Article not found'
+                        : 'Loading...'
+                    }
+                 </div>
 
             <div className={Style.article}>
                 <div className={Style.publisher}>Publisher <span>{data.publisher}</span></div>
