@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import TermsAndConditionsStyle from './TermsAndConditions.module.scss'
+import Style from './TermsAndConditions.module.scss'
 
 class TermsAndConditions extends Component {
     render() {
         return (
-            <div className={ `${TermsAndConditionsStyle.wrapper} container` }>
-                <div className={TermsAndConditionsStyle.top}>
-                    <h1 className={TermsAndConditionsStyle.title}>Terms & Conditions</h1>
+            <div className={ `${Style.wrapper} container` }>
+                <div className={Style.top}>
+                    <h1 className={Style.title}>Terms & Conditions</h1>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Introduction</h3>
                     <p>
                         Latest Privacy value each of its members and their privacy, we will not share 
@@ -17,7 +17,7 @@ class TermsAndConditions extends Component {
                         protection act 1998 and GDPR this is mentioned throughout our terms and 
                         conditions and a copy of the act can be found by using the following links: 
                     </p>
-                    <p className={TermsAndConditionsStyle.hasLink}>
+                    <p className={Style.hasLink}>
                         <a href="https://www.legislation.gov.uk/ukpga/1998/29/data.pdf">https://www.legislation.gov.uk/ukpga/1998/29/data.pdf</a>
                         <br></br>
                         <a href="https://gdpr-info.eu">https://gdpr-info.eu</a>
@@ -39,7 +39,7 @@ class TermsAndConditions extends Component {
                         “Latest Privacy” please note the legal entity which you are entering into a contract with 
                         is: 
                     </p>
-                    <p className={TermsAndConditionsStyle.hasLink}>
+                    <p className={Style.hasLink}>
                         
                         Latest Privacy, the website and information contained within. Contact
                         <br></br>
@@ -63,7 +63,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 1 - Definition’s and Interpretations</h3>
                     <p>The following words, highlighted in bold text, shall have the following Definitions and Interpretations (meanings) in these Terms & Conditions: </p>
                     <p>
@@ -103,7 +103,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 2</h3>
                     <p>
                         Latest Privacy is not an age restricted site, Privacy affects everyone in the world at some 
@@ -124,7 +124,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 3 - The use of Services</h3>
                     <p>
                         We highly value the security of our members information, Password(s) and any other information 
@@ -144,7 +144,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 4 - Your Safety and Security</h3>
                     <p>
                         Latest Privacy do here by state that although we do not share members profile information 
@@ -180,7 +180,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 5 - Member Content</h3>
                     <p>
                         For the avoidance of all doubt, you the member are in control of your profile information; it is 
@@ -220,9 +220,9 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 6 - Acceptable use policy (AUP)</h3>
-                    <p className={TermsAndConditionsStyle.hasLink}>
+                    <p className={Style.hasLink}>
                         The following is the Latest Privacy Acceptable Use Policy (“AUP”). By using Latest Privacy (“Services”), you 
                         agree to comply with this AUP. Latest Privacy reserves the right to amend this AUP at any time, with or without 
                         notice to you. Latest Privacy agrees to post any changes to this AUP on the Latest Privacy Homepage 
@@ -239,7 +239,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>No Unlawful or Prohibited Use (AUP)</h3>
                     <p>
                         As a condition of your use of the Services, you will not use the Services for any purpose that is unlawful or otherwise 
@@ -251,7 +251,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Use of Services (AUP)</h3>
                     <p>
                         The Services are designed to enable you to communicate with others via the Internet. You agree to use the Services only to 
@@ -367,7 +367,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 7 - Termination</h3>
                     <p>
                         Members may at any time and without the need to provide any reason end his/her registration with us by requesting the closure of his/her account in 
@@ -409,7 +409,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 8 - Intellectual Property</h3>
                     <p>
                         The trademark (Latest Privacy) the logos, graphics and texts featured on this website are the intellectual property of Latest Privacy and may not 
@@ -431,7 +431,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 9 - Indemnity</h3>
                     <p>
                         By joining Latest Privacy (filling in the membership form) you agree to indemnify us (including our directors, officers, employees, subcontractors 
@@ -439,7 +439,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 10 - Liabilities and Warranties</h3>
                     <p>
                         This section (and any other clause excluding or restricting our liability) applies to our directors, officers, employees, and agents (who may 
@@ -468,7 +468,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 11 - Functioning of the website and Services</h3>
                     <p>
                         To use the Services, the Member must have the necessary hardware equipment and software and the necessary parameters required to properly use the 
@@ -498,7 +498,7 @@ class TermsAndConditions extends Component {
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 12 - Cookies</h3>
                     <p>
                         Our website uses cookies required to operate and use this site, below you will find an explanation on our cookie usage. Cookies used on our site 
@@ -525,7 +525,7 @@ class TermsAndConditions extends Component {
                     <p>
                         What do we use cookies for?
                     </p>
-                    <ul className={TermsAndConditionsStyle.hasLink}>
+                    <ul className={Style.hasLink}>
                         <li>
                             We’re using first party cookies (our own) for the following purposes: 
                         </li>
@@ -553,7 +553,7 @@ class TermsAndConditions extends Component {
                         Your internet browser offers specialized options to manage and remove cookies and also offer settings to reject many or all cookies. Please refer to the 
                         instructions for your internet browser from the list below.   
                     </p>
-                    <ul className={TermsAndConditionsStyle.hasLink}>
+                    <ul className={Style.hasLink}>
                         <li>
                             Google Chrome (<a href="https://support.google.com/chrome/answer/95647?hl=en">https://support.google.com/chrome/answer/95647?hl=en</a>)
                         </li>
@@ -572,7 +572,7 @@ class TermsAndConditions extends Component {
                     </ul>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 13 - Third party websites</h3>
                     <p>
                         Latest Privacy is not responsible for any actions that would apply as a third party interaction taken between a member and any third party company. Latest 
@@ -594,7 +594,7 @@ class TermsAndConditions extends Component {
 
 
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 14 - Entire Agreement</h3>
                     <p>
                         This Agreement and the pages on this website to which these terms refer including the “AUP”, constitute a contract that
@@ -617,21 +617,21 @@ class TermsAndConditions extends Component {
                 </div>
 
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 15 - Personal privacy and protection of Member data</h3>
                     <p>
                         We uphold the strictest of standards with respect to protection of privacy and of personal information supplied by 
                         members and have tried to be as transparent as possible, please see our Privacy Policy for full details and feel 
                         free to look over the guidelines we follow and adhere to via the link below. 
                     </p>
-                    <p className={TermsAndConditionsStyle.hasLink}>
+                    <p className={Style.hasLink}>
                         Data protection Act 1998 (<a href="https://www.legislation.gov.uk/ukpga/1998/29/data.pdf">https://www.legislation.gov.uk/ukpga/1998/29/data.pdf</a>)
                         <br></br>
                         GDPR (<a href="http://www.legislation.gov.uk/ukpga/1998/29/data.pdf">http://www.legislation.gov.uk/ukpga/1998/29/data.pdf</a>)
                     </p>
                 </div>
 
-                <div className={TermsAndConditionsStyle.section}>
+                <div className={Style.section}>
                     <h3>Article 18 - Amendments</h3>
                     <p>
                         We may at any time modify these Terms and Conditions and “AUP”. The Member will be informed of the nature of these 
