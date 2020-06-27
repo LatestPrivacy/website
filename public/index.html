@@ -22,8 +22,316 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   </head>
+  <style>
+    body{
+      background-color: #1a1a1a;
+    }
+
+    .wrap{
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow-x: hidden;
+    }
+
+    .wrap video{
+      position: absolute;
+      top: -5rem;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      opacity: .5;
+      pointer-events: none;
+    }
+
+    .wrap video::-webkit-media-controls {
+      display:none !important;
+    }
+
+    nav{
+      padding-top: 3.5rem;
+      padding-bottom: 1.5rem;
+      position: relative;
+    }
+
+    nav .container{
+      max-width: 1600px;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      grid-column-gap: 1.5rem;
+      grid-template-columns: 3fr 9fr;
+    }
+
+    nav .logo{
+
+    }
+
+    nav .menuWrap{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    nav .menuWrap .menu{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-align: right;
+      font-size: .9375em;
+      opacity: 1;
+    }
+
+    nav .menuWrap .menu ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-align: right;
+      font-size: .9375em;
+      opacity: 1;
+    }
+
+    nav .menuWrap .menu li{
+      display: inline-block;
+      margin-right: 2rem;
+      position: relative;
+    }
+
+    nav .menuWrap .menu li a{
+      color: white;
+      text-decoration: none;
+      -webkit-transition: .3s;
+      transition: .3s;
+      opacity: .5;
+    }
+
+    nav .menuWrap .menu li a:hover{
+      opacity: 1;
+    }
+
+    section{
+      max-width: 734px;
+      margin-top: 6.5rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .header{
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .header h1{
+      font-weight: 400;
+      font-size: 4.5rem;
+      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .header h1 span{
+      font-weight: 900;
+    }
+
+    .header p{
+      max-width: 650px;
+      margin-right: auto;
+      margin-left: auto;  
+      margin-top: 2rem;
+      margin-bottom: 0; 
+      
+      font-size: 1.2em;
+      line-height: 1.5;
+      color: #909090;
+    }
+
+    .header p strong{
+      color: white;
+    }
+
+    .why{
+      margin-bottom: 13rem;
+    }
+
+    .why div{
+
+      padding-top: 5rem;
+
+    }
+
+    .why div span{
+      position: absolute;
+      font-size: 5.5rem;
+      font-weight: 900;
+      opacity: 0.05;
+    }
+
+    .why div div{
+      margin-top: -2.7rem;
+      margin-left: 2.3rem;
+    }
+
+    .why div div h3{
+      font-size: 1.625em;
+      font-weight: 400;
+    }
+
+    .why div div p{
+      font-size: 1.2em;
+      line-height: 1.5;
+      opacity: .5;
+    }
+
+    .story{
+      margin-bottom: 10rem;
+    }
+
+    .story h1{
+      font-weight: 400;
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-bottom: 2.5rem;
+    }
+
+    .story p{
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      font-size: 1.2em;
+      line-height: 1.5;
+      color: #909090;
+    }
+
+    .story p strong{
+      color: white;
+    }
+
+    .story a{
+      color: white;
+      opacity: 1;
+      text-decoration: none;
+      transition: 300ms;
+      font-size: 1.2em;
+      line-height: 1.5;
+      
+    }
+
+    .story a:hover{
+      opacity: 0.5;
+    }
+  </style>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div class="wrap">
+        <video class="Home_videoBG__2gljc" autoplay="auto" loop="loop" controls="true">
+          <source src="https://latestprivacy.org/static/media/eye.1421c6ee.mp4" type="video/mp4">
+        </video>
+        <nav>
+          <div class="container">
+            <div class="logo">
+              <img src="./logo.png" alt=""/>
+            </div>
+            <div class="menuWrap">
+              <ul class="menu">
+                <li>
+                  <a target="_blank" href="https://twitter.com/Latest_Privacy">Twitter</a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://github.com/LatestPrivacy">Github</a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://opencollective.com/latestprivacy#section-contribute">OpenCollective</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <section>
+          <div class="header">
+            <h1>
+              Hello, 
+              <br> 
+              <span>Privacy Advocates</span></h1>
+            <p>
+              <strong>We are very happy that you disable javascript</strong>, however to 
+              use this website you'll need to enable it. <strong>Before you go let us explain why.</strong>
+            </p>
+          </div>
+          <div class="why">
+            <div>
+              <span>01</span>
+              <div>
+                <h3>Accessing our custom API</h3>
+                <p>
+                  We implemented our own API to manage the vast amount of articles etc. As such
+                  we need the front end to do the heavy lifting.
+                </p>
+              </div>
+            </div>
+            <div>
+              <span>02</span>
+              <div>
+                <h3>Mobile support through PWAs</h3>
+                <p>
+                  By using the open source react js, it gives us the powerful tools needed to create a 
+                  web app that works the same as a real app. This means that we wont need to
+                  develop a native app and be forced to use mobile platforms.
+                </p>
+              </div>
+            </div>
+            <div>
+              <span>03</span>
+              <div>
+                <h3>Light by design</h3>
+                <p>
+                  Lightweight by design, helps us to maintain low running costs, as it uses fewer 
+                  resources to run Latest Privacy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="story">
+            <h1>
+              Our Story
+            </h1>
+            <p>
+              In 2013 Edward Snowden leaked information concerning privacy in the world around us, 
+              this uncovered many mysteries. 3 years later in 2016 the British government pushed their
+              first draft of the Investigatory powers act 2016, this has now become the worlds most 
+              prolific surveillance legislation in democratic history.
+            </p>
+            <p>
+              The British government tried to sneak this into law with out people knowing. While this 
+              was happening there were websites stating that they was petitioning against it, however 
+              upon signup they sold your data, and the 3 million plus votes were silenced and 
+              disregarded.
+            </p>
+            <p>
+              Imagine if the 3 million plus people were pointed in the right direction and their 
+              voice was heard. It could have had a totally different outcome.
+            </p>
+            <a target="_blank" href="https://petition.parliament.uk/archived/petitions/173199">petition.parliament.uk/archived/petitions/173199</a>
+            <p>
+              We had enough of the misinformation, misconduct and misdirection. We want to try 
+              and solve theses issues. <strong>But we need your help.</strong>
+            </p>
+          </div>
+        </section>
+      </div>
+    </noscript>
     <div id="root"></div>
     <!--
       This HTML file is a template.
