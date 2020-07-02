@@ -1,54 +1,80 @@
-import React, { Component } from 'react'
-import {Helmet} from 'react-helmet'
-import InfiniteScroll from "react-infinite-scroll-component";
+import React, { useState, useCallback, useEffect } from 'react';
+import axios from 'axios';
+import Moment from 'react-moment';
 
-const style = {
-    height: 30,
-    border: "1px solid green",
-    margin: 6,
-    padding: 8
-  };
+import { Helmet } from 'react-helmet';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
-class News extends Component {
-    state = {
-        items: Array.from({ length: 20 })
-      };
+const limit = 20;
+var offset = 0;
 
-    fetchMoreData = () => {
-        // a fake async api call like which sends
-        // 20 more records in 1.5 secs
-        setTimeout(() => {
-          this.setState({
-            items: this.state.items.concat(Array.from({ length: 20 }))
-          });
-        }, 1500);
-      };
-      
-    render() {
-        return (
-            <>
-                <Helmet>
-                    <title>Latest Privacy - News</title>
-                    <meta name="description" content="The latest articles that we publish." />
-                    <meta name="keywords" content="latest privacy, articles, publish, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
-                </Helmet>
-                <div className="container">
-                <InfiniteScroll
-                dataLength={this.state.items.length}
-                next={this.fetchMoreData}
-                hasMore={true}
-                loader={<h4>Loading...</h4>}
-                >
-                {this.state.items.map((i, index) => (
-                    <div style={style} key={index}>
-                    div - #{index}
-                    </div>
-                ))}
-                </InfiniteScroll>
-                </div>
-            </>
-        );
-    }
+const News = () => {
+	const [ data, setData ] = useState( [] );
+	const [ loading, setLoading ] = useState( false );
+
+	const loadArticles = useCallback( async () => {
+		if ( loading ) { return; };
+
+		setLoading( true );
+
+		let response = await axios.get( `/api/articles?limit=${limit}&offset=${offset}` );
+
+		if ( offset < limit ) {
+			const desc = await axios.get( `/api/articles/${response.data[ 0 ].slug}` );
+			response.data[ 0 ].description = desc.data.description;
+		};
+
+		offset = offset + limit;
+
+		setData( data => data.concat( response.data ) );
+
+		setLoading( false );
+	}, [ loading ] );
+
+	useEffect( () => {
+		loadArticles();
+	}, [] );
+
+	return (
+		<>
+
+			<Helmet>
+				<title>Latest Privacy - News</title>
+				<meta name="description" content="The latest articles that we publish." />
+				<meta name="keywords" content="latest privacy, articles, publish, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
+			</Helmet>
+
+			<div className="container">
+				<InfiniteScroll
+					dataLength={data.length}
+					next={loadArticles}
+					hasMore={true}
+					loader={
+						<h4>Loading...</h4>
+					}
+				>
+					{data.map((item, index) => (
+						<div style={{
+							border: '1px solid green',
+							margin: 6,
+							padding: 8
+						}} key={index}>
+							{item.title}
+							{item.description &&
+								<div style={{
+									color: '#838',
+									marginTop: 8
+								}}>
+									{item.description}
+								</div>
+							}
+						</div>
+					))}
+				</InfiniteScroll>
+			</div>
+
+		</>
+	);
 }
 
 export default News;
