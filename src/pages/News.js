@@ -1,12 +1,20 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import axios from 'axios';
-import Moment from 'react-moment';
+
+import HeadingAnimation from '../components/HeadingAnimation';
+import InViewMonitor from 'react-inview-monitor';
+import BodyTextAnimation from '../components/BodyTextAnimation'
+import NewsItem from '../components/NewsItem'
+import Button from '../components/Button'
 
 import { Helmet } from 'react-helmet';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
+import Style from './News.module.scss'
+
 const limit = 20;
 var offset = 0;
+let className12;
 
 const News = () => {
 	const [ data, setData ] = useState( [] );
@@ -24,6 +32,9 @@ const News = () => {
 			response.data[ 0 ].description = desc.data.description;
 		};
 
+		className12 = 'Style.class1';
+		console.log(className12)
+
 		offset = offset + limit;
 
 		setData( data => data.concat( response.data ) );
@@ -35,6 +46,8 @@ const News = () => {
 		loadArticles();
 	}, [] );
 
+
+
 	return (
 		<>
 
@@ -44,33 +57,38 @@ const News = () => {
 				<meta name="keywords" content="latest privacy, articles, publish, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
 			</Helmet>
 
-			<div className="container">
-				<InfiniteScroll
-					dataLength={data.length}
-					next={loadArticles}
-					hasMore={true}
-					loader={
-						<h4>Loading...</h4>
-					}
-				>
-					{data.map((item, index) => (
-						<div style={{
-							border: '1px solid green',
-							margin: 6,
-							padding: 8
-						}} key={index}>
-							{item.title}
-							{item.description &&
-								<div style={{
-									color: '#838',
-									marginTop: 8
-								}}>
-									{item.description}
+			<div className={`${Style.container} container`}>
+				<InViewMonitor classNameInView="animated-in">
+					<InfiniteScroll
+						dataLength = {data.length}
+						next = {loadArticles}
+						hasMore = {true}
+						loader = {
+							<h4>Loading...</h4>
+						}
+					>
+						<div className={Style.newsWrapper}>
+							{
+								data.map((item, index) => (
+								<div class={className12}>
+									<NewsItem
+										author = {item.publisher}
+										date = {item.published_on}
+										/*timetoread = {news.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
+										slug = {item.slug}
+										/*delay = { 0.6 + (index * 0.3) }*/
+									>
+										{item.title}
+										<p>
+											{item.description}
+										</p>
+									</NewsItem>
 								</div>
+								))
 							}
 						</div>
-					))}
-				</InfiniteScroll>
+					</InfiniteScroll>
+				</InViewMonitor>
 			</div>
 
 		</>
