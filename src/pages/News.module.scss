@@ -15,6 +15,7 @@
 }
 .newsWrapper{
     display: grid;
+    grid-auto-flow: row;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 1.5rem;
     @media screen and (max-width: 666px){
