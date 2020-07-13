@@ -74,7 +74,7 @@ const News = () => {
 											/*delay = { 0.6 + (index * 0.3) }*/
 										>
 											{item.description ? (
-												<div className="big-header">
+												<div className={Style.bigheader}>
 													<h2>
 														{item.title}
 													</h2>

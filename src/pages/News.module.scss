@@ -33,9 +33,11 @@
     text-align: center;
 }
 
-.class1{
-    background-color: yellow;
-    color: #61dafb;
+.bigheader{
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
 .advert{
     grid-column-start: span 4;
     padding: 10rem;
