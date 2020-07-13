@@ -71,7 +71,7 @@ const HomeNews = () => {
                 </div>
                 <div className={Style.buttonWrapper}>
                     <BodyTextAnimation duration={0.7} delay={2.7}>
-                        <Button url="#" value="Coming Soon" />
+                        <Button url="/news" value="Explore More" />
                     </BodyTextAnimation>
                 </div>
             </InViewMonitor>
