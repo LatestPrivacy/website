@@ -83,6 +83,14 @@ const News = () => {
 											) : item.title }
 										</NewsItem>
 
+										{!((index+1) % (limit*3)) &&
+
+										<div className={Style.advert}>
+											Hello :o!
+										</div>
+
+										}
+
 									</>
 								))
 							}
@@ -96,13 +104,3 @@ const News = () => {
 }
 
 export default News;
-
-/*
-{!((index+1) % (limit*4)) &&
-
-	<div>
-		Hello :o!
-	</div>
-
-}
-*/
