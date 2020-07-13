@@ -4,17 +4,16 @@ import axios from 'axios';
 import HeadingAnimation from '../components/HeadingAnimation';
 import InViewMonitor from 'react-inview-monitor';
 import BodyTextAnimation from '../components/BodyTextAnimation'
-import NewsItem from '../components/NewsItem'
-import Button from '../components/Button'
+import NewsItem from '../components/NewsItem';
+import Button from '../components/Button';
 
 import { Helmet } from 'react-helmet';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-import Style from './News.module.scss'
+import Style from './News.module.scss';
 
-const limit = 20;
+const limit = 12;
 var offset = 0;
-let className12;
 
 const News = () => {
 	const [ data, setData ] = useState( [] );
@@ -32,9 +31,6 @@ const News = () => {
 			response.data[ 0 ].description = desc.data.description;
 		};
 
-		className12 = 'Style.class1';
-		console.log(className12)
-
 		offset = offset + limit;
 
 		setData( data => data.concat( response.data ) );
@@ -45,8 +41,6 @@ const News = () => {
 	useEffect( () => {
 		loadArticles();
 	}, [] );
-
-
 
 	return (
 		<>
@@ -70,20 +64,26 @@ const News = () => {
 						<div className={Style.newsWrapper}>
 							{
 								data.map((item, index) => (
-								<div class={className12}>
-									<NewsItem
-										author = {item.publisher}
-										date = {item.published_on}
-										/*timetoread = {news.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
-										slug = {item.slug}
-										/*delay = { 0.6 + (index * 0.3) }*/
-									>
-										{item.title}
-										<p>
-											{item.description}
-										</p>
-									</NewsItem>
-								</div>
+									<>
+
+										<NewsItem
+											author = {item.publisher}
+											date = {item.published_on}
+											/*timetoread = {news.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
+											slug = {item.slug}
+											/*delay = { 0.6 + (index * 0.3) }*/
+										>
+											{item.description ? (
+												<div className="big-header">
+													<h2>
+														{item.title}
+													</h2>
+													{item.description}
+												</div>
+											) : item.title }
+										</NewsItem>
+
+									</>
 								))
 							}
 						</div>
@@ -96,3 +96,13 @@ const News = () => {
 }
 
 export default News;
+
+/*
+{!((index+1) % (limit*4)) &&
+
+	<div>
+		Hello :o!
+	</div>
+
+}
+*/
