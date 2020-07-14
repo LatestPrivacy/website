@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import axios from 'axios';
 
-import HeadingAnimation from '../components/HeadingAnimation';
 import InViewMonitor from 'react-inview-monitor';
 import NewsItem from '../components/NewsItem';
 
