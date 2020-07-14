@@ -38,22 +38,21 @@
 }
 
 .advert{
-    grid-column-start: span 3;
+    grid-column-start: span 1;
+    text-align: center;    
     border-radius: 10px;
     background: #212121;
-    padding: 2.5rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    width: 1000px;
-    height: 150px; 
-    display: flex;
-    align-items: center;
+    padding: 2rem;
+    width: 400px;
+    height: 290px; 
+    display: block;
     margin: auto;
     margin-top: 7rem;
     margin-bottom: 10rem;
     transition: all .15s ease-in-out;
     color: white;
     text-decoration: none;
+    cursor: pointer !important;
     
     &:hover{
         transform: scale(1.05);
@@ -64,15 +63,16 @@
         text-transform: uppercase;
         max-width: 340px;
         margin: 0;
-        padding-left: 3.5rem;
+        padding-left: 0;
         line-height: 60px;
+        margin: auto;
     }
 
     div{
         padding-top: 2rem;
-        padding-left: 5rem;
+        padding-left: 0;
         max-width: 450px;
-        margin: 0;
+        margin: auto;
         span{
             font-size: 1.3rem;
         }
@@ -80,5 +80,41 @@
             font-size: 1.15rem;
         }
     }
+
+    @media screen and (min-width: 666px){
+        grid-column-start: span 2;
+    }
+
+    @media screen and (min-width: 1024px){
+        grid-column-start: span 3;
+    }
+   
+    @media screen and (min-width: 1182px){
+        text-align: left;
+        grid-column-start: span 3;
+        border-radius: 10px;
+        padding: 2.5rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        width: 1000px;
+        height: 150px; 
+        display: flex;
+        align-items: center;
+        margin: auto;
+        margin-top: 7rem;
+        margin-bottom: 10rem;
+
+        h3{
+            font-size: 3rem;
+            margin: 0;
+            padding-left: 3.5rem;
+        }
+    
+        div{
+            padding-top: 0.3rem;
+            padding-left: 5rem;
+        }
+    }
+
 }
 
