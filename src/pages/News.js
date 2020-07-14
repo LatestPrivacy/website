@@ -14,10 +14,10 @@ import SyncLoader from 'react-spinners/SyncLoader';
 import Style from './News.module.scss';
 
 const limit = 12;
-var offset = 0;
 
 const News = () => {
 	const [ data, setData ] = useState( [] );
+	const [ offset, setOffset ] = useState( 0 );
 	const [ loading, setLoading ] = useState( false );
 	const [ more, setMore ] = useState( true );
 
@@ -27,20 +27,18 @@ const News = () => {
 		setLoading( true );
 
 		let response = await axios.get( `/api/articles?limit=${limit}&offset=${offset}` );
-
+		
 		if ( response.data.length < limit ) {
 			setMore( false );
 		};
 
 		if ( offset < limit ) {
-			var desc = await axios.get( `/api/articles/${response.data[ 0 ].slug}` );
+			const desc = await axios.get( `/api/articles/${response.data[ 0 ].slug}` );
 			response.data[ 0 ].description = desc.data.description;
 		};
 
-		offset = offset + limit;
-
+		setOffset( offset => ( offset + limit ) );
 		setData( data => data.concat( response.data ) );
-
 		setLoading( false );
 	}, [ loading ] );
 
