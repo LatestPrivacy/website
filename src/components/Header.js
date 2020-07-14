@@ -48,9 +48,9 @@ class Header extends Component {
   render() {
     const menus = [
       {
-        url: "#news",
+        url: "/news",
         text: "News",
-        type: "hash"
+        type: "link"
       },
       
       {
