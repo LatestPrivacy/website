@@ -102,14 +102,15 @@ const News = () => {
 										{!((index+1) % (limit*4)) &&
 											<a href="/#donate" class={Style.advert}>
 												<h3>
-													We need your support
+													Please support us
 												</h3>
 												<div>
-													<span>Public Funding Transparency</span>
 													<p>
-														We belive in being open about the public funds we 
-														receive. You can see where its from and also
-														where its being spent.
+														By supporting, it enables us to carry on 
+														spreading awareness to a bigger audience 
+														about our right to privacy with tools 
+														that make it easier to follow the privacy 
+														world.
 													</p>
 												</div>
 											</a>
