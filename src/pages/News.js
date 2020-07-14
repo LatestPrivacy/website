@@ -59,7 +59,7 @@ const News = () => {
 						next={loadArticles}
 						hasMore={more}
 						loader={
-							<div class={Style.advert}>
+							<div class={Style.loading}>
 								<SyncLoader
 									size={8}
 									color={'#656565'}
@@ -68,7 +68,7 @@ const News = () => {
 							</div>
 						}
 						endMessage={
-							<div class={Style.advert}>
+							<div class={Style.loading}>
 								<b>Yay! You have seen it all, come back later for more articles.</b>
 							</div>
 						}
@@ -100,13 +100,19 @@ const News = () => {
 										</NewsItem>
 
 										{!((index+1) % (limit*4)) &&
-
-											<div class={Style.advert}>
-												This is a banner, should be across all 4 sections.
-												<br />
-												Also shown every 48 articles.
-											</div>
-
+											<a href="/#donate" class={Style.advert}>
+												<h3>
+													We need your support
+												</h3>
+												<div>
+													<span>Public Funding Transparency</span>
+													<p>
+														We belive in being open about the public funds we 
+														receive. You can see where its from and also
+														where its being spent.
+													</p>
+												</div>
+											</a>
 										}
 
 									</>
