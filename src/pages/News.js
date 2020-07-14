@@ -9,6 +9,7 @@ import Button from '../components/Button';
 
 import { Helmet } from 'react-helmet';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import SyncLoader from 'react-spinners/SyncLoader';
 
 import Style from './News.module.scss';
 
@@ -18,16 +19,21 @@ var offset = 0;
 const News = () => {
 	const [ data, setData ] = useState( [] );
 	const [ loading, setLoading ] = useState( false );
+	const [ more, setMore ] = useState( true );
 
 	const loadArticles = useCallback( async () => {
-		if ( loading ) { return; };
+		if ( loading || !more ) { return; };
 
 		setLoading( true );
 
 		let response = await axios.get( `/api/articles?limit=${limit}&offset=${offset}` );
 
+		if ( response.data.length < limit ) {
+			setMore( false );
+		};
+
 		if ( offset < limit ) {
-			const desc = await axios.get( `/api/articles/${response.data[ 0 ].slug}` );
+			var desc = await axios.get( `/api/articles/${response.data[ 0 ].slug}` );
 			response.data[ 0 ].description = desc.data.description;
 		};
 
@@ -56,9 +62,20 @@ const News = () => {
 					<InfiniteScroll
 						dataLength={data.length}
 						next={loadArticles}
-						hasMore={true}
+						hasMore={more}
 						loader={
-							<h4>Loading...</h4>
+							<div class={Style.advert}>
+								<SyncLoader
+									size={8}
+									color={'#656565'}
+									loading={loading}
+								/>
+							</div>
+						}
+						endMessage={
+							<div class={Style.advert}>
+								<b>Yay! You have seen it all, come back later for more articles.</b>
+							</div>
 						}
 					>
 						<div className={Style.newsWrapper}>
