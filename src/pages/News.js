@@ -1,10 +1,9 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 import InViewMonitor from 'react-inview-monitor';
 import NewsItem from '../components/NewsItem';
-
-import { Helmet } from 'react-helmet';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import SyncLoader from 'react-spinners/SyncLoader';
 
@@ -37,21 +36,17 @@ const News = () => {
 		setOffset( offset => ( offset + limit ) );
 		setData( data => data.concat( response.data ) );
 		setLoading( false );
-	}, [ loading ] );
+	}, [ offset, loading, more ] );
 
-	useEffect( () => {
-		loadArticles();
-	}, [] );
+	useEffect( () => { loadArticles(); }, [ loadArticles ] );
 
 	return (
 		<>
-
 			<Helmet>
 				<title>Latest Privacy - News</title>
 				<meta name="description" content="The latest articles that we publish." />
 				<meta name="keywords" content="latest privacy, articles, publish, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
 			</Helmet>
-
 			<div className={`${Style.container} container`}>
 				<InViewMonitor classNameInView="animated-in">
 					<InfiniteScroll
@@ -59,7 +54,7 @@ const News = () => {
 						next={loadArticles}
 						hasMore={more}
 						loader={
-							<div class={Style.loading}>
+							<div className={Style.loading}>
 								<SyncLoader
 									size={8}
 									color={'#656565'}
@@ -68,8 +63,8 @@ const News = () => {
 							</div>
 						}
 						endMessage={
-							<div class={Style.loading}>
-								<b>Yay! You have seen it all, come back later for more articles.</b>
+							<div className={Style.loading}>
+								<b>Yay! You have seen everything, come back later for more articles.</b>
 							</div>
 						}
 					>
@@ -77,18 +72,16 @@ const News = () => {
 							{
 								data.map((item, index) => (
 									<>
-
 										<NewsItem
 											author={item.publisher}
 											date={item.published_on}
-											/*timetoread={news.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
+											/*timetoread={item.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
 											slug={item.slug}
 											/*delay={ 0.6 + (index * 0.3) }*/
 											bigArticle={item.description && true}
 										>
 											{item.description ? (
 												<>
-
 													<h2>
 														{item.title}
 													</h2>
@@ -98,9 +91,8 @@ const News = () => {
 												</>
 											) : item.title }
 										</NewsItem>
-
-										{!((index+1) % (limit*4)) &&
-											<a href="/#donate" class={Style.advert}>
+										{!((index+1) % (limit*6)) &&
+											<a href="/#donate" className={Style.advert}>
 												<h3>
 													Please support us
 												</h3>
@@ -115,7 +107,6 @@ const News = () => {
 												</div>
 											</a>
 										}
-
 									</>
 								))
 							}
@@ -123,7 +114,6 @@ const News = () => {
 					</InfiniteScroll>
 				</InViewMonitor>
 			</div>
-
 		</>
 	);
 }

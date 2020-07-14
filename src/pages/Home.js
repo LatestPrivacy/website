@@ -1,16 +1,18 @@
-import React, { Component } from 'react'
-import {Helmet} from 'react-helmet'
-import HomeBanner from '../components/HomeBanner'
-import HomeNews from '../components/HomeNews'
-import HomeOrganisation from '../components/HomeOrganisation'
-import HomeHistory from '../components/HomeHistory'
-import HomeMission from '../components/HomeMission'
-import HomeVideo from '../components/HomeVideo'
-import HomeDonate from '../components/HomeDonate'
+import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 
-import video from '../assets/eye.mp4'
+import HomeBanner from '../components/HomeBanner';
+import HomeNews from '../components/HomeNews';
+import HomeOrganisation from '../components/HomeOrganisation';
+import HomeMission from '../components/HomeMission';
+import HomeDonate from '../components/HomeDonate';
 
-import Style from './Home.module.scss'
+//import HomeHistory from '../components/HomeHistory';
+//import HomeVideo from '../components/HomeVideo';
+
+import Style from './Home.module.scss';
+
+import eye from '../assets/eye.mp4';
 
 class Home extends Component {
     render() {
@@ -23,7 +25,7 @@ class Home extends Component {
                 </Helmet>
                 <div className={Style.wrapper}>
                     <video className={Style.videoBG} autoPlay muted loop>
-                        <source src={video} type="video/mp4" />
+                        <source src={eye} type="video/mp4"/>
                     </video>
                     <HomeBanner />
                     <HomeNews />
