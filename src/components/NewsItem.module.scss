@@ -32,15 +32,14 @@
 .bigheader{
     grid-column-start: span 1;
     grid-row: span 3;
-
     a{
         color: white;
         text-decoration: none;
         transition: opacity 300ms;
-        
+        cursor: pointer !important;
+
         &:hover{
             opacity: 0.5;
-            cursor: pointer;
         }
         &:visited{
             color: white;
