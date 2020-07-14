@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import Moment from 'react-moment'
-import { Link } from "react-router-dom"
-import BodyTextAnimation from '../components/BodyTextAnimation'
+import React, { Component } from 'react';
+import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
+import BodyTextAnimation from '../components/BodyTextAnimation';
 
-import Style from './NewsItem.module.scss'
+import Style from './NewsItem.module.scss';
 
 class NewsItem extends Component {
     render() {
         return (
-            <BodyTextAnimation duration={0.7} delay={this.props.delay}>
+            <BodyTextAnimation duration={0.7} delay={this.props.delay} className={this.props.bigArticle && Style.bigheader}>
                 <div className={Style.newsItem}>
                     <div className={Style.author}>
                         <span>Publisher </span><span>{this.props.author}</span>
