@@ -83,6 +83,11 @@ const News = () => {
 													<p>
 														{item.description}
 													</p>
+													<div className={Style.buttonWrapper}>
+														<BodyTextAnimation duration={0.7} delay={0.2}>
+															<Button url="/news" value="Explore More" />
+														</BodyTextAnimation>
+													</div>
 												</>
 											) : item.title }
 										</NewsItem>
