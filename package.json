@@ -10,20 +10,22 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-infinite-scroll-component": "^5.0.5",
     "react-inview-monitor": "^2.2.1",
     "react-moment": "^0.9.7",
     "react-router-dom": "^5.0.1",
     "react-router-hash-link": "^1.2.2",
     "react-scripts": "3.1.1",
-    "react-scroll-parallax": "^2.1.2",
+    "react-scroll-parallax": "^2.3.4",
     "react-slick": "^0.25.2",
+    "react-spinners": "^0.9.0",
     "react-spring": "^8.0.27",
     "react-tooltip": "^4.2.7",
     "scrollmonitor-react": "^2.4.1",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "http-proxy-middleware": "^1.0.4"
+    "http-proxy-middleware": "^1.0.5"
   },
   "scripts": {
     "start": "react-scripts start",

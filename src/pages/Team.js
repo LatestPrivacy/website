@@ -1,27 +1,30 @@
-import React, { Component } from 'react'
-import {Helmet} from 'react-helmet'
-import { Parallax } from 'react-scroll-parallax'
-import InViewMonitor from 'react-inview-monitor'
-import BodyTextAnimation from '../components/BodyTextAnimation'
-import AboutStyle from './Team.module.scss'
+import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 
-import AboutBanner from '../components/AboutBanner'
-import AboutMission from '../components/AboutMission'
-import AboutAchieve from '../components/AboutAchieve'
-import TitleAndDescription from '../components/TitleAndDescription'
-import AboutTeam from '../components/AboutTeam'
-import AboutTeamItem from '../components/AboutTeamItem'
-import AboutJoin from '../components/AboutJoin'
-import AboutJoinPosition from '../components/AboutJoinPosition'
+import { Parallax } from 'react-scroll-parallax';
+import InViewMonitor from 'react-inview-monitor';
+import BodyTextAnimation from '../components/BodyTextAnimation';
 
-import LukeImage from '../assets/images/Luke.jpg'
-import JohnImage from '../assets/images/John.jpg'
-import DaveImage from '../assets/images/Dave.jpg'
-import RizqiImage from '../assets/images/Rizqi.jpg'
-import noImage from '../assets/images/no-image.jpg'
+import AboutBanner from '../components/AboutBanner';
+import AboutMission from '../components/AboutMission';
+import AboutAchieve from '../components/AboutAchieve';
+import TitleAndDescription from '../components/TitleAndDescription';
+import AboutTeam from '../components/AboutTeam';
+import AboutTeamItem from '../components/AboutTeamItem';
+//import AboutJoin from '../components/AboutJoin';
+//import AboutJoinPosition from '../components/AboutJoinPosition';
+
+import AboutStyle from './Team.module.scss';
+
+import LukeImage from '../assets/images/Luke.jpg';
+import JohnImage from '../assets/images/John.jpg';
+import DaveImage from '../assets/images/Dave.jpg';
+import RizqiImage from '../assets/images/Rizqi.jpg';
+import noImage from '../assets/images/no-image.jpg';
 
 // Shuffle array
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+// This really could be done a lot simpler... >.< code review
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     // While there remain elements to shuffle...

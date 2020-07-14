@@ -1,21 +1,121 @@
-import React, { Component } from 'react'
-import {Helmet} from 'react-helmet'
+import React, { useState, useCallback, useEffect } from 'react';
+import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
-class News extends Component {
-    render() {
-        return (
-            <>
-                <Helmet>
-                    <title>Latest Privacy - News</title>
-                    <meta name="description" content="The latest articles that we publish." />
-                    <meta name="keywords" content="latest privacy, articles, publish, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
-                </Helmet>
-                <div className="container">
-                    This is News
-                </div>
-            </>
-        );
-    }
+import InViewMonitor from 'react-inview-monitor';
+import NewsItem from '../components/NewsItem';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import SyncLoader from 'react-spinners/SyncLoader';
+
+import Style from './News.module.scss';
+
+const limit = 12;
+
+const News = () => {
+	const [ data, setData ] = useState( [] );
+	const [ offset, setOffset ] = useState( 0 );
+	const [ loading, setLoading ] = useState( false );
+	const [ more, setMore ] = useState( true );
+
+	const loadArticles = useCallback( async () => {
+		if ( loading || !more ) { return; };
+
+		setLoading( true );
+
+		let response = await axios.get( `/api/articles?limit=${limit}&offset=${offset}` );
+		
+		if ( response.data.length < limit ) {
+			setMore( false );
+		};
+
+		if ( offset < limit ) {
+			const desc = await axios.get( `/api/articles/${response.data[ 0 ].slug}` );
+			response.data[ 0 ].description = desc.data.description;
+		};
+
+		setOffset( offset => ( offset + limit ) );
+		setData( data => data.concat( response.data ) );
+		setLoading( false );
+	}, [ offset, loading, more ] );
+
+	useEffect( () => { loadArticles(); }, [ loadArticles ] );
+
+	return (
+		<>
+			<Helmet>
+				<title>Latest Privacy - News</title>
+				<meta name="description" content="The latest articles that we publish." />
+				<meta name="keywords" content="latest privacy, articles, publish, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
+			</Helmet>
+			<div className={`${Style.container} container`}>
+				<InViewMonitor classNameInView="animated-in">
+					<InfiniteScroll
+						dataLength={data.length}
+						next={loadArticles}
+						hasMore={more}
+						loader={
+							<div className={Style.loading}>
+								<SyncLoader
+									size={8}
+									color={'#656565'}
+									loading={loading}
+								/>
+							</div>
+						}
+						endMessage={
+							<div className={Style.loading}>
+								<b>Yay! You have seen everything, come back later for more articles.</b>
+							</div>
+						}
+					>
+						<div className={Style.newsWrapper}>
+							{
+								data.map((item, index) => (
+									<>
+										<NewsItem
+											author={item.publisher}
+											date={item.published_on}
+											/*timetoread={item.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
+											slug={item.slug}
+											/*delay={ 0.6 + (index * 0.3) }*/
+											bigArticle={item.description && true}
+										>
+											{item.description ? (
+												<>
+													<h2>
+														{item.title}
+													</h2>
+													<p>
+														{item.description}
+													</p>
+												</>
+											) : item.title }
+										</NewsItem>
+										{!((index+1) % (limit*6)) &&
+											<a href="/#donate" className={Style.advert}>
+												<h3>
+													Please support us
+												</h3>
+												<div>
+													<p>
+														By supporting, it enables us to carry on 
+														spreading awareness to a bigger audience 
+														about our right to privacy with tools 
+														that make it easier to follow the privacy 
+														world.
+													</p>
+												</div>
+											</a>
+										}
+									</>
+								))
+							}
+						</div>
+					</InfiniteScroll>
+				</InViewMonitor>
+			</div>
+		</>
+	);
 }
 
 export default News;

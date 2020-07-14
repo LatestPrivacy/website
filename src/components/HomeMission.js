@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
-import BodyTextAnimation from '../components/BodyTextAnimation'
-import InViewMonitor from 'react-inview-monitor'
-import Section from '../components/Section'
-import TitleAndDescription from '../components/TitleAndDescription'
+import React, { Component } from 'react';
 
-import Style from './HomeMission.module.scss'
-import Cams from '../assets/images/cams.png';
+import BodyTextAnimation from '../components/BodyTextAnimation';
+import InViewMonitor from 'react-inview-monitor';
+import Section from '../components/Section';
+import TitleAndDescription from '../components/TitleAndDescription';
+
+import Style from './HomeMission.module.scss';
+
+//import Cams from '../assets/images/cams.png';
 
 class HomeMission extends Component {
     render() {
