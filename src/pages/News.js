@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import HeadingAnimation from '../components/HeadingAnimation';
 import InViewMonitor from 'react-inview-monitor';
-import BodyTextAnimation from '../components/BodyTextAnimation'
+import BodyTextAnimation from '../components/BodyTextAnimation';
 import NewsItem from '../components/NewsItem';
 import Button from '../components/Button';
 
@@ -54,10 +54,10 @@ const News = () => {
 			<div className={`${Style.container} container`}>
 				<InViewMonitor classNameInView="animated-in">
 					<InfiniteScroll
-						dataLength = {data.length}
-						next = {loadArticles}
-						hasMore = {true}
-						loader = {
+						dataLength={data.length}
+						next={loadArticles}
+						hasMore={true}
+						loader={
 							<h4>Loading...</h4>
 						}
 					>
@@ -67,27 +67,32 @@ const News = () => {
 									<>
 
 										<NewsItem
-											author = {item.publisher}
-											date = {item.published_on}
-											/*timetoread = {news.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
-											slug = {item.slug}
-											/*delay = { 0.6 + (index * 0.3) }*/
+											author={item.publisher}
+											date={item.published_on}
+											/*timetoread={news.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
+											slug={item.slug}
+											/*delay={ 0.6 + (index * 0.3) }*/
+											bigArticle={item.description && true}
 										>
 											{item.description ? (
-												<div className={Style.bigheader}>
+												<>
+
 													<h2>
 														{item.title}
 													</h2>
 													{item.description}
-												</div>
+
+												</>
 											) : item.title }
 										</NewsItem>
 
-										{!((index+1) % (limit*3)) &&
+										{!((index+1) % (limit*4)) &&
 
-										<div className={Style.advert}>
-											Hello :o!
-										</div>
+											<div class={Style.advert}>
+												This is a banner, should be across all 4 sections.
+												<br />
+												Also shown every 48 articles.
+											</div>
 
 										}
 
