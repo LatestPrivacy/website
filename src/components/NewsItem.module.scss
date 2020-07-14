@@ -28,7 +28,53 @@
         }
     }
 }
+
 .bigheader{
-    grid-column: span 2;
+    grid-column-start: span 3;
     grid-row: span 3;
+    pointer-events: none;
+    a{
+        color: white;
+        text-decoration: none;
+        transition: opacity 300ms;
+        &:hover{
+            opacity: 0.5;
+            cursor: default;
+        }
+        &:visited{
+            color: white;
+        }
+    }
+
+
+    h2{
+        font-size: 4.0625em;
+        margin: 0;
+    }
+
+    div{
+        padding-bottom: 1rem;
+        p{
+            margin-top: 3rem;
+            position: relative;
+            max-height: 500px;
+            overflow: hidden;
+            line-height: 1.5;
+        }
+        p:after{
+            content: "";
+            display: block;
+            position: absolute;
+            background-image: linear-gradient(180deg, rgba(26, 26, 26, 0) 0%, #1a1a1a 100%);
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    }
+
+    .meta span{
+        display: none
+    }
+
 }

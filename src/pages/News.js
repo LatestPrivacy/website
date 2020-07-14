@@ -80,8 +80,9 @@ const News = () => {
 													<h2>
 														{item.title}
 													</h2>
-													{item.description}
-
+													<p>
+														{item.description}
+													</p>
 												</>
 											) : item.title }
 										</NewsItem>
