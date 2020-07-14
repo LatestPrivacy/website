@@ -30,30 +30,14 @@
 }
 
 .bigheader{
-    grid-column-start: span 3;
-    grid-row: span 3;
-    pointer-events: none;
-    a{
-        color: white;
-        text-decoration: none;
-        transition: opacity 300ms;
-        &:hover{
-            opacity: 0.5;
-            cursor: default;
-        }
-        &:visited{
-            color: white;
-        }
-    }
-
-
+    
     h2{
-        font-size: 4.0625em;
+        font-size: 2.0625em;
         margin: 0;
     }
 
     div{
-        padding-bottom: 1rem;
+        padding-bottom: 0.4rem;
         p{
             margin-top: 3rem;
             position: relative;
@@ -76,5 +60,22 @@
     .meta span{
         display: none
     }
+    
+    grid-column-start: span 1;
+    grid-row: span 3;
 
+    @media screen and (min-width: 666px){
+        grid-column-start: span 2;
+        grid-row: span 3;
+        h2{
+            font-size: 4.0625em;
+            margin: 0;
+        }
+    }
+    @media screen and (min-width: 1025px){
+        grid-column-start: span 3;
+        grid-row: span 3;
+    }
 }
+
+
