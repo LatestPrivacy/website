@@ -4,7 +4,7 @@
 }
 .article{
     grid-column: 3 / span 8;
-    margin-top: 3rem;
+    margin-top: 8rem;
     @media screen and (max-width: 767px){
         grid-column: 1 / span 12;
     }
