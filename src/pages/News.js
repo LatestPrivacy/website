@@ -2,9 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import axios from 'axios';
 
 import InViewMonitor from 'react-inview-monitor';
-import BodyTextAnimation from '../components/BodyTextAnimation';
 import NewsItem from '../components/NewsItem';
-import Button from '../components/Button';
 
 import { Helmet } from 'react-helmet';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -97,11 +95,6 @@ const News = () => {
 													<p>
 														{item.description}
 													</p>
-													<div className={Style.buttonWrapper}>
-														<BodyTextAnimation duration={0.7} delay={0.2}>
-															<Button url="/news" value="Explore More" />
-														</BodyTextAnimation>
-													</div>
 												</>
 											) : item.title }
 										</NewsItem>
