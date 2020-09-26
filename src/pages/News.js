@@ -32,19 +32,19 @@ class News extends Component {
 
 		const response = await axios.get( `/api/articles?sort=${dateStr}&description=true` );
 
-		this.setState( {
-			data: {
-				...data,
-				[ dateStr ]: response.data
-			},
-			length: length + response.data.length
-		} );
-
 		if ( response.data.length < 1 ) {
 
 			this.setState( { more: false } );
 
 		} else {
+
+			this.setState( {
+				data: {
+					...data,
+					[ dateStr ]: response.data
+				},
+				length: length + response.data.length
+			} );
 
 			date.setMonth( date.getMonth() - 1 );
 			dateStr = moment( date ).format( 'MM-YYYY' );
@@ -76,7 +76,7 @@ class News extends Component {
 							dataLength={length}
 							next={async () => {await this.loadArticles();}}
 							hasMore={more}
-							scrollThreshold={0.75}
+							scrollThreshold={0.1}
 							loader={
 								<div className={Style.loading}>
 									<SyncLoader
@@ -100,7 +100,7 @@ class News extends Component {
 
 											<>
 
-												{index > 0 &&
+												{(index > 0) &&
 													<div className={Style.advert}>
 														<h3>{key}</h3>
 													</div>
