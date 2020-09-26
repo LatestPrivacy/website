@@ -76,7 +76,7 @@ class News extends Component {
 							dataLength={length}
 							next={async () => {await this.loadArticles();}}
 							hasMore={more}
-							scrollThreshold={0.1}
+							scrollThreshold={0.75}
 							loader={
 								<div className={Style.loading}>
 									<SyncLoader
