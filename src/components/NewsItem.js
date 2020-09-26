@@ -8,7 +8,7 @@ import Style from './NewsItem.module.scss';
 class NewsItem extends Component {
 	render() {
 		return (
-			<BodyTextAnimation duration={0.7} delay={this.props.delay} className={this.props.bigArticle && Style.bigheader}>
+			<BodyTextAnimation duration={0.7} delay={this.props.delay}>
 				<div className={Style.newsItem}>
 					<div className={Style.author}>
 						<span>Publisher </span><span>{this.props.author}</span>
