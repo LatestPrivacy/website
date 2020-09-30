@@ -35,10 +35,10 @@ Think you can help us? We would love your support! [hello@latestprivacy.org](mai
 
 <a href="https://opencollective.com/latestprivacy" target="_blank"><img src="https://opencollective.com/latestprivacy/tiers/sponsors.svg?avatarHeight=36"></a>
 
-[![Browserstack](https://latestprivacy.org/images/browserstack.svg)](http://www.browserstack.com/)
+[![Browserstack](https://raw.githubusercontent.com/LatestPrivacy/website/b78a61267bd34c383ecd779ed94b43952ece66ca/src/assets/sponsors/browerstack.svg)](http://www.browserstack.com/)
 
 Browserstack has allowed us to test and develop our website under many different devices. We can now develop Latest Privacy knowing that everything on our website will be truly responsive.
 
-[![PrimeNodes](https://latestprivacy.org/images/primenodes.svg)](https://primenodes.com)
+[![PrimeNodes](https://raw.githubusercontent.com/LatestPrivacy/website/b78a61267bd34c383ecd779ed94b43952ece66ca/src/assets/sponsors/primenodes.svg)](https://primenodes.com)
 
 PrimeNodes Is giving us access to some of their goodies including a virtual private server (VPS), which we will be using to host a status page that give us a heads up if anything goes down.
