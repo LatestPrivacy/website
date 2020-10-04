@@ -1,3 +1,51 @@
+.parallaxLeft{
+    left: -900px;
+    top: 15%;
+    position: absolute;
+    transform: rotate(90deg) translateX(57%);
+    pointer-events: none;
+    display: none;
+    @media screen and (min-width: 1024px){
+        display: block;
+    }
+    
+}
+
+.parallaxright{
+    right: -600px;
+    top: 0%;
+    position: absolute;
+    transform: rotate(90deg) translateX(155%);
+    pointer-events: none;
+    display: none;
+    @media screen and (min-width: 1024px){
+        display: block;
+    }
+}
+
+.videoBG{
+    position: absolute;
+    top: -5rem;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.parallaxText{
+    font-size: 27em;
+    opacity: 0.07;
+    text-transform: uppercase;
+    font-weight: 900;
+    pointer-events: none;
+    z-index: -1;
+}
+
 .container{
     margin-bottom: 13.5rem;
     padding-top: 8rem;
@@ -7,27 +55,22 @@
     }
 }
 
-.title{
-    margin-bottom: 4rem;
-    h3{
-        margin: 0;
-        font-weight: 400;
-    }
-}
-
 .newsWrapper{
     display: grid;
     grid-auto-flow: row;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 1.5rem;
-    @media screen and (max-width: 666px){
-        grid-template-columns: repeat(1, 1fr);
-    }
-    @media screen and (min-width: 667px) and (max-width: 1023px){
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 1.2rem;
+    @media screen and (min-width: 1024px){
         grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 4rem;
     }
-    @media screen and (min-width: 1600px){
-        grid-column-gap: 3.5rem;
+    @media screen and (min-width: 1280px){
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 5rem;
+    }
+    @media screen and (min-width: 1280px){
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 1.2rem;
     }
 }
 
@@ -35,6 +78,41 @@
     grid-column-start: span 4;
     padding: 10rem;
     text-align: center;
+}
+
+
+.date{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    grid-column-start: span 1;
+    font-size: 0.70em;
+    h2 {
+        font-weight: 500;
+        width: 100%; 
+        text-align: center; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.452);
+        line-height: 0.1em;
+        margin: 10px 0 20px; 
+     } 
+     
+     h2 span { 
+         background:#1A1A1A; 
+         padding:0 10px; 
+     }
+
+     @media screen and (min-width: 1024px){
+        grid-column-start: span 2;
+        
+    }
+    @media screen and (min-width: 1280px){
+        grid-column-start: span 3;
+        
+    }
+    @media screen and (min-width: 1280px){
+        grid-column-start: span 4;
+        
+    }
+
 }
 
 .advert{
@@ -115,5 +193,82 @@
             max-width: 500px;
         }
     }
+}
 
+.newsHeader{
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    h2{
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+    .search{
+        display: flex;
+        position: absolute;
+        right: 0;
+        align-items: center;
+
+        .filter{
+            padding-right: 2rem;
+            opacity: 0.5;
+            span{
+                font-size: 1rem;
+                padding-right: 1rem;
+                font-weight: 500;
+                display: none;
+                @media screen and (min-width: 1024px){
+                    display: block;
+                }
+            }
+        }
+
+        .searchbar{
+            padding-right: 2.2rem;
+            
+            form{
+                position: relative;
+                align-items: center;
+                display: flex;
+                input{
+                    cursor: pointer;
+                    background-color: transparent;
+                    color: transparent;
+                    border: transparent;
+                    font-size: .80rem;
+                    opacity: 0.5;
+                    padding-bottom: 0.5rem;
+                    width: 20px;
+                    transition:  300ms ease-out;
+                }
+                :focus{
+                    cursor: text;
+                    outline: transparent;
+                    border-bottom: 1px solid white;
+                    color: white;
+                    width: 130px;
+                    opacity: 1;
+                    @media screen and (min-width: 1024px){
+                        width: 260px;
+                    }
+                }
+                svg{
+                    z-index: -1;
+                    right: 0;
+                    position: absolute;
+                    width: 20px;
+                    fill: white;
+                }
+            }
+        }
+    }
+}
+
+// Add this later
+.block{
+    display: none;
 }

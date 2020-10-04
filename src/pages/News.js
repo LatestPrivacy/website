@@ -6,10 +6,13 @@ import InViewMonitor from 'react-inview-monitor';
 import NewsItem from '../components/NewsItem';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import SyncLoader from 'react-spinners/SyncLoader';
+import { Parallax } from 'react-scroll-parallax';
 
 import Style from './News.module.scss';
 
 import moment from 'moment';
+
+import eye from '../assets/eye.mp4';
 
 const artLimit = 64;
 
@@ -89,20 +92,38 @@ class News extends Component {
 					<meta name="keywords" content="latest privacy, articles, publish, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
 				</Helmet>
 
-				<div>
-					<form onSubmit={this.handleSubmit}>
-						<input
-							className="react-search-field-input"
-							style={{}}
-							onChange={this.handleTextChange}
-							placeholder={'search'}
-							type="text"
-							value={value}
-						/>
-					</form>
-				</div>
+				
 
 				<div className={`${Style.container} container`}>
+					<video className={Style.videoBG} autoPlay muted loop>
+                        <source src={eye} type="video/mp4"/>
+                    </video>
+					<div className={Style.newsHeader}>
+						<h2>
+							Explore
+						</h2>
+						<div className={Style.search}>
+							<div className={Style.filter}>
+								<span>Latest</span>
+							</div>
+							<div className={Style.searchbar}>
+								<form onSubmit={this.handleSubmit} >
+									<input
+										className="react-search-field-input"
+										style={{}}
+										onChange={this.handleTextChange}
+										placeholder={'Search'}
+										type="text"
+										value={value}
+									/>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+										<path d="M495 466.2L377.2 348.4c29.2-35.6 46.8-81.2 46.8-130.9C424 103.5 331.5 11 217.5 11 103.4 11 11 103.5 11 217.5S103.4 424 217.5 424c49.7 0 95.2-17.5 130.8-46.7L466.1 495c8 8 20.9 8 28.9 0 8-7.9 8-20.9 0-28.8zm-277.5-83.3C126.2 382.9 52 308.7 52 217.5S126.2 52 217.5 52C308.7 52 383 126.3 383 217.5s-74.3 165.4-165.5 165.4z"/>
+									</svg>
+								</form>
+							</div>
+						</div>
+						
+					</div>
 					<InViewMonitor classNameInView="animated-in">
 						{((value.length > 0 && loading) || result.length > 0) ?
 							(
@@ -120,14 +141,14 @@ class News extends Component {
 																slug={article.slug}
 																/*delay={ 0.6 + (i * 0.3) }*/
 															>
-																<>
-																	<h2>
-																		{article.title}
-																	</h2>
-																	<p>
-																		{article.description}
-																	</p>
-																</>
+																
+																<a>
+																	{article.title}
+																</a>
+																<p>
+																	{article.description.substring(0, 120)}...
+																</p>
+																
 															</NewsItem>
 														</>
 													))
@@ -172,12 +193,12 @@ class News extends Component {
 													<>
 														{(index > 0) ?
 															(
-																<div className={Style.advert}>
-																	<h3>{key}</h3>
+																<div className={Style.date}>
+																	<h2><span>{key}</span></h2>
 																</div>
 															) : (
-																<div>
-																	<h3>First Block Here</h3>
+																<div className={Style.block}>
+																	<h3>Welcome</h3>
 																</div>
 															)
 														}
@@ -192,14 +213,14 @@ class News extends Component {
 																			slug={article.slug}
 																			/*delay={ 0.6 + (i * 0.3) }*/
 																		>
-																			<>
-																				<h2>
-																					{article.title}
-																				</h2>
-																				<p>
-																					{article.description}
-																				</p>
-																			</>
+
+																			<a>
+																				{article.title}
+																			</a>
+																			<p>
+																				{article.description.substring(0, 120)}...
+																			</p>
+																				
 																		</NewsItem>
 																		{!((i+1) % (artLimit*6)) &&
 																			<a href="/#donate" className={Style.advert}>
@@ -231,6 +252,12 @@ class News extends Component {
 						}
 					</InViewMonitor>
 				</div>
+				<Parallax className={Style.parallaxLeft} x={[30, -60]} tagOuter="figure">
+                    <div className={Style.parallaxText}>Privacy</div>
+                </Parallax>
+				<Parallax className={Style.parallaxright} x={[50, -40]} tagOuter="figure">
+                    <div className={Style.parallaxText}>News</div>
+                </Parallax>
 			</>
 		);
 	}
