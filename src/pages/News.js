@@ -77,6 +77,10 @@ class News extends Component {
 	}
 
 	handleSubmit = async ( event ) => {
+		if ( event ) {
+			event.preventDefault();
+		};
+
 		if ( this.searchTimer !== undefined ) {
 			clearTimeout( this.searchTimer );
 		};
@@ -88,10 +92,6 @@ class News extends Component {
 				result: [],
 				found: true
 			} );
-		};
-
-		if ( event ) {
-			event.preventDefault();
 		};
 
 		if ( value === lastValue ) {
