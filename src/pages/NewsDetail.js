@@ -44,8 +44,8 @@ const NewsDetail = ( { match, location } ) => {
 				}}
 				className={loading ? Style.loading : Style.loadingComplete}>
 					{failed
-						? <p>Article not found...</p>
-						: <SyncLoader
+					?	<p>Article not found...</p>
+					:	<SyncLoader
 							size={8}
 							color={'#656565'}
 							loading={loading}
@@ -61,8 +61,7 @@ const NewsDetail = ( { match, location } ) => {
 								<Moment format="DD MMM YYYY">
 									{new Date(data.published_on).toDateString()}
 								</Moment>
-							</span>  
-							
+							</span>
 						</div>
 						<div className={Style.metaAuthor}>
 							Author <span>{data.author}</span>
@@ -72,14 +71,14 @@ const NewsDetail = ( { match, location } ) => {
 						{data.description}
 					</div>
 					<div style={{
-							display: 'flex', 
-							justifyContent: 'center', 
-							marginTop: '0',
-							marginBottom: '8rem',
-							position: 'relative',
-							zIndex: '9'
-						}}>
-						<Link url={data.link} value="Read full article" target="_blank"/>
+						display: 'flex', 
+						justifyContent: 'center', 
+						marginTop: '0',
+						marginBottom: '8rem',
+						position: 'relative',
+						zIndex: '9'
+					}}>
+						<Link url={data.link} value="Read full article" target="_blank" />
 					</div>
 				</div>
 			</div>

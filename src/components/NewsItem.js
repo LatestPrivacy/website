@@ -22,7 +22,6 @@ class NewsItem extends Component {
 								{new Date(this.props.date).toDateString()}
 							</Moment>
 						</span>
-						
 					</div>
 				</div>
 			</BodyTextAnimation>

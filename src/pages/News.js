@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
 
@@ -16,17 +16,20 @@ import eye from '../assets/eye.mp4';
 
 const artLimit = 64;
 
-let date = new Date();
-let dateStr = moment( date ).format( 'MM-YYYY' );
-
 class News extends Component {
+	date = new Date();
+	dateStr = moment( this.date ).format( 'MM-YYYY' );
+	searchTimer;
+
 	state = {
 		data: {},
 		length: 0,
 		loading: false,
 		more: true,
 		value: '',
-		result: []
+		lastValue: '',
+		result: [],
+		found: true
 	}
 
 	loadArticles = async () => {
@@ -35,19 +38,19 @@ class News extends Component {
 
 		this.setState( { loading: true } );
 
-		const response = await axios.get( `/api/articles?sort=${dateStr}&description=true` );
+		const response = await axios.get( `/api/articles?sort=${this.dateStr}&description=true` );
 
 		if ( response.data.length > 0 ) {
 			this.setState( {
 				data: {
 					...data,
-					[ dateStr ]: response.data
+					[ this.dateStr ]: response.data
 				},
 				length: length + response.data.length
 			} );
 
-			date.setMonth( date.getMonth() - 1 );
-			dateStr = moment( date ).format( 'MM-YYYY' );
+			this.date.setMonth( this.date.getMonth() - 1 );
+			this.dateStr = moment( this.date ).format( 'MM-YYYY' );
 		} else {
 			this.setState( { more: false } );
 		};
@@ -55,34 +58,100 @@ class News extends Component {
 		this.setState( { loading: false } );
 	}
 
+	throttleSearching( func, delay ) {
+		if ( this.searchTimer !== undefined ) {
+			clearTimeout( this.searchTimer );
+		};
+
+		this.searchTimer = setTimeout( () => {
+			func();
+
+			this.searchTimer = undefined;
+		}, delay );
+	}
+
 	handleTextChange = ( event ) => {
 		this.setState( { value: event.target.value } );
+
+		this.throttleSearching( this.handleSubmit, 1000 );
 	}
 
 	handleSubmit = async ( event ) => {
-		event.preventDefault();
+		if ( this.searchTimer !== undefined ) {
+			clearTimeout( this.searchTimer );
+		};
 
-		const { data, value } = this.state;
+		const { value, lastValue } = this.state;
 
-		this.setState( { loading: true } );
+		if ( value.length < 1 ) {
+			return this.setState( {
+				result: [],
+				found: true
+			} );
+		};
+
+		if ( event ) {
+			event.preventDefault();
+		};
+
+		if ( value === lastValue ) {
+			return;
+		};
+
+		this.setState( { loading: true, lastValue: value } );
 
 		const response = await axios.get( `/api/articles?search=${value}&description=true&limit=100` );
 
 		if ( response.data.length > 0 ) {
-			this.setState( { result: response.data } );
+			this.setState( {
+				result: response.data,
+				found: true
+			} );
+		} else {
+			this.setState( { found: false } );
 		};
 
 		this.setState( { loading: false } );
 	}
 
 	async componentDidMount() {
-
 		await this.loadArticles();
+	}
 
+	renderArticle( article ) {
+		const description = article.description.split( ' ' ).splice( 0, 16 ).join( ' ' ).replace( /[^a-zA-Z0-9]$/, '' );
+
+		return (
+			<NewsItem
+				author={article.publisher}
+				date={article.published_on}
+				/*timetoread={article.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
+				slug={article.slug}
+				/*delay={ 0.6 + (i * 0.3) }*/
+			>
+				<Fragment>
+					{article.title}
+					<p>
+						{description}...
+					</p>
+				</Fragment>
+			</NewsItem>
+		);
+	}
+
+	renderLoading() {
+		return (
+			<div className={Style.placeholder}>
+				<SyncLoader
+					size={8}
+					color={'#656565'}
+				/>
+			</div>
+		);
 	}
 
 	render() {
-		const { data, length, loading, more, value, result } = this.state;
+		const { data, length, loading, more, value, result, found } = this.state;
 
 		return (
 			<>
@@ -92,20 +161,20 @@ class News extends Component {
 					<meta name="keywords" content="latest privacy, articles, publish, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
 				</Helmet>
 
-				
-
 				<div className={`${Style.container} container`}>
 					<video className={Style.videoBG} autoPlay muted loop>
                         <source src={eye} type="video/mp4"/>
                     </video>
 					<div className={Style.newsHeader}>
-						<h2>
-							Explore
-						</h2>
+						<h2>Explore</h2>
 						<div className={Style.search}>
+							{
+							/*	
 							<div className={Style.filter}>
 								<span>Latest</span>
 							</div>
+							*/
+							}
 							<div className={Style.searchbar}>
 								<form onSubmit={this.handleSubmit} >
 									<input
@@ -122,133 +191,88 @@ class News extends Component {
 								</form>
 							</div>
 						</div>
-						
 					</div>
 					<InViewMonitor classNameInView="animated-in">
-						{((value.length > 0 && loading) || result.length > 0) ?
-							(
-								<>
-									{(!loading) ?
-										(
-											<div className={Style.newsWrapper}>
-												{
-													result.map((article, i) => (
-														<>
-															<NewsItem
-																author={article.publisher}
-																date={article.published_on}
-																/*timetoread={article.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
-																slug={article.slug}
-																/*delay={ 0.6 + (i * 0.3) }*/
-															>
-																
-																<a>
-																	{article.title}
-																</a>
-																<p>
-																	{article.description.substring(0, 120)}...
-																</p>
-																
-															</NewsItem>
-														</>
-													))
-												}
-											</div>
-										) : (
-											<div className={Style.loading}>
-												<SyncLoader
-													size={8}
-													color={'#656565'}
-													loading={loading}
-												/>
-											</div>
-										)
-									}
-								</>
-							) : (
-								<InfiniteScroll
-									dataLength={length}
-									next={this.loadArticles}
-									hasMore={more}
-									scrollThreshold={0.6}
-									loader={
-										<div className={Style.loading}>
-											<SyncLoader
-												size={8}
-												color={'#656565'}
-												loading={loading}
-											/>
-										</div>
-									}
-									endMessage={
-										<div className={Style.loading}>
-											<b>Yay! You have seen everything, come back later for more articles.</b>
-										</div>
-									}
-								>
-									<div className={Style.newsWrapper}>
+						{((value.length > 0 && loading) || result.length > 0 || !found)
+						?	<>
+								{(!loading)
+								?	<div className={Style.newsWrapper}>
 										{
-											Object.entries(data).map(([key, item], index) => {
-												return (
-													<>
-														{(index > 0) ?
-															(
-																<div className={Style.date}>
-																	<h2><span>{key}</span></h2>
-																</div>
-															) : (
-																<div className={Style.block}>
-																	<h3>Welcome</h3>
-																</div>
-															)
-														}
-														<>
-															{
-																item.map((article, i) => (
-																	<>
-																		<NewsItem
-																			author={article.publisher}
-																			date={article.published_on}
-																			/*timetoread={article.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
-																			slug={article.slug}
-																			/*delay={ 0.6 + (i * 0.3) }*/
-																		>
-
-																			<a>
-																				{article.title}
-																			</a>
-																			<p>
-																				{article.description.substring(0, 120)}...
-																			</p>
-																				
-																		</NewsItem>
-																		{!((i+1) % (artLimit*6)) &&
-																			<a href="/#donate" className={Style.advert}>
-																				<h3>
-																					Please support us
-																				</h3>
-																				<div>
-																					<p>
-																						By supporting, it enables us to carry on 
-																						spreading awareness to a bigger audience 
-																						about our right to privacy with tools 
-																						that make it easier to follow the privacy 
-																						world.
-																					</p>
-																				</div>
-																			</a>
-																		}
-																	</>
-																))
-															}
-														</>
-													</>
-												)
-											})
+											result.map((article, i) => (
+												<Fragment key={i}>
+													{
+														this.renderArticle(article)
+													}
+												</Fragment>
+											))
 										}
 									</div>
-								</InfiniteScroll>
-							)
+								:	this.renderLoading()
+								}
+								{(!found) &&
+									<div className={Style.placeholder}>
+										<b>Oops... it seems we couldn't find what you were looking for, try searching for something else.</b>
+									</div>
+								}
+							</>
+						:	<InfiniteScroll
+								dataLength={length}
+								next={this.loadArticles}
+								hasMore={more}
+								scrollThreshold={(length > artLimit) ? 0.75 : 0.4}
+								loader={this.renderLoading()}
+								endMessage={
+									<div className={Style.placeholder}>
+										<b>Yay! You have seen everything, come back later for more articles.</b>
+									</div>
+								}
+							>
+								<div className={Style.newsWrapper}>
+									{
+										Object.entries(data).map(([key, item], index) => {
+											return (
+												<Fragment key={index}>
+													{(index > 0)
+													?	<div className={Style.date}>
+															<h2><span>{key}</span></h2>
+														</div>
+													:	<div className={Style.block}>
+															<h3>Welcome</h3>
+														</div>
+													}
+													<>
+														{
+															item.map((article, i) => (
+																<Fragment key={i}>
+																	{
+																		this.renderArticle(article)
+																	}
+																	{!((i+1) % (artLimit*6)) &&
+																		<a href="/#donate" className={Style.advert}>
+																			<h3>
+																				Please support us
+																			</h3>
+																			<div>
+																				<p>
+																					By supporting, it enables us to carry on 
+																					spreading awareness to a bigger audience 
+																					about our right to privacy with tools 
+																					that make it easier to follow the privacy 
+																					world.
+																				</p>
+																			</div>
+																		</a>
+																	}
+																</Fragment>
+															))
+														}
+													</>
+												</Fragment>
+											)
+										})
+									}
+								</div>
+							</InfiniteScroll>
 						}
 					</InViewMonitor>
 				</div>

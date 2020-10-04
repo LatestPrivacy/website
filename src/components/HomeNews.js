@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 
 import HeadingAnimation from './HeadingAnimation';
@@ -39,23 +39,25 @@ const HomeNews = () => {
 				</HeadingAnimation>
 				<div className={Style.newsWrapper}>
 					{loading
-						? <div style={{'gridColumn': 'span 12', 'textAlign': 'center'}}>
+					?	<div style={{'gridColumn': 'span 12', 'textAlign': 'center'}}>
 							<SyncLoader
 								size={8}
 								color={'#656565'}
 								loading={loading}
 							/>
 						</div>
-						: data.map((item, index) => (
-							<NewsItem
-								author={item.publisher} 
-								date={item.published_on} 
-								/*timetoread={item.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
-								slug={item.slug}
-								delay={0.6 + (index * 0.3)}
-							>
-								{item.title}
-							</NewsItem>
+					:	data.map((item, index) => (
+							<Fragment key={index}>
+								<NewsItem
+									author={item.publisher} 
+									date={item.published_on} 
+									/*timetoread={item.read_time}*/  /*NewsItem.js: Line 35*/ /*NewsDetail.js: Line 72*/
+									slug={item.slug}
+									delay={0.6 + (index * 0.3)}
+								>
+									{item.title}
+								</NewsItem>
+							</Fragment>
 						))
 					}
 				</div>
