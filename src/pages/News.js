@@ -90,6 +90,7 @@ class News extends Component {
 		if ( value.length < 1 ) {
 			return this.setState( {
 				result: [],
+				lastValue: '',
 				found: true
 			} );
 		};
