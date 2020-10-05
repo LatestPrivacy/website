@@ -146,6 +146,7 @@ class News extends Component {
 				<SyncLoader
 					size={8}
 					color={'#656565'}
+					loading={this.state.loading}
 				/>
 			</div>
 		);
