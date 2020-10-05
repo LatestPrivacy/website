@@ -12,9 +12,9 @@
 
 .parallaxright{
     right: -600px;
-    top: 0%;
+    top: 15%;
     position: absolute;
-    transform: rotate(90deg) translateX(155%);
+    transform: rotate(90deg) translateX(157%);
     pointer-events: none;
     display: none;
     @media screen and (min-width: 1024px){
@@ -67,14 +67,14 @@
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 5rem;
     }
-    @media screen and (min-width: 1280px){
+    @media screen and (min-width: 1820px){
         grid-template-columns: repeat(4, 1fr);
-        grid-column-gap: 1.2rem;
+        grid-column-gap: 1.5rem;
     }
 }
 
 .placeholder{
-    grid-column-start: span 4;
+    grid-column-start: span;
     padding: 10rem;
     text-align: center;
 }
@@ -101,10 +101,10 @@
 	}
 	@media screen and (min-width: 1280px){
 		grid-column-start: span 3;
-	}
-	@media screen and (min-width: 1280px){
-		grid-column-start: span 4;
-	}
+    }
+    @media screen and (min-width: 1820px){
+        grid-column-start: span 4;
+    }
 }
 
 .advert{
@@ -188,11 +188,21 @@
 }
 
 .newsHeader{
-    padding-top: 8rem;
-    padding-bottom: 6rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
     display: flex;
     align-items: center;
     position: relative;
+
+    @media screen and (min-width: 1024px){
+		grid-column-start: span 2;
+	}
+	@media screen and (min-width: 1280px){
+		padding-top: 1rem;
+        padding-bottom: 3rem;
+	}
+	
+
 
     h2{
         font-size: 2rem;
@@ -232,7 +242,7 @@
                     background-color: transparent;
                     color: transparent;
                     border: transparent;
-                    font-size: .80rem;
+                    font-size: 1rem;
                     opacity: 0.5;
                     padding-bottom: 0.5rem;
                     width: 20px;
