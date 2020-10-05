@@ -171,7 +171,7 @@ class News extends Component {
 						<h2>Explore</h2>
 						<div className={Style.search}>
 							{
-							/*	
+							/*
 							<div className={Style.filter}>
 								<span>Latest</span>
 							</div>
@@ -231,47 +231,45 @@ class News extends Component {
 							>
 								<div className={Style.newsWrapper}>
 									{
-										Object.entries(data).map(([key, item], index) => {
-											return (
-												<Fragment key={index}>
-													{(index > 0)
-													?	<div className={Style.date}>
-															<h2><span>{key}</span></h2>
-														</div>
-													:	<div className={Style.block}>
-															<h3>Welcome</h3>
-														</div>
+										Object.entries(data).map(([key, item], index) => (
+											<Fragment key={index}>
+												{(index > 0)
+												?	<div className={Style.date}>
+														<h2><span>{key}</span></h2>
+													</div>
+												:	<div className={Style.block}>
+														<h3>Welcome</h3>
+													</div>
+												}
+												<>
+													{
+														item.map((article, i) => (
+															<Fragment key={i}>
+																{
+																	this.renderArticle(article)
+																}
+																{!((i+1) % (artLimit*6)) &&
+																	<a href="/#donate" className={Style.advert}>
+																		<h3>
+																			Please support us
+																		</h3>
+																		<div>
+																			<p>
+																				By supporting, it enables us to carry on 
+																				spreading awareness to a bigger audience 
+																				about our right to privacy with tools 
+																				that make it easier to follow the privacy 
+																				world.
+																			</p>
+																		</div>
+																	</a>
+																}
+															</Fragment>
+														))
 													}
-													<>
-														{
-															item.map((article, i) => (
-																<Fragment key={i}>
-																	{
-																		this.renderArticle(article)
-																	}
-																	{!((i+1) % (artLimit*6)) &&
-																		<a href="/#donate" className={Style.advert}>
-																			<h3>
-																				Please support us
-																			</h3>
-																			<div>
-																				<p>
-																					By supporting, it enables us to carry on 
-																					spreading awareness to a bigger audience 
-																					about our right to privacy with tools 
-																					that make it easier to follow the privacy 
-																					world.
-																				</p>
-																			</div>
-																		</a>
-																	}
-																</Fragment>
-															))
-														}
-													</>
-												</Fragment>
-											)
-										})
+												</>
+											</Fragment>
+										))
 									}
 								</div>
 							</InfiniteScroll>
