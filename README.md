@@ -1,6 +1,3 @@
-## New website
-This is the brand new website which is in development.
-
 ## [Latest Privacy](https://latestprivacy.com/)
 Our goal is to have a platform that allows people to keep track of privacy related news, laws etc easily.
 
