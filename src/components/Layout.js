@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import NoticeBanner from './NoticeBanner';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -6,6 +8,7 @@ class Layout extends Component {
 	render() {
 		return (
 			<>
+				<NoticeBanner />
 				<Header />
 				{this.props.children}
 				<Footer />
