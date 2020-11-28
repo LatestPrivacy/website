@@ -4,7 +4,7 @@ import NoticeStyle from './NoticeBanner.module.scss';
 
 import parliamentImg from '../assets/images/parliament.png'
 
-class HomeMission extends Component {
+class NoticeBanner extends Component {
     render() {
         return (
           <a className={NoticeStyle.notice} href="https://petition.parliament.uk/petitions/554027" >
@@ -20,4 +20,4 @@ class HomeMission extends Component {
     }
 }
 
-export default HomeMission;
+export default NoticeBanner;
