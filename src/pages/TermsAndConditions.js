@@ -225,8 +225,8 @@ class TermsAndConditions extends Component {
                     <p className={Style.hasLink}>
                         The following is the Latest Privacy Acceptable Use Policy (“AUP”). By using Latest Privacy (“Services”), you 
                         agree to comply with this AUP. Latest Privacy reserves the right to amend this AUP at any time, with or without 
-                        notice to you. Latest Privacy agrees to post any changes to this AUP on the Latest Privacy Homepage 
-                        (located at: <a href="https://latestprivacy.com/terms-and-conditions">https://latestprivacy.com/terms-and-conditions</a>) and you agree to periodically review this AUP as 
+                        notice to you. Latest Privacy agrees to post any changes to this AUP on the Latest Privacy Page 
+                        (located <a href="/terms-and-conditions">here</a>) and you agree to periodically review this AUP as 
                         modified from time to time. You agree to be bound to this AUP, as modified from time to time, every time you 
                         use or access the Services. You affirm that you have read this Policy and understand, agree and consent to its 
                         terms and conditions. 
