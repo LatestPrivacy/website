@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react'; //, { useState, useEffect } from 'react';
+//import axios from 'axios';
 import { Helmet } from 'react-helmet';
 
 import { Parallax } from 'react-scroll-parallax';
@@ -25,24 +26,23 @@ import noImage from '../assets/images/no-image.jpg';
 // Shuffle array
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 // This really could be done a lot simpler... >.< code review
-function shuffle(array) {
+function shuffle( array ) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
+    while ( 0 !== currentIndex ) {
         // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
+        randomIndex = Math.floor( Math.random() * currentIndex );
         currentIndex -= 1;
         // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
+        temporaryValue = array[ currentIndex ];
+        array[ currentIndex] = array[ randomIndex ];
+        array[ randomIndex] = temporaryValue;
+    };
+
     return array;
-}
+};
 
-
-/*When Myles has finished the team API add this on line 81*/
-/*
+/* When Myles has finished the team API
     ,
     {
         image: noImage,
@@ -51,7 +51,6 @@ function shuffle(array) {
     }
 */
 
-  
 const Team = [
     {
         image: LukeImage,
@@ -72,6 +71,8 @@ const Team = [
         name: 'Johnathon Weaver',
         position: 'DevOps',
         github: 'https://github.com/8BallBomBom',
+        twitter: 'https://twitter.com/8BallBomBom',
+        exlink: 'https://bombom.dev'
     },
     {
         image: RizqiImage,
@@ -81,10 +82,11 @@ const Team = [
         twitter: 'https://twitter.com/nizamilputra',
         exlink: 'https://rizqi.im'
     }
-]
-const shuffleTeam = shuffle(Team)
+];
 
-const PastContributor = [
+const shuffleTeam = shuffle( Team );
+
+const pastContributors = [
     {
         image: noImage,
         name: 'William Phillips',
@@ -93,127 +95,125 @@ const PastContributor = [
         twitter: 'https://twitter.com/MetallicGloss',
         exlink: 'https://www.william-phillips.com'
     }
-]
+];
 
-class About extends Component {
-    state = {
-        loading: true,
-        jobsData: null
-    }
+const About = () => {
+/* When Myles has finished the team API
+	const [ data, setData ] = useState( [] );
+	const [ loading, setLoading ] = useState( true );
 
-    async componentDidMount(){
-        const url = "https://latestprivacy.org/api/jobs"
-        const response = await fetch(url)
-        const data = await response.json()
-        console.log(data)
-        this.setState({
-            loading: false,
-            jobsData: data
-        })
-    }
+	useEffect( () => {
+		const fetchJobs = async () => {
+			try {
+				const response = await axios.get( '/api/jobs' );
 
-    render() {
-        return (
-            <>
-                <Helmet>
-                    <title>Latest Privacy - Team</title>
-                    <meta name="description" content="About the team who are behind Latest Privacy." />
-                    <meta name="keywords" content="latest privacy, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
-                </Helmet>
-                <div className={AboutStyle.wrapper}>
-                    <AboutBanner />
+				setData( data => response.data );
+				setLoading( false );
+			} catch( err ) {
+				console.log( err );
+			};
+		};
 
-                    <AboutMission title="Our Mission" desc="To raise public awareness surrounding the issues of privacy in everyday life. If it's relevant we will let you know about it and guide you in the right direction." />
-                
-                    <AboutAchieve title="What we want to achieve">
-                        <div className={AboutStyle.achieveItemWrapper}>
-                            <InViewMonitor classNameInView='animated-in'>
-                                <BodyTextAnimation duration={0.7} delay={0.3}>
-                                    <TitleAndDescription className={AboutStyle.tadItem} title="Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
-                                </BodyTextAnimation>
-                                <BodyTextAnimation duration={0.7} delay={0.6}>
-                                    <TitleAndDescription className={AboutStyle.tadItem} title="Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
-                                </BodyTextAnimation>
-                                <BodyTextAnimation duration={0.7} delay={0.9}>
-                                    <TitleAndDescription className={AboutStyle.tadItem} title="Security" desc="Guiding the public in ways to stay secure whilst online."/>
-                                </BodyTextAnimation>
-                                <BodyTextAnimation duration={0.7} delay={1.2}>
-                                    <TitleAndDescription className={AboutStyle.tadItem} title="Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
-                                </BodyTextAnimation>
-                            </InViewMonitor>
-                        </div>
-                    </AboutAchieve>
+		fetchJobs();
+	}, [] );
+*/
 
-                    <AboutTeam title="Meet the team" desc="Small group of people working towards an endgame where privacy really does mean private. We are all volunteers contributing to this project in our free time at our own cost.">
-                        {
-                            shuffleTeam.map((data, key) => {
-                                return(
-                                    <AboutTeamItem
-                                        image = {data.image}
-                                        imgAlt = {data.name}
-                                        name = {data.name}
-                                        position = {data.position}
-                                        github = {data.github}
-                                        twitter = {data.twitter}
-                                        exlink = {data.exlink}
-                                        key = {key}
-                                        delay = { 0.6 + (key * 0.3) }
-                                    />
-                                )
-                            })                         
-                        }
-                    </AboutTeam>
+    return (
+        <>
+            <Helmet>
+                <title>Latest Privacy - Team</title>
+                <meta name="description" content="About the team who are behind Latest Privacy." />
+                <meta name="keywords" content="latest privacy, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
+            </Helmet>
+            <div className={AboutStyle.wrapper}>
+                <AboutBanner />
 
-                    <AboutTeam title="Past contributors" desc="Team members who previously contributed to this project,
-                    who are no longer currently active.">
-                        {
-                            PastContributor.map((data, key) => {
-                                return(
-                                    <AboutTeamItem
-                                        image = {data.image}
-                                        imgAlt = {data.name}
-                                        name = {data.name}
-                                        position = {data.position}
-                                        github = {data.github}
-                                        twitter = {data.twitter}
-                                        exlink = {data.exlink}
-                                        key = {key}
-                                        delay = { 0.6 + (key * 0.3) }
-                                    />
-                                )
-                            })                         
-                        }
-                    </AboutTeam>
+                <AboutMission title="Our Mission" desc="To raise public awareness surrounding the issues of privacy in everyday life. If it's relevant we will let you know about it and guide you in the right direction." />
+            
+                <AboutAchieve title="What we want to achieve">
+                    <div className={AboutStyle.achieveItemWrapper}>
+                        <InViewMonitor classNameInView='animated-in'>
+                            <BodyTextAnimation duration={0.7} delay={0.3}>
+                                <TitleAndDescription className={AboutStyle.tadItem} title="Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
+                            </BodyTextAnimation>
+                            <BodyTextAnimation duration={0.7} delay={0.6}>
+                                <TitleAndDescription className={AboutStyle.tadItem} title="Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
+                            </BodyTextAnimation>
+                            <BodyTextAnimation duration={0.7} delay={0.9}>
+                                <TitleAndDescription className={AboutStyle.tadItem} title="Security" desc="Guiding the public in ways to stay secure whilst online."/>
+                            </BodyTextAnimation>
+                            <BodyTextAnimation duration={0.7} delay={1.2}>
+                                <TitleAndDescription className={AboutStyle.tadItem} title="Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
+                            </BodyTextAnimation>
+                        </InViewMonitor>
+                    </div>
+                </AboutAchieve>
 
-               
+                <AboutTeam title="Meet the team" desc="Small group of people working towards an endgame where privacy really does mean private. We are all volunteers contributing to this project in our free time at our own cost.">
+                    {
+                        shuffleTeam.map((member, key) => {
+                            return(
+                                <AboutTeamItem
+                                    image={member.image}
+                                    imgAlt={member.name}
+                                    name={member.name}
+                                    position={member.position}
+                                    github={member.github}
+                                    twitter={member.twitter}
+                                    exlink={member.exlink}
+                                    key={key}
+                                    delay={0.6 + (key * 0.3)}
+                                />
+                            )
+                        })                         
+                    }
+                </AboutTeam>
+
+                <AboutTeam title="Past contributors" desc="Team members who previously contributed to this project,
+                who are no longer currently active.">
+                    {
+                        pastContributors.map((member, key) => {
+                            return (
+                                <AboutTeamItem
+                                    image={member.image}
+                                    imgAlt={member.name}
+                                    name={member.name}
+                                    position={member.position}
+                                    github={member.github}
+                                    twitter={member.twitter}
+                                    exlink={member.exlink}
+                                    key={key}
+                                    delay={0.6 + (key * 0.3)}
+                                />
+                            )
+                        })                         
+                    }
+                </AboutTeam>
+
                 <Parallax className={AboutStyle.parallaxTxt} x={[30, -60]} tagOuter="figure">
                     <div className={AboutStyle.privacyText}>Privacy</div>
                 </Parallax>
             </div>
-
-                   
         </>
-        );
-    }
+    );
 }
 
 export default About;
 
-/*When Myles has finished the team API add this on line 183*/
-/*
+/* When Myles has finished the team API
     <AboutJoin title="Join the team" desc="If you care about privacy please apply, we would love to hear from you!">
         {
-            this.state.loading && <div>loading...</div>
+            loading && <div>loading...</div>
         }
         {
-            //console.log(this.state)
-            !this.state.jobsData ? <div>didn't get a news data</div> :
-            this.state.jobsData.map((data, key) => {
+            !data
+            ? <div>didn't get any jobs yet?</div>
+            : data.map((job, key) => {
                 return(
                     <AboutJoinPosition
-                        position = {data.position}
-                        status = {data.status}
-                        key = {key}
+                        position={job.position}
+                        status={job.status}
+                        key={key}
                     />
                 )
             })                         
