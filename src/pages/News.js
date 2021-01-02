@@ -14,7 +14,9 @@ import moment from 'moment';
 
 import eye from '../assets/eye.mp4';
 
-const artLimit = 64;
+const articleLimit = 64;
+const attemptLimit = 6;
+let attempt = 0;
 
 class News extends Component {
 	date = new Date();
@@ -30,6 +32,13 @@ class News extends Component {
 		lastValue: '',
 		result: [],
 		found: true
+	}
+
+	adjustDates = () => {
+		this.date.setMonth( this.date.getMonth() - 1 );
+		this.dateStr = moment( this.date ).format( 'MM-YYYY' );
+
+		this.setState( { loading: false } );
 	}
 
 	loadArticles = async () => {
@@ -49,13 +58,19 @@ class News extends Component {
 				length: length + response.data.length
 			} );
 
-			this.date.setMonth( this.date.getMonth() - 1 );
-			this.dateStr = moment( this.date ).format( 'MM-YYYY' );
-		} else {
-			this.setState( { more: false } );
-		};
+			this.adjustDates();
 
-		this.setState( { loading: false } );
+			attempt = 0;
+		} else {
+			if ( attempt >= attemptLimit ) {
+				this.setState( { more: false } );
+			} else {
+				attempt = attempt + 1;
+
+				this.adjustDates();
+				this.loadArticles();
+			};
+		};
 	}
 
 	throttleSearching( func, delay ) {
@@ -221,7 +236,7 @@ class News extends Component {
 								dataLength={length}
 								next={this.loadArticles}
 								hasMore={more}
-								scrollThreshold={(length > artLimit) ? 0.75 : 0.4}
+								scrollThreshold={(length > articleLimit) ? 0.6 : 0.4}
 								loader={this.renderLoading()}
 								endMessage={
 									<div className={Style.placeholder}>
@@ -248,7 +263,7 @@ class News extends Component {
 																{
 																	this.renderArticle(article)
 																}
-																{!((i+1) % (artLimit*6)) &&
+																{!((i+1) % (articleLimit*6)) &&
 																	<a href="/#donate" className={Style.advert}>
 																		<h3>
 																			Please support us
