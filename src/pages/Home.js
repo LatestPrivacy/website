@@ -12,7 +12,7 @@ import HomeDonate from '../components/HomeDonate';
 
 import Style from './Home.module.scss';
 
-import eye from '../assets/eye.mp4';
+import eye from '../assets/videos/eye.mp4';
 
 class Home extends Component {
     render() {

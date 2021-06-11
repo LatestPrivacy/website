@@ -11,7 +11,7 @@ import { Parallax } from 'react-scroll-parallax';
 
 import Style from './News.module.scss';
 
-import eye from '../assets/eye.mp4';
+import eye from '../assets/videos/eye.mp4';
 
 const articleLimit = 64;
 const attemptLimit = 6;
