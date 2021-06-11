@@ -8,7 +8,6 @@ class Layout extends Component {
 	render() {
 		return (
 			<>
-				<NoticeBanner />
 				<Header />
 				{this.props.children}
 				<Footer />
