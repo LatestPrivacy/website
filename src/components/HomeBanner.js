@@ -3,8 +3,7 @@ import HeadingAnimation from './HeadingAnimation';
 import InViewMonitor from 'react-inview-monitor';
 import BodyTextAnimation from '../components/BodyTextAnimation'
 import TitleAndDescription from '../components/TitleAndDescription'
-import Button from '../components/Button';
-import ButtonExternal from '../components/ButtonExternal'
+import Button from '../components/Button'
 
 import Style from './HomeBanner.module.scss'
 
