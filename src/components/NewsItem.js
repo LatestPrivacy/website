@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
+
 import BodyTextAnimation from '../components/BodyTextAnimation';
 
 import Style from './NewsItem.module.scss';
@@ -18,9 +19,7 @@ class NewsItem extends Component {
 					</div>
 					<div className={Style.meta}>
 						<span>
-							<Moment format="DD MMM YYYY">
-								{new Date(this.props.date).toDateString()}
-							</Moment>
+							{moment(new Date(this.props.date)).format('LL')}
 						</span>
 					</div>
 				</div>

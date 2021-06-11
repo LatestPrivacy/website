@@ -1,6 +1,7 @@
 {
   "short_name": "Latest Privacy",
   "name": "Latest Privacy",
+  "description": "Keep track of privacy easily.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,6 +20,7 @@
     }	    
   ],
   "start_url": ".",
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#1a1a1a",
   "background_color": "#1a1a1a"

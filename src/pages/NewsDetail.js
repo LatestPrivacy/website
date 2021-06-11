@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Moment from 'react-moment';
+import moment from 'moment';
 
 import SyncLoader from 'react-spinners/SyncLoader';
 import Link from '../components/Link';
@@ -58,9 +58,7 @@ const NewsDetail = ( { match, location } ) => {
 					<div className={Style.meta}>
 						<div className={Style.metaDate}>
 							<span>
-								<Moment format="DD MMM YYYY">
-									{new Date(data.published_on).toDateString()}
-								</Moment>
+								{moment(new Date(data.published_on)).format('LL')}
 							</span>
 						</div>
 						<div className={Style.metaAuthor}>

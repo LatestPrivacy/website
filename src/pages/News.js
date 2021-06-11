@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import { Helmet } from 'react-helmet';
+import moment from 'moment';
 
 import InViewMonitor from 'react-inview-monitor';
 import NewsItem from '../components/NewsItem';
@@ -9,8 +10,6 @@ import SyncLoader from 'react-spinners/SyncLoader';
 import { Parallax } from 'react-scroll-parallax';
 
 import Style from './News.module.scss';
-
-import moment from 'moment';
 
 import eye from '../assets/eye.mp4';
 
@@ -106,6 +105,7 @@ class News extends Component {
 			return this.setState( {
 				result: [],
 				lastValue: '',
+				loading: false,
 				found: true
 			} );
 		};
@@ -124,7 +124,10 @@ class News extends Component {
 				found: true
 			} );
 		} else {
-			this.setState( { found: false } );
+			this.setState( {
+				result: [],
+				found: false
+			} );
 		};
 
 		this.setState( { loading: false } );
@@ -239,7 +242,7 @@ class News extends Component {
 								loader={this.renderLoading()}
 								endMessage={
 									<div className={Style.placeholder}>
-										<b>Yay! You have seen everything, come back later for more articles.</b>
+										<b>Yay! You've seen everything. Come back later for more articles.</b>
 									</div>
 								}
 							>
