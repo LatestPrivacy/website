@@ -46,7 +46,7 @@ const NewsDetail = ( { match, location } ) => {
 					{failed
 					?	<p>Article not found...</p>
 					:	<SyncLoader
-							size={8}
+							size={10}
 							color={'#656565'}
 							loading={loading}
 						/>

@@ -1,10 +1,10 @@
 ## [Latest Privacy](https://latestprivacy.com/)
 Our goal is to have a platform that allows people to keep track of privacy related news, laws etc easily.
 
-### who are we
+### Who are we?
 We are a small team of people working towards the greater good; built up around volunteers contributing to this project in our free time at our own cost.
 
-### What can I do to help?
+### What can i do to help?
 You can help by spreading the word about the site [latestprivacy.org](https://latestprivacy.org). If you've found a bug or you have any cool ideas, pleases email us [hello@latestprivacy.org](mailto:hello@latestprivacy.org). We are all eyes and ears. 
 
 ### Blog

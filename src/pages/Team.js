@@ -15,7 +15,7 @@ import AboutTeamItem from '../components/AboutTeamItem';
 //import AboutJoin from '../components/AboutJoin';
 //import AboutJoinPosition from '../components/AboutJoinPosition';
 
-import AboutStyle from './Team.module.scss';
+import Style from './Team.module.scss';
 
 import LukeImage from '../assets/images/Luke.jpg';
 import JohnImage from '../assets/images/John.jpg';
@@ -51,7 +51,7 @@ function shuffle( array ) {
 	}
 */
 
-const Team = [
+const currentContributors = shuffle( [
 	{
 		image: LukeImage,
 		name: 'Luke Seers',
@@ -82,9 +82,7 @@ const Team = [
 		twitter: 'https://twitter.com/nizamilputra',
 		exlink: 'https://rizqi.im'
 	}
-];
-
-const shuffleTeam = shuffle( Team );
+] );
 
 const pastContributors = [
 	{
@@ -97,7 +95,7 @@ const pastContributors = [
 	}
 ];
 
-const About = () => {
+const Team = () => {
 /* When Myles has finished the team API
 	const [ data, setData ] = useState( [] );
 	const [ loading, setLoading ] = useState( true );
@@ -125,33 +123,30 @@ const About = () => {
 				<meta name="description" content="About the team who are behind Latest Privacy." />
 				<meta name="keywords" content="latest privacy, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
 			</Helmet>
-			<div className={AboutStyle.wrapper}>
+			<div className={Style.wrapper}>
 				<AboutBanner />
-
 				<AboutMission title="Our Mission" desc="To raise public awareness surrounding the issues of privacy in everyday life. If it's relevant we will let you know about it and guide you in the right direction." />
-			
 				<AboutAchieve title="What we want to achieve">
-					<div className={AboutStyle.achieveItemWrapper}>
+					<div className={Style.achieveItemWrapper}>
 						<InViewMonitor classNameInView='animated-in'>
 							<BodyTextAnimation duration={0.7} delay={0.3}>
-								<TitleAndDescription className={AboutStyle.tadItem} title="Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
+								<TitleAndDescription className={Style.tadItem} title="Awareness" desc="To raise the level of public awareness as to what happens to their data."/>
 							</BodyTextAnimation>
 							<BodyTextAnimation duration={0.7} delay={0.6}>
-								<TitleAndDescription className={AboutStyle.tadItem} title="Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
+								<TitleAndDescription className={Style.tadItem} title="Privacy" desc="To aid the public in knowing exactly what privacy really means."/>
 							</BodyTextAnimation>
 							<BodyTextAnimation duration={0.7} delay={0.9}>
-								<TitleAndDescription className={AboutStyle.tadItem} title="Security" desc="Guiding the public in ways to stay secure whilst online."/>
+								<TitleAndDescription className={Style.tadItem} title="Security" desc="Guiding the public in ways to stay secure whilst online."/>
 							</BodyTextAnimation>
 							<BodyTextAnimation duration={0.7} delay={1.2}>
-								<TitleAndDescription className={AboutStyle.tadItem} title="Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
+								<TitleAndDescription className={Style.tadItem} title="Human Rights" desc="Privacy is a basic human right, we are all entitled to it and we stand by that."/>
 							</BodyTextAnimation>
 						</InViewMonitor>
 					</div>
 				</AboutAchieve>
-
 				<AboutTeam title="Meet the team" desc="Small group of people working towards an endgame where privacy really does mean private. We are all volunteers contributing to this project in our free time at our own cost.">
 					{
-						shuffleTeam.map((member, key) => {
+						currentContributors.map((member, key) => {
 							return (
 								<AboutTeamItem
 									image={member.image}
@@ -168,7 +163,6 @@ const About = () => {
 						})                         
 					}
 				</AboutTeam>
-
 				<AboutTeam title="Past contributors" desc="Team members who previously contributed to this project,
 				who are no longer currently active.">
 					{
@@ -189,16 +183,15 @@ const About = () => {
 						})                         
 					}
 				</AboutTeam>
-
-				<Parallax className={AboutStyle.parallaxTxt} x={[30, -60]} tagOuter="figure">
-					<div className={AboutStyle.privacyText}>Privacy</div>
+				<Parallax className={Style.parallaxTxt} x={[30, -60]} tagOuter="figure">
+					<div className={Style.privacyText}>Privacy</div>
 				</Parallax>
 			</div>
 		</>
 	);
 }
 
-export default About;
+export default Team;
 
 /* When Myles has finished the team API
 	<AboutJoin title="Join the team" desc="If you care about privacy please apply, we would love to hear from you!">

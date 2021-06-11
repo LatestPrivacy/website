@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import NoticeBanner from './NoticeBanner';
 import Header from './Header';
 import Footer from './Footer';
 

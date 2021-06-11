@@ -9,21 +9,13 @@ class Button extends Component {
     render() {
         return (
             <>
-                {
-                    this.props.type === "line" ?
-                    (
-                        <Link to={this.props.url} className={`button ${Style.buttonLine}`} target={this.props.target}>
-                            <span>{this.props.value}</span>
-                            <img src={Love} alt="Love" className="love" />
-                        </Link>
-                    ) : (
-                        <Link to={this.props.url} className={`button ${Style.button}`} target={this.props.target}>
-                            <span>{this.props.value}</span>
-                            <img src={Arrow} alt="arrow" className="arrow" />
-                        </Link>
-                    )
-                }
-                
+                <Link to={this.props.url} className={`button ${this.props.type === "line" ? Style.buttonLine : Style.button}`}>
+                    <span>{this.props.value}</span>
+                    {this.props.type === "line"
+                        ? <img src={Love} alt="Love" className="love" />
+                        : <img src={Arrow} alt="arrow" className="arrow" />
+                    }
+                </Link>
             </>
         );
     }

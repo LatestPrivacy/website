@@ -1,31 +1,36 @@
 {
   "name": "latestprivacy",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "proxy": "https://opencollective.com/",
   "private": true,
   "dependencies": {
+    "@testing-library/jest-dom": "^5.13.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^13.1.9",
     "axios": "^0.21.1",
-    "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1",
-    "react-infinite-scroll-component": "^5.0.5",
-    "react-inview-monitor": "^2.2.1",
-    "react-moment": "^0.9.7",
-    "react-router-dom": "^5.0.1",
-    "react-router-hash-link": "^1.2.2",
-    "react-scripts": "^3.4.3",
-    "react-scroll-parallax": "^2.3.4",
-    "react-slick": "^0.25.2",
-    "react-spinners": "^0.9.0",
-    "react-spring": "^8.0.27",
-    "react-tooltip": "^4.2.7",
+    "css-loader": "^5.2.6",
+    "moment": "^2.29.1",
+    "node-sass": "^6.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-inview-monitor": "^2.3.0",
+    "react-moment": "^1.1.1",
+    "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.4.3",
+    "react-scripts": "^4.0.3",
+    "react-scroll-parallax": "^2.4.0",
+    "react-slick": "^0.28.1",
+    "react-spinners": "^0.11.0",
+    "react-tooltip": "^4.2.21",
+    "sass-loader": "^12.1.0",
     "scrollmonitor-react": "^2.4.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "web-vitals": "^2.0.1"
   },
   "devDependencies": {
-    "http-proxy-middleware": "^1.0.5"
+    "http-proxy-middleware": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,7 +39,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [

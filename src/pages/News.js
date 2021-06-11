@@ -159,7 +159,7 @@ class News extends Component {
 		return (
 			<div className={Style.placeholder}>
 				<SyncLoader
-					size={8}
+					size={10}
 					color={'#656565'}
 					loading={this.state.loading}
 				/>
@@ -177,7 +177,6 @@ class News extends Component {
 					<meta name="description" content="The latest articles that we publish." />
 					<meta name="keywords" content="latest privacy, articles, publish, technology, security, privacy, surveillance, human rights, encryption, law, investigations, research, internet, united kingdom, GDPR, data protection, artificial intelligence" />
 				</Helmet>
-
 				<div className={`${Style.container} container`}>
 					<video className={Style.videoBG} autoPlay muted loop>
                         <source src={eye} type="video/mp4"/>
@@ -226,7 +225,7 @@ class News extends Component {
 									</div>
 								:	this.renderLoading()
 								}
-								{(!found) &&
+								{(!found && !loading) &&
 									<div className={Style.placeholder}>
 										<b>Oops... it seems we couldn't find what you were looking for, try searching for something else.</b>
 									</div>

@@ -12,7 +12,7 @@
         margin: 0 1rem;
         display: inline-block;
     }
-    a{
+    a, .link{
         font-size: 0.9em;
         color: var(--white);
         transition: 300ms;
@@ -21,6 +21,14 @@
         &:hover{
             opacity: 1;
         }
+    }
+    .link{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: inline;
+        margin: 0;
+        padding: 0;
     }
     .onionlink{
         a{

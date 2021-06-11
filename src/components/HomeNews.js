@@ -41,7 +41,7 @@ const HomeNews = () => {
 					{loading
 					?	<div style={{'gridColumn': 'span 12', 'textAlign': 'center'}}>
 							<SyncLoader
-								size={8}
+								size={10}
 								color={'#656565'}
 								loading={loading}
 							/>
