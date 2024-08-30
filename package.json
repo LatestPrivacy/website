@@ -8,7 +8,7 @@
     "@testing-library/jest-dom": "^5.14.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^13.1.9",
-    "axios": "^1.6.0",
+    "axios": "^1.7.4",
     "moment": "^2.29.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
